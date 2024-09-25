@@ -2,8 +2,7 @@
   <div id="features" class="bg-primary py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:text-center">
-        <h2 class="text-base font-semibold leading-7 text-white">Services</h2>
-        <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Revolutionize the way you manage your business</p>
+        <p class="mt-2 text-5xl font-bold tracking-tight text-white sm:text-4xl">We Build what your have in Mind.</p>
         <p class="mt-6 text-lg leading-8 text-white">We are a dynamic group of experts specializing in developing custom software solutions and innovative strategies for businesses across all sectors. Combining our technical expertise with industry knowledge, we create tailored solutions that address our clients' unique needs.</p>
       </div>
       <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

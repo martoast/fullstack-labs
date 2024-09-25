@@ -12,7 +12,7 @@
       <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
         <img class="h-11 text-white" src="/logo.svg" alt="Your Company" />
         <div class="mt-24 sm:mt-32 lg:mt-16">
-          <a href="#" class="inline-flex space-x-6">
+          <a href="#projects" class="inline-flex space-x-6">
             <span class="rounded-full bg-blue-400/10 px-3 py-1 text-sm font-semibold leading-6 text-white ring-1 ring-inset ring-blue-400/20">Portafolio</span>
             <span class="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-white">
               <span>View latest project</span>
@@ -20,7 +20,7 @@
             </span>
           </a>
         </div>
-        <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">Innovate. Create. Grow.</h1>
+        <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">Create. Innovate. Grow.</h1>
         <p class="mt-6 text-lg leading-8 text-white">Empowering businesses with cutting-edge fullstack software solutions. Transform your ideas into powerful, scalable applications that drive growth and efficiency.</p>
         <div class="mt-10 flex items-center gap-x-6">
           <a href="#contact" class="rounded-md bg-blue-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Contact us</a>
