@@ -1,43 +1,161 @@
 <template>
-  <div id="home" class="relative isolate overflow-hidden bg-primary">
-    <svg class="absolute inset-0 -z-10 h-full w-full stroke-blue-400 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" aria-hidden="true">
-      <defs>
-        <pattern id="0787a7c5-978c-4f66-83c7-11c213f99cb7" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
-          <path d="M.5 200V.5H200" fill="none" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" stroke-width="0" fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)" />
-    </svg>
-    <div class="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-      <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-        <img class="h-11 text-white" src="/logo.svg" alt="Your Company" />
-        <div class="mt-24 sm:mt-32 lg:mt-16">
-          <a href="#projects" class="inline-flex space-x-6">
-            <span class="rounded-full bg-blue-400/10 px-3 py-1 text-sm font-semibold leading-6 text-white ring-1 ring-inset ring-blue-400/20">Portafolio</span>
-            <span class="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-white">
-              <span>View latest project</span>
-              <ChevronRightIcon class="h-5 w-5 text-white" aria-hidden="true" />
-            </span>
-          </a>
-        </div>
-        <h1 class="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">Create. Innovate. Grow.</h1>
-        <p class="mt-6 text-lg leading-8 text-white">Empowering businesses with cutting-edge fullstack software solutions. Transform your ideas into powerful, scalable applications that drive growth and efficiency.</p>
-        <div class="mt-10 flex items-center gap-x-6">
-          <a href="#contact" class="rounded-md bg-blue-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Contact us</a>
-          <a href="#features" class="text-sm font-semibold leading-6 text-white">Learn more <span aria-hidden="true">→</span></a>
+  <div
+    class="min-h-screen flex items-center justify-center bg-primary overflow-hidden relative"
+  >
+    <!-- Dynamic background animation -->
+    <div class="absolute inset-0">
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary"
+      ></div>
+      <div class="absolute inset-0 mix-blend-overlay opacity-40">
+        <div
+          v-for="i in 3"
+          :key="i"
+          class="absolute inset-0 blur-3xl"
+          :class="`animate-pulse-slow-${i}`"
+        >
+          <div
+            class="w-full h-full bg-white/10 rounded-full transform rotate-12 scale-150"
+          ></div>
         </div>
       </div>
-      <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-        <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-          <div class="-m-2 rounded-xl bg-blue-400/5 p-2 ring-1 ring-inset ring-blue-400/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80" alt="App screenshot" width="2432" height="1442" class="w-[76rem] rounded-md shadow-2xl ring-1 ring-blue-400/10" />
-          </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="relative w-full max-w-7xl mx-auto px-6 py-24">
+      <!-- Logo with fade-in -->
+      <div class="fade-in-up">
+        <img class="h-10" src="/logo.svg" alt="Your Company" />
+      </div>
+
+      <!-- Hero content with staggered animations -->
+      <div class="mt-24 space-y-16">
+        <!-- Animated heading -->
+        <div class="space-y-4">
+          <h1
+            class="text-6xl md:text-8xl font-bold text-white tracking-tight split-words"
+          >
+            <span class="block overflow-hidden">
+              <span class="slide-up inline-block">Build</span>
+              <span class="text-blue-400 slide-up inline-block delay-150"
+                >.</span
+              >
+            </span>
+            <span class="block overflow-hidden">
+              <span class="slide-up inline-block delay-300">Innovate</span>
+              <span class="text-blue-400 slide-up inline-block delay-450"
+                >.</span
+              >
+            </span>
+            <span class="block overflow-hidden">
+              <span class="slide-up inline-block delay-600">Transform</span>
+              <span class="text-blue-400 slide-up inline-block delay-750"
+                >.</span
+              >
+            </span>
+          </h1>
+        </div>
+
+        <!-- Animated subheading -->
+        <p
+          class="text-xl md:text-2xl text-gray-300 max-w-2xl fade-in-up delay-1000"
+        >
+          Creating remarkable digital experiences that elevate your business to
+          new heights.
+        </p>
+
+        <!-- Interactive CTA section -->
+        <div class="flex flex-wrap gap-8 items-center fade-in-up delay-1200">
+          <NuxtLink
+            to="#contact"
+            class="px-8 py-4 bg-white text-primary rounded-xl font-semibold transition-all duration-300 ease-out hover:shadow-xl hover:shadow-white/20 hover:scale-105"
+          >
+            Start a Project
+          </NuxtLink>
+
+          <NuxtLink
+            to="#portfolio"
+            class="group flex items-center gap-3 text-lg text-gray-300 hover:text-white transition-colors duration-200"
+          >
+            <span>View Our Work</span>
+            <div
+              class="group-hover:translate-x-2 transition-transform duration-200"
+            >
+              <Icon name="heroicons:arrow-right" class="w-5 h-5" />
+            </div>
+          </NuxtLink>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import { ChevronRightIcon } from '@heroicons/vue/20/solid'
-</script>
+<style scoped>
+/* Animation keyframes */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: translateY(100%);
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Delay utilities */
+.delay-150 {
+  animation-delay: 150ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-450 {
+  animation-delay: 450ms;
+}
+.delay-600 {
+  animation-delay: 600ms;
+}
+.delay-750 {
+  animation-delay: 750ms;
+}
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+.delay-1200 {
+  animation-delay: 1200ms;
+}
+
+/* Background animation utilities */
+.animate-pulse-slow-1 {
+  animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-pulse-slow-2 {
+  animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation-delay: -2s;
+}
+.animate-pulse-slow-3 {
+  animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation-delay: -4s;
+}
+</style>

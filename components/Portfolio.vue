@@ -1,60 +1,108 @@
 <template>
-    <div id="projects" class="bg-primary">
-      <div class="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
-        <!-- Details section -->
-        <section aria-labelledby="details-heading">
-          <div class="flex flex-col items-center text-center">
-            <h2 id="details-heading" class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Showcase Projects</h2>
-            <p class="mt-3 max-w-3xl text-lg text-white">At FullstackLabs, we pride ourselves on delivering cutting-edge solutions that drive business growth. Here are some of our recent projects that demonstrate our expertise and innovation.</p>
-          </div>
-  
-          <div class="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8">
-            <div>
-              <div class="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg">
-                <img src="/goza2.webp" alt="Drawstring top with elastic loop closure and textured interior padding." class="h-full w-full object-cover object-center" />
-              </div>
-              <p class="mt-8 text-base text-white">Delivering cutting-edge development and intuitive interface design to simplify how users exchange currencies, all in one seamless app experience.</p>
-              <div class="mt-6">
-              <a href="/projects/goza" class="inline-flex items-center rounded-md bg-blue-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
-                View Project Details
-                <svg class="ml-2 -mr-0.5 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
-                </svg>
-              </a>
-            </div>
-            </div>
-            <div>
-              <div class="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg">
-                <img src="/thecreativeone.webp" alt="Front zipper pouch with included key ring." class="h-full w-full object-cover object-center" />
-              </div>
-              <p class="mt-8 text-base text-white">Delivering cutting-edge development and intuitive interface design to simplify how users exchange currencies, all in one seamless app experience.</p>
-              <div class="mt-6">
-              <a href="#" class="inline-flex items-center rounded-md bg-blue-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
-                View Project Details
-                <svg class="ml-2 -mr-0.5 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
-                </svg>
-              </a>
-            </div>
-            </div>
-            <!-- <div>
-              <div class="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg">
-                <img src="/harmony2.webp" alt="Front zipper pouch with included key ring." class="h-full w-full object-cover object-center" />
-              </div>
-              <p class="mt-8 text-base text-white">Delivering cutting-edge development and intuitive interface design to simplify how users exchange currencies, all in one seamless app experience.</p>
-              <div class="mt-6">
-              <a href="#" class="inline-flex items-center rounded-md bg-blue-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
-                View Project Details
-                <svg class="ml-2 -mr-0.5 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
-                </svg>
-              </a>
-            </div>
-            </div> -->
-            
-          </div>
-        </section>
+  <div class="bg-primary relative overflow-hidden">
+    <!-- Keep your existing background effect -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary"></div>
+      <div class="absolute inset-0 mix-blend-overlay opacity-30">
+        <div class="absolute inset-0 blur-3xl animate-pulse-slow-1">
+          <div class="w-full h-full bg-white/10 rounded-full transform rotate-12 scale-150"></div>
+        </div>
       </div>
     </div>
-  </template>
+
+    <div class="relative mx-auto max-w-7xl px-6 py-32">
+      <!-- Simplified header -->
+      <div class="fade-in-up max-w-3xl mb-24">
+        <h2 class="text-sm font-semibold text-white mb-3">Our Projects</h2>
+        <p class="text-4xl font-bold text-white mb-6">Driving Innovation Through Technology</p>
+        <p class="text-lg text-gray-300">Explore our showcase of cutting-edge solutions that transform businesses.</p>
+      </div>
+
+      <!-- Projects Grid with larger images -->
+      <div class="space-y-32">
+        <div v-for="project in projects" :key="project.name" 
+             class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8">
+          <div class="mt-6 lg:col-span-4 lg:mt-0">
+            <h3 class="text-2xl font-bold text-white">{{ project.name }}</h3>
+            <p class="mt-4 text-gray-300">{{ project.description }}</p>
+            <NuxtLink 
+              :to="project.link"
+              target="_blank"
+              external
+              class="inline-flex items-center text-gray-300 hover:text-white transition-colors duration-200 mt-6"
+            >
+              <span class="font-medium">View Project</span>
+              <Icon 
+                name="heroicons:arrow-up-right" 
+                class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+              />
+            </NuxtLink>
+          </div>
+          <div class="lg:col-span-8">
+            <div class="relative aspect-[16/9] overflow-hidden rounded-xl">
+              <img 
+                :src="project.image" 
+                :alt="project.name"
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+const projects = [
+  {
+    name: 'Propquest.ai',
+    description: 'A powerful platform for real estate investors featuring AI property search, expert filters, skip tracing, and comprehensive property analysis tools.',
+    image: '/propquest.webp',
+    link: 'https://propquest.ai/'
+  },
   
+  {
+    name: 'Pinclick.mx',
+    description: 'A streamlined market research platform that simplifies location-based analysis in Mexico. Users can easily search locations, select areas, and instantly generate comprehensive market studies to make data-driven business decisions.',
+    image: '/pinclick.png',
+    link: 'https://pinclickmx.netlify.app/'
+  },
+  {
+      name: 'Harmony Homecare',
+      description: 'A comprehensive assisted living facility search platform that helps seniors and their families find their ideal care community. Features location-based search, detailed facility profiles, and an intuitive inquiry system for seamless community connections.',
+      image: '/harmony.png',
+      link: 'https://harmony-livingcare.web.app/'
+  },
+  
+  {
+    name: 'The Heist by MGMS',
+    description: 'NFT collection featuring custom ERC-721 smart contracts and a minting platform. Generated over $200K in NFT sales and built an engaged community of 2,000+ collectors. The project showcases unique generative art "Identities" created by Latina artist MGMS, combining innovative blockchain technology with artistic vision.',
+    image: '/theheist.png',
+    link: 'https://www.theheist.world/'
+}
+]
+</script>
+
+<style scoped>
+/* Keep the same animations from before */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-slow-1 {
+  animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+</style>

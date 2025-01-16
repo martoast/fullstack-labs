@@ -3,16 +3,16 @@
       <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           <div v-for="item in navigation.main" :key="item.name" class="pb-6">
-            <a :href="item.href" class="text-sm leading-6 text-white hover:text-blue-400">{{ item.name }}</a>
+            <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white transition-colors duration-200">{{ item.name }}</a>
           </div>
         </nav>
-        <div class="mt-10 flex justify-center space-x-10">
-          <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-white hover:text-blue-400">
+        <!-- <div class="mt-10 flex justify-center space-x-10">
+          <a v-for="item in navigation.social" :key="item.name" :href="item.href" class="text-gray-300 hover:text-white transition-colors duration-200">
             <span class="sr-only">{{ item.name }}</span>
             <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
           </a>
-        </div>
-        <p class="mt-10 text-center text-xs leading-5 text-white">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+        </div> -->
+        <p class="mt-10 text-center text-xs leading-5 text-white">&copy; 2024 Fullstack Labs, Inc. All rights reserved.</p>
       </div>
     </footer>
   </template>
@@ -23,7 +23,7 @@
   const navigation = {
     main: [
       { name: 'Home', href: '#home' },
-      { name: 'Services', href: '#features' },
+      { name: 'View Our Work', href: '#portfolio' },
       { name: 'Contact', href: '#contact' },
     ],
     social: [

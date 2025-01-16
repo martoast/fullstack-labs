@@ -2,8 +2,8 @@
     <div>
       <Hero/>
       
-      <Features/>
-      <Portfolio/>
+      <!-- <Features/> -->
+      <Portfolio id="portfolio"/>
       
       <Contact/>
       <Footer/>
@@ -14,14 +14,14 @@
   <script setup>
   
   useHead({
-    title: 'Fullstack Labs - Innovate. Create. Grow.',
-    description: 'Empowering Businesses with Cutting-Edge Fullstack Software Solutions.',
-    ogDescription: 'Empowering Businesses with Cutting-Edge Fullstack Software Solutions.',
+    title: 'Fullstack Labs - Build. Innovate. Transform.',
+    description: 'Creating remarkable digital experiences that elevate your business to new heights.',
+    ogDescription: 'Creating remarkable digital experiences that elevate your business to new heights.',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
-      { name: 'description', content: 'Fullstack Labs: Empowering Businesses with Cutting-Edge Fullstack Software Solutions.' }
+      { name: 'description', content: 'Creating remarkable digital experiences that elevate your business to new heights.' }
     ]
   })
   

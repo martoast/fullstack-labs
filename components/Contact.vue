@@ -1,79 +1,170 @@
 <template>
-    <div id="contact" class="bg-primary">
-      <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div class="px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
-          <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-            
-            <h2 class="text-3xl font-bold tracking-tight text-white">Get in touch</h2>
-            <p class="mt-6 text-lg leading-8 text-white">Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada et magna.</p>
-            <dl class="mt-10 space-y-4 text-base leading-7 text-white">
-              <div class="flex gap-x-4">
-                <dt class="flex-none">
-                  <span class="sr-only">Address</span>
-                  <BuildingOffice2Icon class="h-7 w-6 text-white" aria-hidden="true" />
-                </dt>
-                <dd>30 NORTH GOULD STREET SUITE R<br />SHERIDAN, WY 82801</dd>
+  <div id="contact" class="bg-primary relative overflow-hidden">
+    <!-- Background effect -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/90 to-primary"></div>
+      <div class="absolute inset-0 mix-blend-overlay opacity-30">
+        <div class="absolute inset-0 blur-3xl animate-pulse-slow-1">
+          <div class="w-full h-full bg-white/10 rounded-full transform -rotate-12 scale-150"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-x-8">
+      <!-- Contact Info Section -->
+      <div class="px-6 py-24 lg:py-32">
+        <div class="max-w-xl">
+          <div class="fade-in-up">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">
+              Let's Create Something Amazing Together
+            </h2>
+            <p class="text-lg text-gray-300 mb-12">
+              Get in touch with us and let's discuss how we can help bring your vision to life.
+            </p>
+
+            <!-- Contact Details -->
+            <div class="space-y-6 text-gray-300">
+              <!-- <div class="flex items-center space-x-4 group">
+                <div class="p-3 rounded-lg bg-white/5 group-hover:bg-white/10 transition-colors duration-300">
+                  <PhoneIcon class="h-6 w-6 text-white" />
+                </div>
+                <a href="tel:+1 (619) 888-5248" class="hover:text-white transition-colors duration-300">
+                  +1 (619) 888-5248
+                </a>
+              </div> -->
+
+              <div class="flex items-center space-x-4 group">
+                <div class="p-3 rounded-lg bg-white/5 group-hover:bg-white/10 transition-colors duration-300">
+                  <EnvelopeIcon class="h-6 w-6 text-white" />
+                </div>
+                <a href="mailto:alexmartos96@gmail.com" class="hover:text-white transition-colors duration-300">
+                  alexmartos96@gmail.com
+                </a>
               </div>
-              <div class="flex gap-x-4">
-                <dt class="flex-none">
-                  <span class="sr-only">Telephone</span>
-                  <PhoneIcon class="h-7 w-6 text-white" aria-hidden="true" />
-                </dt>
-                <dd><a class="hover:text-white" href="tel:+1 (555) 234-5678">+1 (619) 888-5248</a></dd>
-              </div>
-              <div class="flex gap-x-4">
-                <dt class="flex-none">
-                  <span class="sr-only">Email</span>
-                  <EnvelopeIcon class="h-7 w-6 text-white" aria-hidden="true" />
-                </dt>
-                <dd><a class="hover:text-white" href="mailto:alexmartos96@gmail.com">alexmartos96@gmail.com</a></dd>
-              </div>
-            </dl>
+            </div>
           </div>
         </div>
-        <form action="#" method="POST" class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
-          <div class="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
-            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-              <div>
-                <label for="first-name" class="block text-sm font-semibold leading-6 text-white">First name</label>
-                <div class="mt-2.5">
-                  <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6" />
-                </div>
-              </div>
-              <div>
-                <label for="last-name" class="block text-sm font-semibold leading-6 text-white">Last name</label>
-                <div class="mt-2.5">
-                  <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6" />
-                </div>
-              </div>
-              <div class="sm:col-span-2">
-                <label for="email" class="block text-sm font-semibold leading-6 text-white">Email</label>
-                <div class="mt-2.5">
-                  <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6" />
-                </div>
-              </div>
-              <div class="sm:col-span-2">
-                <label for="phone-number" class="block text-sm font-semibold leading-6 text-white">Phone number</label>
-                <div class="mt-2.5">
-                  <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6" />
-                </div>
-              </div>
-              <div class="sm:col-span-2">
-                <label for="message" class="block text-sm font-semibold leading-6 text-white">Message</label>
-                <div class="mt-2.5">
-                  <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-blue-400 sm:text-sm sm:leading-6" />
-                </div>
-              </div>
+      </div>
+
+      <!-- Contact Form Section -->
+      <div class="px-6 pb-24 lg:py-32">
+        <form @submit.prevent="handleSubmit" class="space-y-6 fade-in-up delay-300">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="group">
+              <label class="block text-sm font-medium text-gray-300 mb-2">First name</label>
+              <input 
+                type="text" 
+                class="w-full bg-white/5 border-0 rounded-lg px-4 py-3 text-white 
+                       ring-1 ring-inset ring-white/10 
+                       focus:ring-2 focus:ring-white/30
+                       placeholder:text-gray-400/60
+                       transition-all duration-300
+                       group-hover:ring-white/20"
+                placeholder="John"
+              />
             </div>
-            <div class="mt-8 flex justify-end">
-              <button type="submit" class="rounded-md bg-blue-400 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400">Send message</button>
+
+            <div class="group">
+              <label class="block text-sm font-medium text-gray-300 mb-2">Last name</label>
+              <input 
+                type="text" 
+                class="w-full bg-white/5 border-0 rounded-lg px-4 py-3 text-white 
+                       ring-1 ring-inset ring-white/10 
+                       focus:ring-2 focus:ring-white/30
+                       placeholder:text-gray-400/60
+                       transition-all duration-300
+                       group-hover:ring-white/20"
+                placeholder="Doe"
+              />
             </div>
+          </div>
+
+          <div class="group">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+            <input 
+              type="email" 
+              class="w-full bg-white/5 border-0 rounded-lg px-4 py-3 text-white 
+                     ring-1 ring-inset ring-white/10 
+                     focus:ring-2 focus:ring-white/30
+                     placeholder:text-gray-400/60
+                     transition-all duration-300
+                     group-hover:ring-white/20"
+              placeholder="john@example.com"
+            />
+          </div>
+
+          <div class="group">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Phone number</label>
+            <input 
+              type="tel" 
+              class="w-full bg-white/5 border-0 rounded-lg px-4 py-3 text-white 
+                     ring-1 ring-inset ring-white/10 
+                     focus:ring-2 focus:ring-white/30
+                     placeholder:text-gray-400/60
+                     transition-all duration-300
+                     group-hover:ring-white/20"
+              placeholder="+1 (555) 000-0000"
+            />
+          </div>
+
+          <div class="group">
+            <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+            <textarea 
+              rows="4" 
+              class="w-full bg-white/5 border-0 rounded-lg px-4 py-3 text-white 
+                     ring-1 ring-inset ring-white/10 
+                     focus:ring-2 focus:ring-white/30
+                     placeholder:text-gray-400/60
+                     transition-all duration-300
+                     group-hover:ring-white/20"
+              placeholder="Tell us about your project..."
+            ></textarea>
+          </div>
+
+          <div class="flex justify-end">
+            <button 
+              type="submit"
+              class="px-8 py-4 bg-white text-primary rounded-xl font-semibold transition-all duration-300 ease-out hover:shadow-xl hover:shadow-white/20 hover:scale-105"
+            >
+              Send Message
+            </button>
           </div>
         </form>
       </div>
     </div>
-  </template>
-  
-  <script setup>
-  import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/vue/24/outline'
-  </script>
+  </div>
+</template>
+
+<script setup>
+import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/vue/24/outline'
+
+const handleSubmit = () => {
+  // Add your form submission logic here
+}
+</script>
+
+<style scoped>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-pulse-slow-1 {
+  animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+</style>
