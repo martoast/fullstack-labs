@@ -13,8 +13,8 @@
     <div class="relative mx-auto max-w-7xl px-6 py-32">
       <!-- Simplified header -->
       <div class="fade-in-up max-w-3xl mb-24">
-        <h2 class="text-sm font-semibold text-white mb-3">Our Projects</h2>
-        <p class="text-4xl font-bold text-white mb-6">Driving Innovation Through Technology</p>
+        <h2 class="text-sm font-semibold text-white mb-3">Recent Projects</h2>
+        <p class="text-4xl font-bold text-white mb-6">Your Vision Combined With Our Skills.</p>
         <p class="text-lg text-gray-300">Explore our showcase of cutting-edge solutions that transform businesses.</p>
       </div>
  
