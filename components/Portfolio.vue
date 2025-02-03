@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-
+ 
     <div class="relative mx-auto max-w-7xl px-6 py-32">
       <!-- Simplified header -->
       <div class="fade-in-up max-w-3xl mb-24">
@@ -17,7 +17,7 @@
         <p class="text-4xl font-bold text-white mb-6">Driving Innovation Through Technology</p>
         <p class="text-lg text-gray-300">Explore our showcase of cutting-edge solutions that transform businesses.</p>
       </div>
-
+ 
       <!-- Projects Grid with larger images -->
       <div class="space-y-32">
         <div v-for="project in projects" :key="project.name" 
@@ -32,8 +32,7 @@
               class="inline-flex items-center text-gray-300 hover:text-white transition-colors duration-200 mt-6"
             >
               <span class="font-medium">View Project</span>
-              <Icon 
-                name="heroicons:arrow-up-right" 
+              <ArrowUpRightIcon 
                 class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
               />
             </NuxtLink>
@@ -52,17 +51,18 @@
       </div>
     </div>
   </div>
-</template>
-
-<script setup>
-const projects = [
+ </template>
+ 
+ <script setup>
+ import { ArrowUpRightIcon } from '@heroicons/vue/24/outline'
+ 
+ const projects = [
   {
     name: 'Propquest.ai',
     description: 'A powerful platform for real estate investors featuring AI property search, expert filters, skip tracing, and comprehensive property analysis tools.',
     image: '/propquest.webp',
     link: 'https://propquest.ai/'
   },
-  
   {
     name: 'Pinclick.mx',
     description: 'A streamlined market research platform that simplifies location-based analysis in Mexico. Users can easily search locations, select areas, and instantly generate comprehensive market studies to make data-driven business decisions.',
@@ -70,24 +70,23 @@ const projects = [
     link: 'https://pinclickmx.netlify.app/'
   },
   {
-      name: 'Harmony Homecare',
-      description: 'A comprehensive assisted living facility search platform that helps seniors and their families find their ideal care community. Features location-based search, detailed facility profiles, and an intuitive inquiry system for seamless community connections.',
-      image: '/harmony.png',
-      link: 'https://harmony-livingcare.web.app/'
+    name: 'Harmony Homecare',
+    description: 'A comprehensive assisted living facility search platform that helps seniors and their families find their ideal care community. Features location-based search, detailed facility profiles, and an intuitive inquiry system for seamless community connections.',
+    image: '/harmony.png',
+    link: 'https://harmony-livingcare.web.app/'
   },
-  
   {
     name: 'The Heist by MGMS',
     description: 'NFT collection featuring custom ERC-721 smart contracts and a minting platform. Generated over $200K in NFT sales and built an engaged community of 2,000+ collectors. The project showcases unique generative art "Identities" created by Latina artist MGMS, combining innovative blockchain technology with artistic vision.',
     image: '/theheist.png',
     link: 'https://www.theheist.world/'
-}
-]
-</script>
-
-<style scoped>
-/* Keep the same animations from before */
-@keyframes fadeInUp {
+  }
+ ]
+ </script>
+ 
+ <style scoped>
+ /* Keep the same animations from before */
+ @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -96,13 +95,13 @@ const projects = [
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.fade-in-up {
+ }
+ 
+ .fade-in-up {
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-pulse-slow-1 {
+ }
+ 
+ .animate-pulse-slow-1 {
   animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-</style>
+ }
+ </style>
