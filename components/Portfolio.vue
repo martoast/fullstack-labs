@@ -64,16 +64,16 @@
     link: 'https://propquest.ai/'
   },
   {
+    name: 'Apollo Medical Transport',
+    description: 'A comprehensive medical transport website with integrated request management system. Features include an interactive service area map, automated transport request pipeline, CRM integration for patient data management, and a dynamic scheduling system.',
+    image: '/apollo.png',
+    link: 'https://apollo-mts.com/'
+  },
+  {
     name: 'Pinclick.mx',
     description: 'A streamlined market research platform that simplifies location-based analysis in Mexico. Users can easily search locations, select areas, and instantly generate comprehensive market studies to make data-driven business decisions.',
     image: '/pinclick.png',
     link: 'https://pinclickmx.netlify.app/'
-  },
-  {
-    name: 'Harmony Homecare',
-    description: 'A comprehensive assisted living facility search platform that helps seniors and their families find their ideal care community. Features location-based search, detailed facility profiles, and an intuitive inquiry system for seamless community connections.',
-    image: '/harmony.png',
-    link: 'https://harmony-livingcare.web.app/'
   },
   {
     name: 'The Heist by MGMS',
