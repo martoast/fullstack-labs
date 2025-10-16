@@ -58,10 +58,10 @@
  
  const projects = [
   {
-    name: 'Envios Comerciales TJ',
+    name: 'Boxly',
     description: 'A comprehensive package consolidation system for customers in Mexico to shop from US online stores. Features include automated warehouse address assignment with unique User IDs, item declaration and package linking, warehouse package management, dynamic shipping quotes, secure Stripe payments, and full tracking from US arrival to delivery in Mexico.',
     image: '/envios.png',
-    link: 'https://envioscomercialestj.com/'
+    link: 'https://boxly.mx/'
   },
 
   {
