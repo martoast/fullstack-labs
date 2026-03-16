@@ -1,0 +1,27 @@
+name: fullstack-labs
+
+services:
+    fullstack-labs:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: 'fullstack-labs/app'
+        container_name: fullstack-labs
+        ports:
+            - '3003:3000'
+        environment:
+            NITRO_PORT: 3000
+            NITRO_HOST: 0.0.0.0
+        networks:
+            - shared
+        restart: unless-stopped
+        healthcheck:
+            test: ["CMD", "node", "-e", "fetch('http://localhost:3000').then(r=>{process.exit(r.ok?0:1)}).catch(()=>process.exit(1))"]
+            interval: 10s
+            timeout: 5s
+            retries: 3
+            start_period: 30s
+
+networks:
+    shared:
+        external: true
