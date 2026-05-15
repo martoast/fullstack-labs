@@ -177,13 +177,18 @@
       </section>
 
       <!-- Footer -->
-      <div class="bg-gray-50 px-5 sm:px-10 py-5 sm:py-6 text-center border-t border-gray-200">
-        <p class="text-sm text-gray-400">
-          <a href="https://fullstacklabs.org" target="_blank" rel="noopener" class="text-gray-600 font-semibold hover:text-sky-700 transition">Fullstack Labs</a> · Alejandro Martos Ayala · (619) 888-5248
+      <div class="bg-gray-50 px-5 sm:px-10 py-6 text-center border-t border-gray-200">
+        <p class="text-sm font-semibold text-gray-700">
+          <a href="https://fullstacklabs.org" target="_blank" rel="noopener" class="hover:text-sky-700 transition">Fullstack Labs</a>
         </p>
-        <p class="text-xs text-gray-400 mt-1">
+        <p class="text-sm text-gray-500 mt-1">Alejandro Martos Ayala</p>
+        <div class="mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-1 sm:gap-0 text-sm text-gray-500">
+          <a href="mailto:alexmartos96@gmail.com" class="hover:text-sky-600 transition break-all">alexmartos96@gmail.com</a>
+          <span class="hidden sm:inline mx-2 text-gray-300">·</span>
+          <a href="tel:+16198885248" class="hover:text-sky-600 transition">(619) 888-5248</a>
+          <span class="hidden sm:inline mx-2 text-gray-300">·</span>
           <a href="https://fullstacklabs.org" target="_blank" rel="noopener" class="hover:text-sky-600 transition">fullstacklabs.org</a>
-        </p>
+        </div>
       </div>
 
     </div>
