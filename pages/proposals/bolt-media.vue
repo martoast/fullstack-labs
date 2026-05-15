@@ -48,10 +48,10 @@
       <!-- Project Title -->
       <div class="px-5 sm:px-10 pt-6 sm:pt-8 pb-3 sm:pb-4">
         <h2 class="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
-          Migración, Infraestructura, Sitio Web y CRM — Bolt Media
+          Migración, Infraestructura, Integración y CRM — Bolt Media
         </h2>
         <p class="text-gray-500 text-sm sm:text-base mt-2 leading-relaxed">
-          Infraestructura digital consolidada, nueva landing page enfocada en conversión, y un CRM a la medida para gestionar todo el flujo de leads.
+          Infraestructura digital consolidada, integración del formulario existente con el CRM, y un CRM a la medida para gestionar todo el flujo de leads y los entregables a cada cliente.
         </p>
       </div>
 
@@ -98,48 +98,32 @@
         </h3>
 
         <div class="sm:ml-11">
-          <!-- Mobile cards (≤sm) -->
-          <div class="space-y-3 sm:hidden">
+          <!-- Conceptos incluidos -->
+          <div class="space-y-3">
             <div
               v-for="(row, i) in lineItems"
               :key="i"
-              class="border border-gray-200 rounded-lg p-4"
+              class="border border-gray-200 rounded-lg p-4 flex items-start gap-3"
             >
-              <p class="font-semibold text-gray-900 text-sm">{{ row.name }}</p>
-              <p class="text-gray-400 text-xs mt-1 leading-relaxed">{{ row.detail }}</p>
-              <div class="flex justify-end items-center mt-3 pt-3 border-t border-gray-100">
-                <span class="font-semibold text-gray-900 text-sm">{{ row.cost }}</span>
+              <span class="text-sky-500 mt-0.5 shrink-0">✓</span>
+              <div>
+                <p class="font-semibold text-gray-900 text-sm">{{ row.name }}</p>
+                <p class="text-gray-400 text-xs mt-1 leading-relaxed">{{ row.detail }}</p>
               </div>
             </div>
           </div>
 
-          <!-- Desktop table (≥sm) -->
-          <table class="w-full text-sm hidden sm:table">
-            <thead>
-              <tr class="border-b-2 border-gray-200">
-                <th class="text-left py-3 font-semibold text-gray-500 uppercase text-xs tracking-wider">Concepto</th>
-                <th class="text-right py-3 font-semibold text-gray-500 uppercase text-xs tracking-wider">Costo (USD)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(row, i) in lineItems" :key="i" class="border-b border-gray-100 align-top">
-                <td class="py-4 pr-4">
-                  <p class="font-semibold text-gray-900">{{ row.name }}</p>
-                  <p class="text-gray-400 text-xs mt-0.5">{{ row.detail }}</p>
-                </td>
-                <td class="text-right py-4 font-semibold text-gray-900 whitespace-nowrap">{{ row.cost }}</td>
-              </tr>
-            </tbody>
-          </table>
-
           <!-- Total -->
-          <div class="mt-5 sm:mt-6 bg-sky-50 border border-sky-200 rounded-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4">
+          <div class="mt-5 sm:mt-6 bg-sky-50 border border-sky-200 rounded-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
             <div>
               <p class="font-semibold text-sky-900">Total del proyecto</p>
-              <p class="text-xs text-sky-500 mt-0.5">Migraciones + Landing Page + CRM personalizado</p>
+              <p class="text-xs text-sky-500 mt-1 leading-relaxed">
+                Migraciones + Integración del formulario + CRM personalizado<br />
+                <span class="font-medium">Precio especial bajo alianza con Bolt Media.</span>
+              </p>
             </div>
             <p class="text-2xl sm:text-3xl font-bold text-sky-700 whitespace-nowrap">
-              $2,500.00 <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
+              $650.00 <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
             </p>
           </div>
         </div>
@@ -215,13 +199,13 @@ useHead({
 
 useSeoMeta({
   title: 'Propuesta — Bolt Media | Fullstack Labs',
-  description: 'Propuesta de Fullstack Labs para Bolt Media: migración de infraestructura, rediseño del sitio web y CRM personalizado multi-tenant con dashboard en tiempo real.',
+  description: 'Propuesta de Fullstack Labs para Bolt Media: migración de infraestructura, integración del formulario con el CRM, y un CRM multi-tenant con dashboard en tiempo real y seguimiento de entregables por cliente.',
   author: 'Alejandro Martos — Fullstack Labs',
   robots: 'noindex, nofollow',
   ogType: 'website',
   ogSiteName: 'Fullstack Labs',
   ogTitle: 'Propuesta — Bolt Media | Fullstack Labs',
-  ogDescription: 'Migración, infraestructura, sitio web rediseñado y CRM personalizado con dashboard en tiempo real — propuesta integral para Bolt Media.',
+  ogDescription: 'Migración de infraestructura, integración del formulario existente con el CRM, y un CRM personalizado con dashboard en tiempo real y seguimiento de entregables por cliente.',
   ogUrl: 'https://fullstacklabs.org/proposals/bolt-media',
   ogImage: 'https://fullstacklabs.org/logo.png',
   ogImageWidth: 1200,
@@ -230,7 +214,7 @@ useSeoMeta({
   ogLocale: 'es_MX',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Propuesta — Bolt Media | Fullstack Labs',
-  twitterDescription: 'Migración, infraestructura, sitio web rediseñado y CRM personalizado con dashboard en tiempo real — propuesta integral para Bolt Media.',
+  twitterDescription: 'Migración de infraestructura, integración del formulario existente con el CRM, y un CRM personalizado con dashboard en tiempo real y seguimiento de entregables por cliente.',
   twitterImage: 'https://fullstacklabs.org/logo.png',
   twitterImageAlt: 'Fullstack Labs'
 })
@@ -254,13 +238,12 @@ const scopeCards = [
     ]
   },
   {
-    title: 'Rediseño del sitio web boltmedia.com.mx',
+    title: 'Integración del formulario existente con el CRM',
     items: [
-      'Rediseño completo del sitio actual con enfoque en conversión de leads',
-      'Reestructuración del embudo de ventas dentro de la landing page',
-      'Diseño moderno, responsivo y optimizado para dispositivos móviles',
-      'Integración directa con el CRM — los formularios envían leads automáticamente',
-      'Despliegue final en Netlify, conectado al dominio en Cloudflare'
+      'Integración del formulario actual de boltmedia.com.mx directamente con el CRM',
+      'Captura automática de leads desde el formulario hacia el pipeline del CRM',
+      'Validación de campos, manejo de errores y confirmación al usuario',
+      'No incluye rediseño ni reconstrucción del sitio — se conserva la landing page actual'
     ]
   },
   {
@@ -268,12 +251,13 @@ const scopeCards = [
     title: 'CRM personalizado multi-tenant',
     items: [
       'Sistema CRM a la medida — similar en funcionalidad a Go High Level pero personalizado',
-      'Captura automática de leads provenientes de la landing page',
+      'Captura automática de leads provenientes del formulario de la landing page',
       'Interfaz tipo Kanban para gestionar pipelines, etapas y estatus de cada lead',
       'Multi-tenant — soporte para múltiples equipos / cuentas dentro del mismo sistema',
       'Asignación de leads a miembros del equipo y seguimiento del avance',
       'Panel de administración para gestionar usuarios, permisos y configuración',
-      'Dashboard administrativo en tiempo real — visualización de leads entrantes, métricas clave y KPIs para medir el desempeño del equipo y del embudo de ventas'
+      'Dashboard administrativo en tiempo real — visualización de leads entrantes, métricas clave y KPIs para medir el desempeño del equipo y del embudo de ventas',
+      'Sistema de seguimiento de entregables por cliente — registro de qué se le debe a cada cliente, fechas de entrega y estatus, para que Bolt Media mantenga expectativas claras y comunicación transparente con cada cuenta'
     ]
   }
 ]
@@ -282,30 +266,25 @@ const deliverables = [
   { title: 'Dominios migrados a Cloudflare', detail: 'DNS, SSL y configuración de seguridad listos' },
   { title: 'Cuentas migradas', detail: 'Google Search Console, Google Workspace y hosting consolidados' },
   { title: 'Hosting unificado en Netlify', detail: 'conectado a los dominios en Cloudflare' },
-  { title: 'Sitio web boltmedia.com.mx rediseñado', detail: 'desplegado, responsivo y optimizado para conversión' },
+  { title: 'Formulario integrado con el CRM', detail: 'el formulario actual de boltmedia.com.mx envía leads automáticamente al CRM' },
   { title: 'CRM personalizado desplegado', detail: 'multi-tenant, con interfaz Kanban y gestión de equipo' },
-  { title: 'Integración landing → CRM', detail: 'captura automática de leads desde el sitio' },
+  { title: 'Dashboard en tiempo real', detail: 'leads entrantes, métricas clave y KPIs del embudo' },
+  { title: 'Seguimiento de entregables por cliente', detail: 'cada cuenta de Bolt Media con sus entregables, fechas y estatus' },
   { title: 'Documentación y accesos', detail: 'credenciales, guías de uso y panel administrativo' }
 ]
 
 const lineItems = [
   {
     name: 'Migración de dominios y cuentas',
-    detail: 'GoDaddy → Cloudflare, Google Workspace, Search Console y hosting → Netlify',
-    type: 'Pago único',
-    cost: '$350.00'
+    detail: 'GoDaddy → Cloudflare, Google Workspace, Search Console y hosting → Netlify'
   },
   {
-    name: 'Rediseño y desarrollo de la landing page',
-    detail: 'Rediseño completo de boltmedia.com.mx con embudo de ventas optimizado',
-    type: 'Pago único',
-    cost: '$950.00'
+    name: 'Integración del formulario con el CRM',
+    detail: 'El formulario actual de boltmedia.com.mx envía leads directamente al pipeline del CRM'
   },
   {
     name: 'CRM personalizado multi-tenant',
-    detail: 'Interfaz Kanban, gestión de pipelines, asignación de equipo, integración con landing',
-    type: 'Pago único',
-    cost: '$1,200.00'
+    detail: 'Kanban, dashboard en tiempo real, seguimiento de entregables por cliente y panel de administración'
   }
 ]
 
