@@ -219,6 +219,7 @@ useHead({
   htmlAttrs: { lang: 'es' },
   bodyAttrs: { class: 'bg-primary' },
   link: [
+    { rel: 'canonical', href: 'https://fullstacklabs.org/proposals/bolt-media' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' }
@@ -231,7 +232,24 @@ useHead({
 
 useSeoMeta({
   title: 'Propuesta — Bolt Media | Fullstack Labs',
-  robots: 'noindex, nofollow'
+  description: 'Propuesta de Fullstack Labs para Bolt Media: migración de infraestructura, rediseño del sitio web y CRM personalizado multi-tenant con dashboard en tiempo real.',
+  author: 'Alejandro Martos — Fullstack Labs',
+  robots: 'noindex, nofollow',
+  ogType: 'website',
+  ogSiteName: 'Fullstack Labs',
+  ogTitle: 'Propuesta — Bolt Media | Fullstack Labs',
+  ogDescription: 'Migración, infraestructura, sitio web rediseñado y CRM personalizado con dashboard en tiempo real — propuesta integral para Bolt Media.',
+  ogUrl: 'https://fullstacklabs.org/proposals/bolt-media',
+  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: 'Fullstack Labs',
+  ogLocale: 'es_MX',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Propuesta — Bolt Media | Fullstack Labs',
+  twitterDescription: 'Migración, infraestructura, sitio web rediseñado y CRM personalizado con dashboard en tiempo real — propuesta integral para Bolt Media.',
+  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImageAlt: 'Fullstack Labs'
 })
 
 const scopeCards = [
