@@ -107,8 +107,7 @@
             >
               <p class="font-semibold text-gray-900 text-sm">{{ row.name }}</p>
               <p class="text-gray-400 text-xs mt-1 leading-relaxed">{{ row.detail }}</p>
-              <div class="flex justify-between items-center mt-3 pt-3 border-t border-gray-100">
-                <span class="text-xs text-gray-500">{{ row.type }}</span>
+              <div class="flex justify-end items-center mt-3 pt-3 border-t border-gray-100">
                 <span class="font-semibold text-gray-900 text-sm">{{ row.cost }}</span>
               </div>
             </div>
@@ -119,7 +118,6 @@
             <thead>
               <tr class="border-b-2 border-gray-200">
                 <th class="text-left py-3 font-semibold text-gray-500 uppercase text-xs tracking-wider">Concepto</th>
-                <th class="text-right py-3 font-semibold text-gray-500 uppercase text-xs tracking-wider">Tipo</th>
                 <th class="text-right py-3 font-semibold text-gray-500 uppercase text-xs tracking-wider">Costo (USD)</th>
               </tr>
             </thead>
@@ -129,7 +127,6 @@
                   <p class="font-semibold text-gray-900">{{ row.name }}</p>
                   <p class="text-gray-400 text-xs mt-0.5">{{ row.detail }}</p>
                 </td>
-                <td class="text-right py-4 text-gray-500 whitespace-nowrap">{{ row.type }}</td>
                 <td class="text-right py-4 font-semibold text-gray-900 whitespace-nowrap">{{ row.cost }}</td>
               </tr>
             </tbody>
