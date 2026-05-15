@@ -90,29 +90,10 @@
         </div>
       </section>
 
-      <!-- Timeline -->
-      <section class="px-5 sm:px-10 py-5 sm:py-6">
-        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
-          Línea de tiempo
-        </h3>
-        <div class="sm:ml-11">
-          <div class="flex items-center gap-4">
-            <div class="bg-sky-50 border border-sky-200 rounded-lg px-4 py-3 sm:px-5 text-center shrink-0">
-              <p class="text-xl sm:text-2xl font-bold text-sky-700 leading-none">6</p>
-              <p class="text-[10px] sm:text-xs text-sky-500 font-medium uppercase mt-1">Semanas</p>
-            </div>
-            <p class="text-sm text-gray-500 leading-relaxed">
-              Tiempo estimado total de desarrollo desde la aprobación del proyecto. Las migraciones y el rediseño avanzan en paralelo al desarrollo del CRM.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <!-- Pricing -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">4</span>
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
           Inversión
         </h3>
 
@@ -170,7 +151,7 @@
       <!-- Payment -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">5</span>
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">4</span>
           Métodos de pago
         </h3>
         <div class="sm:ml-11 grid grid-cols-2 gap-3 sm:gap-4">
