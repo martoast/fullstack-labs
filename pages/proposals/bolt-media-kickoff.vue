@@ -53,16 +53,27 @@
         </h2>
       </div>
 
-      <!-- Section 1: GoDaddy -->
+      <!-- Section 1: Cuentas principales -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">1</span>
-          Acceso a la cuenta de GoDaddy
+          Credenciales de las cuentas principales
         </h3>
         <div class="sm:ml-11 border border-gray-200 rounded-lg p-4 sm:p-5 scope-card">
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Mándame el <strong>correo y la contraseña</strong> de la cuenta de GoDaddy donde tienen registrados sus dominios. Con eso entramos y empezamos la transferencia hacia Cloudflare.
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            Mándame el <strong>correo y la contraseña</strong> de las siguientes tres cuentas:
           </p>
+          <ul class="text-sm text-gray-600 space-y-3 list-disc list-outside pl-5">
+            <li>
+              <strong class="text-gray-900">GoDaddy</strong> — la cuenta donde están registrados los dominios, para iniciar la transferencia hacia Cloudflare.
+            </li>
+            <li>
+              <strong class="text-gray-900">Cloudflare</strong> — la cuenta destino donde vivirán los dominios y la configuración de DNS.
+            </li>
+            <li>
+              <strong class="text-gray-900">Gmail maestro</strong> — la cuenta de Google que quieren usar como cuenta central de Bolt Media. La usaremos para crear y enlazar la cuenta de Netlify donde se va a hospedar el sitio.
+            </li>
+          </ul>
         </div>
       </section>
 
