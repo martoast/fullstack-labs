@@ -71,7 +71,7 @@
               <strong class="text-gray-900">Cloudflare</strong> — la cuenta destino donde vivirán los dominios y la configuración de DNS.
             </li>
             <li>
-              <strong class="text-gray-900">Gmail maestro</strong> — la cuenta de Google que quieren usar como cuenta central de Bolt Media. La usaremos para crear y enlazar la cuenta de Netlify donde se va a hospedar el sitio.
+              <strong class="text-gray-900">Gmail maestro</strong> — la cuenta de Google que quieren usar como cuenta central de Bolt Media. La usaremos para crear y enlazar la plataforma de hosting donde alojaremos todos los sitios.
             </li>
             <li>
               <strong class="text-gray-900">Cualquier otra cuenta relacionada</strong> — si tienen acceso a algún otro servicio ligado a sus dominios, correo o sitio (por ejemplo Google Workspace, Search Console, Analytics, hosting secundario, etc.), mándenmela también. Mejor sobrar accesos que faltarnos uno a mitad de la migración.
