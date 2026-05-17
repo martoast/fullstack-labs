@@ -93,6 +93,19 @@
         </div>
       </section>
 
+      <!-- Section 3: CMS / Código del sitio -->
+      <section class="px-5 sm:px-10 py-5 sm:py-6">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
+          Acceso al sitio web o CMS
+        </h3>
+        <div class="sm:ml-11 border border-gray-200 rounded-lg p-4 sm:p-5 scope-card">
+          <p class="text-sm text-gray-600 leading-relaxed">
+            Una cosa es el hosting y otra es dónde vive el contenido y el código del sitio. Mándame también el <strong>correo y la contraseña</strong> del panel de administración de la plataforma donde está construido (por ejemplo WordPress, Wix, Squarespace, Webflow, Shopify, etc.). Si el sitio está hecho con código propio en un repositorio (GitHub, GitLab, Bitbucket), compártanme también el acceso al repo.
+          </p>
+        </div>
+      </section>
+
       <!-- Footer -->
       <div class="bg-gray-50 px-5 sm:px-10 py-6 text-center border-t border-gray-200 mt-2 sm:mt-4">
         <p class="text-sm font-semibold text-gray-700">
