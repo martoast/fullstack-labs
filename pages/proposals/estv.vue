@@ -39,9 +39,7 @@
         </div>
         <div>
           <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Para</p>
-          <p class="font-semibold text-gray-900">Ricardo Ochoa</p>
-          <p class="text-gray-600">Bolt Media</p>
-          <p class="text-gray-600">Tel: +52 1 612 103 1166</p>
+          <p class="font-semibold text-gray-900">A quien corresponda</p>
         </div>
       </div>
 
