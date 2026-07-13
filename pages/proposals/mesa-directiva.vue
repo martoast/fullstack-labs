@@ -23,8 +23,11 @@
             </a>
           </div>
           <div class="text-left sm:text-right">
-            <p class="text-xl sm:text-2xl font-semibold tracking-wide">PROPUESTA</p>
+            <p class="text-xl sm:text-2xl font-semibold tracking-wide">CONFIRMACIÓN DE TRABAJO</p>
             <p class="text-sky-200 text-xs sm:text-sm mt-1">13 de julio, 2026</p>
+            <span class="inline-flex items-center gap-1.5 mt-2 bg-emerald-500/20 text-emerald-200 border border-emerald-400/40 rounded-full px-3 py-1 text-xs font-semibold">
+              ✓ Pago recibido — trabajo confirmado
+            </span>
           </div>
         </div>
       </div>
@@ -49,7 +52,7 @@
           Soporte para múltiples cuentas de Stripe + Mejoras de checkout y reportes — Mesa Directiva
         </h2>
         <p class="text-gray-500 text-sm sm:text-base mt-2 leading-relaxed">
-          Alcance definido con base en la reunión del 13 de julio: separación de finanzas en tres cuentas de Stripe (cafetería, rifa y eventos), pagos en parcialidades dependientes, mejoras al proceso de compra y reportes personalizados por nivel de usuario.
+          Este documento confirma el trabajo a realizar, con base en la reunión del 13 de julio: separación de finanzas en tres cuentas de Stripe (cafetería, rifa y eventos), pagos en parcialidades dependientes, mejoras al proceso de compra y reportes personalizados por nivel de usuario. El pago ya fue recibido y el trabajo está en curso.
         </p>
       </div>
 
@@ -99,7 +102,7 @@
             <div class="text-xl sm:text-2xl shrink-0">📅</div>
             <div>
               <p class="font-semibold text-gray-900 text-sm">Entrega estimada: jueves 17 de julio de 2026</p>
-              <p class="text-gray-400 text-xs mt-1 leading-relaxed">El trabajo se realiza durante esta semana una vez aprobada la propuesta. Se mantendrá comunicación durante todo el proceso y se avisará antes de aplicar cualquier cambio en producción. Al finalizar se agenda una reunión para mostrar los cambios y resolver dudas.</p>
+              <p class="text-gray-400 text-xs mt-1 leading-relaxed">El trabajo ya está en curso y se realiza durante esta semana. Se mantendrá comunicación durante todo el proceso y se avisará antes de aplicar cualquier cambio en producción. Al finalizar se agenda una reunión para mostrar los cambios y resolver dudas.</p>
             </div>
           </div>
         </div>
@@ -129,36 +132,36 @@
           </div>
 
           <!-- Total -->
-          <div class="mt-5 sm:mt-6 bg-sky-50 border border-sky-200 rounded-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
+          <div class="mt-5 sm:mt-6 bg-emerald-50 border border-emerald-200 rounded-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
             <div>
-              <p class="font-semibold text-sky-900">Total del proyecto</p>
-              <p class="text-xs text-sky-500 mt-1 leading-relaxed">
+              <p class="font-semibold text-emerald-900 flex items-center gap-2">
+                Total del proyecto
+                <span class="inline-flex items-center bg-emerald-600 text-white rounded-full px-2.5 py-0.5 text-xs font-semibold">✓ PAGADO</span>
+              </p>
+              <p class="text-xs text-emerald-600 mt-1 leading-relaxed">
                 Multi-Stripe (3 cuentas) + Pagos dependientes + Mejoras de checkout + Reportes por nivel
               </p>
             </div>
-            <p class="text-2xl sm:text-3xl font-bold text-sky-700 whitespace-nowrap">
-              $350.00 <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
+            <p class="text-2xl sm:text-3xl font-bold text-emerald-700 whitespace-nowrap">
+              $350.00 <span class="text-sm sm:text-base font-normal text-emerald-500">USD</span>
             </p>
           </div>
         </div>
       </section>
 
-      <!-- Payment -->
+      <!-- Payment status -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">5</span>
-          Métodos de pago
+          Estado del pago
         </h3>
-        <div class="sm:ml-11 grid grid-cols-2 gap-3 sm:gap-4">
-          <div class="border border-gray-200 rounded-lg p-3 sm:p-4 text-center">
-            <div class="text-xl sm:text-2xl mb-1">💳</div>
-            <p class="font-semibold text-gray-900 text-sm">Stripe</p>
-            <p class="text-gray-400 text-xs mt-1">Tarjeta de crédito/débito</p>
-          </div>
-          <div class="border border-gray-200 rounded-lg p-3 sm:p-4 text-center">
-            <div class="text-xl sm:text-2xl mb-1">💰</div>
-            <p class="font-semibold text-gray-900 text-sm">Efectivo</p>
-            <p class="text-gray-400 text-xs mt-1">Pago en persona</p>
+        <div class="sm:ml-11">
+          <div class="border border-emerald-200 bg-emerald-50 rounded-lg p-4 flex items-start gap-3">
+            <div class="text-xl sm:text-2xl shrink-0">✅</div>
+            <div>
+              <p class="font-semibold text-emerald-900 text-sm">Pago recibido en su totalidad — 13 de julio de 2026</p>
+              <p class="text-emerald-600 text-xs mt-1 leading-relaxed">No hay pagos pendientes. Este documento sirve como confirmación del alcance de trabajo acordado.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -167,7 +170,7 @@
       <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-200 mt-2 sm:mt-4">
         <h3 class="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Notas</h3>
         <ul class="text-sm text-gray-500 space-y-1.5 list-disc list-outside pl-5">
-          <li>El proyecto inicia una vez aprobada la propuesta y recibido el pago.</li>
+          <li>El pago del proyecto ya fue recibido; el trabajo está confirmado y en curso.</li>
           <li>Para arrancar los reportes, el equipo de Mesa Directiva enviará por correo: (1) las columnas exactas del reporte resumido y (2) la definición de los dos niveles de acceso (quién ve el reporte completo y quién el resumido).</li>
           <li>La creación y verificación de las cuentas adicionales de Stripe corre por cuenta del cliente — Fullstack Labs se encarga de toda la integración técnica.</li>
           <li>El tipo de cambio en los pagos lo determina Stripe automáticamente al momento de la transacción; no interviene configuración manual.</li>
@@ -214,13 +217,13 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Propuesta — Mesa Directiva | Fullstack Labs',
-  description: 'Propuesta de Fullstack Labs para Mesa Directiva: tres cuentas de Stripe con finanzas separadas, pagos en parcialidades dependientes, mejoras al checkout y reportes personalizados por nivel de usuario.',
+  title: 'Confirmación de trabajo — Mesa Directiva | Fullstack Labs',
+  description: 'Confirmación de trabajo de Fullstack Labs para Mesa Directiva: tres cuentas de Stripe con finanzas separadas, pagos en parcialidades dependientes, mejoras al checkout y reportes personalizados por nivel de usuario.',
   author: 'Alejandro Martos — Fullstack Labs',
   robots: 'noindex, nofollow',
   ogType: 'website',
   ogSiteName: 'Fullstack Labs',
-  ogTitle: 'Propuesta — Mesa Directiva | Fullstack Labs',
+  ogTitle: 'Confirmación de trabajo — Mesa Directiva | Fullstack Labs',
   ogDescription: 'Tres cuentas de Stripe con finanzas separadas, pagos en parcialidades dependientes, mejoras al checkout y reportes personalizados por nivel de usuario.',
   ogUrl: 'https://fullstacklabs.org/proposals/mesa-directiva',
   ogImage: 'https://fullstacklabs.org/logo.png',
@@ -229,7 +232,7 @@ useSeoMeta({
   ogImageAlt: 'Fullstack Labs',
   ogLocale: 'es_MX',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Propuesta — Mesa Directiva | Fullstack Labs',
+  twitterTitle: 'Confirmación de trabajo — Mesa Directiva | Fullstack Labs',
   twitterDescription: 'Tres cuentas de Stripe con finanzas separadas, pagos en parcialidades dependientes, mejoras al checkout y reportes personalizados por nivel de usuario.',
   twitterImage: 'https://fullstacklabs.org/logo.png',
   twitterImageAlt: 'Fullstack Labs'
