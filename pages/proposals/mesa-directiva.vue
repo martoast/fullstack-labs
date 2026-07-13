@@ -24,7 +24,7 @@
           </div>
           <div class="text-left sm:text-right">
             <p class="text-xl sm:text-2xl font-semibold tracking-wide">PROPUESTA</p>
-            <p class="text-sky-200 text-xs sm:text-sm mt-1">4 de julio, 2026</p>
+            <p class="text-sky-200 text-xs sm:text-sm mt-1">13 de julio, 2026</p>
           </div>
         </div>
       </div>
@@ -46,10 +46,10 @@
       <!-- Project Title -->
       <div class="px-5 sm:px-10 pt-6 sm:pt-8 pb-3 sm:pb-4">
         <h2 class="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
-          Soporte para múltiples cuentas de Stripe + Mejoras de UI/UX — Mesa Directiva
+          Soporte para múltiples cuentas de Stripe + Mejoras de checkout y reportes — Mesa Directiva
         </h2>
         <p class="text-gray-500 text-sm sm:text-base mt-2 leading-relaxed">
-          Cambio de arquitectura en la plataforma para soportar múltiples cuentas de Stripe — permitiendo separar por completo las finanzas de dos líneas de venta distintas — junto con mejoras de interfaz y funcionalidad para agilizar los procesos del día a día.
+          Alcance definido con base en la reunión del 13 de julio: separación de finanzas en tres cuentas de Stripe (cafetería, rifa y eventos), pagos en parcialidades dependientes, mejoras al proceso de compra y reportes personalizados por nivel de usuario.
         </p>
       </div>
 
@@ -98,8 +98,8 @@
           <div class="border border-gray-200 rounded-lg p-4 flex items-start gap-3">
             <div class="text-xl sm:text-2xl shrink-0">📅</div>
             <div>
-              <p class="font-semibold text-gray-900 text-sm">Aproximadamente 4 a 7 días de trabajo</p>
-              <p class="text-gray-400 text-xs mt-1 leading-relaxed">El trabajo inicia una vez recibido el pago. Se mantendrá comunicación durante todo el proceso y se avisará antes de aplicar cualquier cambio en producción.</p>
+              <p class="font-semibold text-gray-900 text-sm">Entrega estimada: jueves 17 de julio de 2026</p>
+              <p class="text-gray-400 text-xs mt-1 leading-relaxed">El trabajo se realiza durante esta semana una vez aprobada la propuesta. Se mantendrá comunicación durante todo el proceso y se avisará antes de aplicar cualquier cambio en producción. Al finalizar se agenda una reunión para mostrar los cambios y resolver dudas.</p>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@
             <div>
               <p class="font-semibold text-sky-900">Total del proyecto</p>
               <p class="text-xs text-sky-500 mt-1 leading-relaxed">
-                Soporte multi-Stripe + Mejoras de UI/UX y funcionalidad
+                Multi-Stripe (3 cuentas) + Pagos dependientes + Mejoras de checkout + Reportes por nivel
               </p>
             </div>
             <p class="text-2xl sm:text-3xl font-bold text-sky-700 whitespace-nowrap">
@@ -168,7 +168,9 @@
         <h3 class="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Notas</h3>
         <ul class="text-sm text-gray-500 space-y-1.5 list-disc list-outside pl-5">
           <li>El proyecto inicia una vez aprobada la propuesta y recibido el pago.</li>
-          <li>La creación y verificación de la segunda cuenta de Stripe corre por cuenta del cliente — Fullstack Labs se encarga de toda la integración técnica.</li>
+          <li>Para arrancar los reportes, el equipo de Mesa Directiva enviará por correo: (1) las columnas exactas del reporte resumido y (2) la definición de los dos niveles de acceso (quién ve el reporte completo y quién el resumido).</li>
+          <li>La creación y verificación de las cuentas adicionales de Stripe corre por cuenta del cliente — Fullstack Labs se encarga de toda la integración técnica.</li>
+          <li>El tipo de cambio en los pagos lo determina Stripe automáticamente al momento de la transacción; no interviene configuración manual.</li>
           <li>Las comisiones de Stripe por transacción son ajenas a esta propuesta y se rigen por las tarifas de Stripe.</li>
           <li>Cambios significativos fuera del alcance descrito pueden requerir un ajuste en costo y tiempo.</li>
         </ul>
@@ -213,13 +215,13 @@ useHead({
 
 useSeoMeta({
   title: 'Propuesta — Mesa Directiva | Fullstack Labs',
-  description: 'Propuesta de Fullstack Labs para Mesa Directiva: soporte para múltiples cuentas de Stripe con finanzas separadas por línea de venta, y mejoras de UI/UX y funcionalidad en la plataforma.',
+  description: 'Propuesta de Fullstack Labs para Mesa Directiva: tres cuentas de Stripe con finanzas separadas, pagos en parcialidades dependientes, mejoras al checkout y reportes personalizados por nivel de usuario.',
   author: 'Alejandro Martos — Fullstack Labs',
   robots: 'noindex, nofollow',
   ogType: 'website',
   ogSiteName: 'Fullstack Labs',
   ogTitle: 'Propuesta — Mesa Directiva | Fullstack Labs',
-  ogDescription: 'Soporte para múltiples cuentas de Stripe con finanzas separadas por línea de venta, y mejoras de UI/UX y funcionalidad en la plataforma.',
+  ogDescription: 'Tres cuentas de Stripe con finanzas separadas, pagos en parcialidades dependientes, mejoras al checkout y reportes personalizados por nivel de usuario.',
   ogUrl: 'https://fullstacklabs.org/proposals/mesa-directiva',
   ogImage: 'https://fullstacklabs.org/logo.png',
   ogImageWidth: 1200,
@@ -228,7 +230,7 @@ useSeoMeta({
   ogLocale: 'es_MX',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Propuesta — Mesa Directiva | Fullstack Labs',
-  twitterDescription: 'Soporte para múltiples cuentas de Stripe con finanzas separadas por línea de venta, y mejoras de UI/UX y funcionalidad en la plataforma.',
+  twitterDescription: 'Tres cuentas de Stripe con finanzas separadas, pagos en parcialidades dependientes, mejoras al checkout y reportes personalizados por nivel de usuario.',
   twitterImage: 'https://fullstacklabs.org/logo.png',
   twitterImageAlt: 'Fullstack Labs'
 })
@@ -236,43 +238,70 @@ useSeoMeta({
 const scopeCards = [
   {
     highlight: true,
-    title: 'Soporte para múltiples cuentas de Stripe (multi-tenant)',
+    title: 'Soporte para múltiples cuentas de Stripe — 3 cuentas separadas',
     items: [
-      'Cambio de arquitectura del sistema para que la plataforma soporte más de una cuenta de Stripe en lugar de una sola',
-      'Cada una de las dos categorías de producto quedará ligada a su propia cuenta de Stripe, permitiendo manejar las finanzas de cada línea de venta de forma completamente independiente',
-      'El checkout detectará automáticamente a qué categoría pertenece la compra y procesará el pago en la cuenta de Stripe correspondiente',
-      'Separación total de los dos pipelines de venta — cobros, depósitos y reportes de cada línea llegan a su propia cuenta sin mezclarse',
-      'Configuración y pruebas de webhooks, llaves y eventos de Stripe para ambas cuentas',
-      'Pruebas completas del flujo de pago en ambas cuentas antes de liberar a producción'
+      'Cambio de arquitectura para que la plataforma soporte tres cuentas de Stripe en lugar de una sola',
+      'Cuenta 1 — Cafetería / flujo diario: prepago de comida, promocionales y productos de venta general (cuenta actual)',
+      'Cuenta 2 — Rifa: los ingresos de rifas quedan aislados en su propia cuenta, sin mezclarse con nada más',
+      'Cuenta 3 — Eventos: primera comunión, graduaciones, paseos y demás eventos cobran en la cuenta nueva',
+      'Al crear cada producto o evento se selecciona a qué cuenta se dirige el dinero',
+      'El checkout procesa automáticamente el pago en la cuenta de Stripe correspondiente al producto',
+      'Migración de los eventos actuales del año a la cuenta de eventos',
+      'Configuración y pruebas de webhooks, llaves y eventos de Stripe para las tres cuentas antes de liberar a producción'
     ]
   },
   {
-    title: 'Mejoras de UI/UX y funcionalidad',
+    title: 'Pagos en parcialidades dependientes (tiers)',
     items: [
-      'Ajustes de interfaz y experiencia de usuario en las secciones clave de la plataforma',
-      'Mejoras de funcionalidad para agilizar y simplificar los procesos operativos del día a día',
-      'Refinamiento de flujos existentes para reducir pasos innecesarios y fricción'
+      'Posibilidad de dividir un mismo evento en dos o tres pagos (tiers)',
+      'Los pagos se habilitan en orden: el pago 2 solo está disponible si el pago 1 ya se completó, y el 3 requiere el 1 y el 2'
+    ]
+  },
+  {
+    title: 'Mejoras al proceso de compra (checkout)',
+    items: [
+      'Campos "Nombre del alumno" y "Clave del alumno" en la sección de pago, con opción de prenderlos o apagarlos por producto — así los compradores externos (que no son alumnos) no ven campos que no aplican',
+      'Eliminar la etiqueta "(opcional)" de los campos que en realidad son obligatorios (salón, generación, etc.), para que el comprador sepa que debe llenarlos'
+    ]
+  },
+  {
+    title: 'Reportes personalizados con dos niveles de acceso',
+    items: [
+      'Reporte resumido para coordinadoras de sección — únicamente las columnas que el equipo defina, listo para usarse sin depurar',
+      'Reporte completo para administradores — toda la información (hora, número de orden, transacción) para rastreo ante cualquier situación',
+      'El reporte que ve cada usuario depende de su nivel de acceso en la plataforma'
+    ]
+  },
+  {
+    title: 'Zona horaria fija',
+    items: [
+      'La creación de eventos queda fija en la zona horaria de Tijuana — se elimina el selector de zona horaria para evitar errores'
     ]
   }
 ]
 
 const deliverables = [
-  { title: 'Plataforma con soporte multi-Stripe', detail: 'dos cuentas de Stripe operando en paralelo, una por categoría de producto' },
-  { title: 'Checkout inteligente', detail: 'cada compra se procesa automáticamente en la cuenta de Stripe de su línea de venta' },
-  { title: 'Finanzas separadas por pipeline', detail: 'cobros, depósitos y reportes independientes para cada línea de negocio' },
-  { title: 'Webhooks y llaves configurados', detail: 'ambas cuentas conectadas, probadas y funcionando en producción' },
-  { title: 'Mejoras de UI/UX aplicadas', detail: 'interfaz refinada y procesos operativos más ágiles' },
-  { title: 'Pruebas de extremo a extremo', detail: 'flujo de compra validado en ambas cuentas antes de la entrega' }
+  { title: 'Plataforma con soporte para 3 cuentas de Stripe', detail: 'cafetería, rifa y eventos operando en paralelo, cada una con sus cobros, depósitos y reportes independientes' },
+  { title: 'Selección de cuenta por producto', detail: 'al crear un producto o evento se elige a qué cuenta va el dinero; el checkout cobra en la cuenta correcta automáticamente' },
+  { title: 'Pagos en parcialidades dependientes', detail: 'eventos divisibles en 2–3 pagos que se habilitan en orden conforme se completan' },
+  { title: 'Checkout mejorado', detail: 'campos de alumno configurables por producto y etiquetas corregidas en campos obligatorios' },
+  { title: 'Reportes por nivel de usuario', detail: 'versión resumida para coordinadoras y versión completa para administradores' },
+  { title: 'Zona horaria fija de Tijuana', detail: 'sin selector, sin riesgo de eventos con horario equivocado' },
+  { title: 'Pruebas de extremo a extremo', detail: 'flujo de compra validado en las tres cuentas antes de la entrega' }
 ]
 
 const lineItems = [
   {
     name: 'Cambio de sistema — soporte para múltiples cuentas de Stripe',
-    detail: 'Arquitectura multi-Stripe: cada categoría de producto cobra en su propia cuenta, con finanzas y pipelines de venta completamente separados'
+    detail: 'Arquitectura multi-Stripe con tres cuentas (cafetería, rifa y eventos): cada producto cobra en su propia cuenta, con finanzas completamente separadas, incluyendo migración de los eventos actuales'
   },
   {
-    name: 'Mejoras de UI/UX y funcionalidad',
-    detail: 'Ajustes de interfaz y optimización de flujos para agilizar los procesos de la plataforma'
+    name: 'Pagos dependientes y mejoras de checkout',
+    detail: 'Parcialidades en orden (2–3 pagos por evento), campos de alumno configurables por producto y corrección de etiquetas en campos obligatorios'
+  },
+  {
+    name: 'Reportes personalizados y zona horaria',
+    detail: 'Dos niveles de reporte según el usuario (resumido / completo) y zona horaria fija de Tijuana en la creación de eventos'
   }
 ]
 
