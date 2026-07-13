@@ -159,7 +159,7 @@
           <div class="border border-emerald-200 bg-emerald-50 rounded-lg p-4 flex items-start gap-3">
             <div class="text-xl sm:text-2xl shrink-0">✅</div>
             <div>
-              <p class="font-semibold text-emerald-900 text-sm">Pago recibido en su totalidad — 13 de julio de 2026</p>
+              <p class="font-semibold text-emerald-900 text-sm">Pago recibido en su totalidad</p>
               <p class="text-emerald-600 text-xs mt-1 leading-relaxed">No hay pagos pendientes. Este documento sirve como confirmación del alcance de trabajo acordado.</p>
             </div>
           </div>
