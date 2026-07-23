@@ -58,6 +58,13 @@
  
  const projects = [
   {
+    name: 'Bolt Media',
+    description: 'The official website for Bolt Media, a full-service marketing agency operating in Tijuana, Mexico City and San Diego. A fully bilingual (ES/EN) site showcasing the agency\'s brand strategy, content, media and experiential services — with an influencer portfolio of 200+, partner showcase, and a contact form wired directly into a custom-built CRM for automatic lead capture.',
+    image: '/boltmedia.jpg',
+    link: 'https://boltmedia.com.mx/'
+  },
+
+  {
     name: 'Boxly',
     description: 'A comprehensive package consolidation system for customers in Mexico to shop from US online stores. Features include automated warehouse address assignment with unique User IDs, item declaration and package linking, warehouse package management, dynamic shipping quotes, secure Stripe payments, and full tracking from US arrival to delivery in Mexico.',
     image: '/envios.png',
