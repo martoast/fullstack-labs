@@ -60,7 +60,7 @@
   {
     name: 'Bolt Media',
     description: 'The official website for Bolt Media, a full-service marketing agency operating in Tijuana, Mexico City and San Diego. A fully bilingual (ES/EN) site showcasing the agency\'s brand strategy, content, media and experiential services — with an influencer portfolio of 200+, partner showcase, and a contact form wired directly into a custom-built CRM for automatic lead capture.',
-    image: '/boltmedia.jpg',
+    image: '/bolt-site.jpg',
     link: 'https://boltmedia.com.mx/'
   },
 
