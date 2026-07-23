@@ -67,7 +67,7 @@
   {
     name: 'Riviera Residencial',
     description: 'A real estate landing page for Riviera Residencial Etapa II, a 46-home private community inside Real del Mar between Tijuana and Rosarito. The site showcases the Murano and Mazzorbo home models with photo galleries, amenities including the clubhouse, pool and golf course with ocean views, location highlights, and an availability request form for prospective buyers. Developed by HIR Baja and marketed by BCapital Brokers.',
-    image: '/riviera.jpg',
+    image: '/riviera-site.jpg',
     link: 'https://riviera-real-del-mar.netlify.app/'
   },
 
