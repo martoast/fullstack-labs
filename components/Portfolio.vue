@@ -79,6 +79,13 @@
   },
 
   {
+    name: 'Vento',
+    description: 'A real estate landing page for Vento, a boutique residential project of 5 apartments in Tijuana. The site presents the two available typologies — 88 m² and 107 m² units with two bedrooms, shared roof deck, two parking spaces and controlled access — with photo galleries, amenities, location and an availability request flow. Marketed by City Inmobiliaria.',
+    image: '/vento-site.jpg',
+    link: 'https://vento-tijuana.netlify.app/'
+  },
+
+  {
     name: 'Boxly',
     description: 'A comprehensive package consolidation system for customers in Mexico to shop from US online stores. Features include automated warehouse address assignment with unique User IDs, item declaration and package linking, warehouse package management, dynamic shipping quotes, secure Stripe payments, and full tracking from US arrival to delivery in Mexico.',
     image: '/envios.png',
