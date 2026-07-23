@@ -25,6 +25,10 @@
   //   ]
   // })
 
+  useHead({
+    htmlAttrs: { lang: 'en' }
+  })
+
   useSeoMeta({
   title: 'Fullstack Labs - Build. Innovate. Transform.',
   ogTitle: 'Fullstack Labs - Build. Innovate. Transform.',
@@ -36,8 +40,8 @@
   googleSiteVerification: '',
   appleMobileWebAppCapable: 'yes',
   mobileWebAppCapable: 'yes',
-  ogImage: '/logo.png',
-  ogUrl: 'https://fullstack-labs.netlify.app/',
+  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogUrl: 'https://fullstacklabs.org/',
   ogLocaleAlternate: ['en_US'],
   ogType: 'website'
 })

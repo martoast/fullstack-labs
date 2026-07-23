@@ -4,7 +4,12 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: ['@nuxtjs/tailwindcss'],
   nitro: {
-    preset: 'node-server'
+    preset: 'node-server',
+    compressPublicAssets: true
+  },
+  routeRules: {
+    // Versioned card images — filenames change when content changes
+    '/img/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
   },
   build: {
     transpile: ['three']
