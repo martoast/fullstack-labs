@@ -38,19 +38,19 @@
             >
               <span class="block overflow-hidden">
                 <span class="slide-up inline-block">Build</span>
-                <span class="text-blue-400 slide-up inline-block delay-150"
+                <span class="text-blue-400 slide-up inline-block delay-a"
                   >.</span
                 >
               </span>
               <span class="block overflow-hidden">
-                <span class="slide-up inline-block delay-300">Innovate</span>
-                <span class="text-blue-400 slide-up inline-block delay-450"
+                <span class="slide-up inline-block delay-b">Innovate</span>
+                <span class="text-blue-400 slide-up inline-block delay-c"
                   >.</span
                 >
               </span>
               <span class="block overflow-hidden">
-                <span class="slide-up inline-block delay-600">Transform</span>
-                <span class="text-blue-400 slide-up inline-block delay-750"
+                <span class="slide-up inline-block delay-d">Transform</span>
+                <span class="text-blue-400 slide-up inline-block delay-e"
                   >.</span
                 >
               </span>
@@ -58,13 +58,13 @@
           </div>
           <!-- Animated subheading -->
           <p
-            class="text-xl md:text-2xl text-gray-300 max-w-2xl fade-in-up delay-1000"
+            class="text-xl md:text-2xl text-gray-300 max-w-2xl fade-in-up delay-f"
           >
             Creating remarkable digital experiences that elevate your business
             to new heights.
           </p>
           <!-- Interactive CTA section -->
-          <div class="flex flex-wrap gap-8 items-center fade-in-up delay-1200">
+          <div class="flex flex-wrap gap-8 items-center fade-in-up delay-g">
             <NuxtLink
               to="#contact"
               class="px-8 py-4 bg-white text-primary rounded-xl font-semibold transition-all duration-300 ease-out hover:shadow-xl hover:shadow-white/20 hover:scale-105"
@@ -122,7 +122,7 @@ import { ArrowRightIcon } from "@heroicons/vue/24/outline";
 }
 /* Animation classes */
 .slide-up {
-  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transform: translateY(100%);
 }
 .fade-in-up {
@@ -130,26 +130,26 @@ import { ArrowRightIcon } from "@heroicons/vue/24/outline";
   opacity: 0;
 }
 /* Delay utilities */
-.delay-150 {
-  animation-delay: 150ms;
+.delay-a {
+  animation-delay: 80ms;
 }
-.delay-300 {
-  animation-delay: 300ms;
+.delay-b {
+  animation-delay: 160ms;
 }
-.delay-450 {
-  animation-delay: 450ms;
+.delay-c {
+  animation-delay: 240ms;
 }
-.delay-600 {
-  animation-delay: 600ms;
+.delay-d {
+  animation-delay: 320ms;
 }
-.delay-750 {
-  animation-delay: 750ms;
+.delay-e {
+  animation-delay: 400ms;
 }
-.delay-1000 {
-  animation-delay: 1000ms;
+.delay-f {
+  animation-delay: 500ms;
 }
-.delay-1200 {
-  animation-delay: 1200ms;
+.delay-g {
+  animation-delay: 650ms;
 }
 /* Background animation utilities */
 .animate-pulse-slow-1 {
