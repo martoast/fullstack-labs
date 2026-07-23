@@ -106,7 +106,7 @@
   },
   {
     name: 'The Heist by MGMS',
-    description: 'NFT collection featuring custom ERC-721 smart contracts and a minting platform. Generated over $200K in NFT sales and built an engaged community of 2,000+ collectors. The project showcases unique generative art "Identities" created by Latina artist MGMS, combining innovative blockchain technology with artistic vision.',
+    description: 'NFT collection featuring custom ERC-721 smart contracts and a minting platform. The project showcases unique generative art "Identities" created by Latina artist MGMS, combining innovative blockchain technology with artistic vision.',
     image: '/theheist.png',
     link: 'https://www.theheist.world/'
   }
