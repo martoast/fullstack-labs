@@ -58,6 +58,13 @@
  
  const projects = [
   {
+    name: 'WhatsApp Suite',
+    description: 'An AI-powered WhatsApp automation platform. Businesses connect their WhatsApp number, train the AI on their own business, and let it respond to every prospect 24/7 — bilingual, with voice support. Features include AI agent onboarding and training, automated lead response, conversation management, and a free-trial signup flow — live as a SaaS product.',
+    image: '/wa-suite.jpg',
+    link: 'https://wa.fullstacklabs.org/'
+  },
+
+  {
     name: 'Bolt Media',
     description: 'The official website for Bolt Media, a full-service marketing agency operating in Tijuana, Mexico City and San Diego. A fully bilingual (ES/EN) site showcasing the agency\'s brand strategy, content, media and experiential services — with an influencer portfolio of 200+, partner showcase, and a contact form wired directly into a custom-built CRM for automatic lead capture.',
     image: '/bolt-site.jpg',
