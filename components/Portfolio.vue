@@ -65,6 +65,13 @@
   },
 
   {
+    name: 'Riviera Residencial',
+    description: 'A real estate landing page for Riviera Residencial Etapa II, a 46-home private community inside Real del Mar between Tijuana and Rosarito. The site showcases the Murano and Mazzorbo home models with photo galleries, amenities including the clubhouse, pool and golf course with ocean views, location highlights, and an availability request form for prospective buyers. Developed by HIR Baja and marketed by BCapital Brokers.',
+    image: '/riviera.jpg',
+    link: 'https://riviera-real-del-mar.netlify.app/'
+  },
+
+  {
     name: 'Boxly',
     description: 'A comprehensive package consolidation system for customers in Mexico to shop from US online stores. Features include automated warehouse address assignment with unique User IDs, item declaration and package linking, warehouse package management, dynamic shipping quotes, secure Stripe payments, and full tracking from US arrival to delivery in Mexico.',
     image: '/envios.png',
