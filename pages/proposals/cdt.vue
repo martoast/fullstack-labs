@@ -144,11 +144,11 @@
               <p class="font-semibold text-sky-900">Total del proyecto</p>
               <p class="text-xs text-sky-500 mt-1 leading-relaxed">
                 Plataforma completa: portal, PEM 2040, mapa, foro, observatorio, portafolio, agenda e IA<br />
-                <span class="font-medium">50% para iniciar ($1,250 USD) · 50% a la entrega ($1,250 USD)</span>
+                <span class="font-medium">50% para iniciar ($1,900 USD) · 50% a la entrega ($1,900 USD)</span>
               </p>
             </div>
             <p class="text-2xl sm:text-3xl font-bold text-sky-700 whitespace-nowrap">
-              $2,500 <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
+              $3,800 <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
             </p>
           </div>
         </div>
