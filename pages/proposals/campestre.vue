@@ -79,10 +79,73 @@
         </div>
       </section>
 
+      <!-- Product catalog for validation -->
+      <section class="px-5 sm:px-10 py-5 sm:py-6">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 flex items-center">
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">2</span>
+          Catálogo y estructura de precios — para revisión y confirmación
+        </h3>
+        <p class="sm:ml-11 text-sm text-gray-500 mb-4 leading-relaxed">
+          Este es el catálogo que se configurará en la plataforma, basado en la operación actual de
+          Campestre Media. <strong class="text-gray-700">Favor de revisarlo y confirmar (o corregir)
+          niveles, precios y reglas antes de iniciar el desarrollo</strong> — será la base de las
+          ventas, los entregables y la cobranza del sistema.
+        </p>
+
+        <div class="sm:ml-11 space-y-5">
+          <!-- Tier table -->
+          <div>
+            <h4 class="font-semibold text-gray-900 text-sm mb-2">Niveles de paquete (precio mensual, MXN + IVA)</h4>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+                <thead>
+                  <tr class="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wider">
+                    <th class="px-3 py-2 font-semibold">Nivel</th>
+                    <th class="px-3 py-2 font-semibold whitespace-nowrap">Precio / mes</th>
+                    <th class="px-3 py-2 font-semibold">Producto ancla</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(t, i) in tiers" :key="i" class="border-t border-gray-200">
+                    <td class="px-3 py-2 font-medium text-gray-900 whitespace-nowrap">{{ t.name }}</td>
+                    <td class="px-3 py-2 text-sky-700 font-semibold whitespace-nowrap">{{ t.price }}</td>
+                    <td class="px-3 py-2 text-gray-500">{{ t.anchor }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Inventory pools -->
+          <div class="rounded-lg p-4 border border-gray-200 scope-card">
+            <h4 class="font-semibold text-gray-900 text-sm">Los cinco inventarios que alimentan cada paquete</h4>
+            <ul class="text-sm mt-1 space-y-1 list-disc list-inside text-gray-500">
+              <li v-for="(inv, i) in inventories" :key="i">{{ inv }}</li>
+            </ul>
+          </div>
+
+          <!-- Add-ons -->
+          <div class="rounded-lg p-4 border border-gray-200 scope-card">
+            <h4 class="font-semibold text-gray-900 text-sm">Complementos y cortesías (se ligan a los paquetes, sin precio individual)</h4>
+            <ul class="text-sm mt-1 space-y-1 list-disc list-inside text-gray-500">
+              <li v-for="(a, i) in addons" :key="i">{{ a }}</li>
+            </ul>
+          </div>
+
+          <!-- Payment structure -->
+          <div class="rounded-lg p-4 border border-sky-200 bg-sky-50 scope-card">
+            <h4 class="font-semibold text-sky-900 text-sm">Reglas comerciales y de cobro que aplicará el sistema</h4>
+            <ul class="text-sm mt-1 space-y-1 list-disc list-inside text-sky-700">
+              <li v-for="(r, i) in paymentRules" :key="i">{{ r }}</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- Timeline -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">2</span>
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
           Cronograma — 4 semanas
         </h3>
         <div class="sm:ml-11 space-y-3">
@@ -103,7 +166,7 @@
       <!-- Deliverables -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">4</span>
           Entregables
         </h3>
         <div class="sm:ml-11 space-y-3 text-sm">
@@ -243,6 +306,41 @@ const scopeCards = [
       'Diseño adaptable a celular para gestionar todo desde el teléfono'
     ]
   }
+]
+
+const tiers = [
+  { name: 'Plana', price: '$13,000', anchor: 'Una plana (anuncio de página completa) en revista impresa + réplica web' },
+  { name: 'Publirreportaje', price: '$20,000', anchor: 'Publirreportaje de 2 páginas + perfil en podcast o video (1 mes)' },
+  { name: 'Publirreportaje plus', price: '$25,000', anchor: 'Publirreportaje o sección gastronómica + aparición en podcast o programa' },
+  { name: 'Sección premium', price: '$30,000', anchor: 'Sección Imperdibles o paquete de cobertura de evento + planas multi-mes' },
+  { name: 'Paquete mayor', price: '$40,000', anchor: 'Paquetes ampliados: cobertura de eventos, Imperdibles + REPLAY, patrocinios' },
+  { name: 'Portada', price: '$50,000', anchor: 'Portada + reportaje de portada de 6 páginas + planas mensuales + podcast/programa (compromiso de 6 meses)' }
+]
+
+const inventories = [
+  'Revista impresa mensual — circula en Tijuana, Rosarito, Tecate, Ensenada, Mexicali y puntos de San Diego; cada edición corre del 15 al 15',
+  'Réplica digital — todo lo impreso se republica en campestre.media, Facebook, Instagram, LinkedIn, Threads, TikTok y X (+ YouTube/Spotify para podcasts)',
+  'Programas y podcasts propios — TrendTalk, Campestre Médico, Cosas de Mujeres, Visionarios, Lujo y Sabor, Top of Mind y Perfil en Video',
+  'Pantallas físicas — mega-pantallas en Gran Hotel Tijuana y TV Azteca Tijuana',
+  'Base de correo y eventos — envíos masivos a la base de contactos de Baja California y Executive Mornings by Campestre'
+]
+
+const addons = [
+  'Cápsulas animadas REPLAY (1 por mes)',
+  'Video promocional y perfil en video',
+  'Kit de cobertura de evento: nota web + video recap + video entrevistas + publicación social',
+  'Presencia en pantallas (frecuentemente como cortesía)',
+  'Envíos de correo masivo (solo en paquetes mayores)',
+  'Espacios de conferencia en Executive Mornings'
+]
+
+const paymentRules = [
+  'Pagos mensuales iguales durante la vigencia del contrato — sin anticipos porcentuales ni hitos',
+  'El primer pago se efectúa a la firma de la propuesta — la firma dispara el cobro inicial',
+  'Duraciones típicas: 1 mes (políticos, restaurantes, eventos), 2–4 meses (paquetes medios), 5–6 meses (portadas), hasta 8–12 meses en casos especiales',
+  'Todos los precios son + IVA; el sistema permitirá marcar excepciones donde el IVA se absorbe',
+  'Contratos de intercambio (barter) sin cobro, con valor nominal registrado y mismos entregables',
+  'Los descuentos y reestructuras (bajar mensualidad, extender plazo, convertir items a cortesía) quedan registrados como versiones de la propuesta'
 ]
 
 const timeline = [
