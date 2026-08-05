@@ -6,8 +6,20 @@
       <div class="absolute top-1/3 -right-40 h-[32rem] w-[32rem] rounded-full bg-blue-500/10 blur-3xl"></div>
     </div>
 
-    <!-- Save as PDF -->
-    <div class="fixed top-4 right-4 z-50 print:hidden">
+    <!-- Main site + Save as PDF.
+         Plain <a>, never NuxtLink: "/" belongs to the Lunaris app on :3014,
+         but this app still has its own pages/index.vue (the retired site),
+         so client-side routing would render that dead page instead of
+         actually leaving for the homepage. A full page load is required. -->
+    <div class="fixed top-4 right-4 z-50 flex gap-2 print:hidden">
+      <a
+        href="https://fullstacklabs.org/"
+        class="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-medium text-white shadow-lg backdrop-blur transition-colors duration-200 hover:border-white/30 hover:bg-white/20"
+      >
+        <HomeIcon class="h-4 w-4 flex-none" />
+        <span class="hidden sm:inline">Main site</span>
+        <span class="sm:hidden">Site</span>
+      </a>
       <button
         type="button"
         @click="printPage"
@@ -23,7 +35,13 @@
 
       <!-- Header -->
       <header class="border-b border-white/10 pb-12">
-        <img src="/logo.svg" alt="Fullstack Labs" class="h-9 w-auto" />
+        <a href="https://fullstacklabs.org/" class="inline-block">
+          <img
+            src="/logo.svg"
+            alt="Fullstack Labs"
+            class="h-9 w-auto transition-opacity duration-200 hover:opacity-80"
+          />
+        </a>
 
         <div class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:items-center lg:gap-12">
           <!-- Portrait: above the name on mobile, to the right on desktop -->
@@ -200,7 +218,7 @@
 </template>
 
 <script setup>
-import { ArrowUpRightIcon, ArrowDownTrayIcon, EnvelopeIcon, PhoneIcon, GlobeAltIcon, MapPinIcon } from '@heroicons/vue/24/outline'
+import { ArrowUpRightIcon, ArrowDownTrayIcon, HomeIcon, EnvelopeIcon, PhoneIcon, GlobeAltIcon, MapPinIcon } from '@heroicons/vue/24/outline'
 
 const year = new Date().getFullYear()
 
