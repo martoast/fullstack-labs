@@ -12,19 +12,40 @@
       <header class="border-b border-white/10 pb-12">
         <img src="/logo.svg" alt="Fullstack Labs" class="h-9 w-auto" />
 
-        <h1 class="mt-10 text-4xl font-bold tracking-tight sm:text-6xl">
-          Alejandro Martos
-        </h1>
-        <p class="mt-3 text-xl text-blue-300 sm:text-2xl">
-          Full-stack developer &middot; Fullstack Labs
-        </p>
+        <div class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:items-center lg:gap-12">
+          <!-- Portrait: above the name on mobile, to the right on desktop -->
+          <div class="order-first lg:order-last lg:col-span-2">
+            <div class="relative mx-auto w-48 sm:w-56 lg:mx-0 lg:w-full">
+              <div class="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl shadow-black/40 print:shadow-none">
+                <img
+                  src="/img/alex.webp"
+                  alt="Alejandro Martos"
+                  width="720"
+                  height="1081"
+                  fetchpriority="high"
+                  decoding="async"
+                  class="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
 
-        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-gray-300">
-          I design, build and run web products end to end &mdash; from the database and the
-          deploy pipeline to the interface people actually use. I work with clients across
-          Tijuana, San Diego and Mexico City on everything from marketing sites to
-          multi-tenant SaaS platforms, and I operate what I ship.
-        </p>
+          <div class="lg:col-span-3">
+            <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+              Alejandro Martos
+            </h1>
+            <p class="mt-3 text-xl text-blue-300 sm:text-2xl">
+              Full-stack developer &middot; Fullstack Labs
+            </p>
+
+            <p class="mt-8 text-lg leading-relaxed text-gray-300">
+              I design, build and run web products end to end &mdash; from the database and the
+              deploy pipeline to the interface people actually use. I work with clients across
+              Tijuana, San Diego and Mexico City on everything from marketing sites to
+              multi-tenant SaaS platforms, and I operate what I ship.
+            </p>
+          </div>
+        </div>
 
         <!-- Contact chips -->
         <div class="mt-10 flex flex-wrap gap-3">
