@@ -1,0 +1,129 @@
+<!doctype html>
+<!--
+  Source for the /me share card (public/img/og-me-N.jpg).
+  Rendered at 1200x630 with headless chromium — see assets/og/render.sh.
+  Relative paths below are resolved from this file's location, so render it
+  in place rather than copying it elsewhere.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+  }
+
+  body {
+    position: relative;
+    background: #1A1E24;
+    font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+    color: #fff;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Ambient glow, same language as the page itself */
+  .glow-a, .glow-b { position: absolute; border-radius: 9999px; filter: blur(120px); }
+  .glow-a { top: -180px; left: -160px; width: 620px; height: 620px; background: rgba(130,152,176,0.30); }
+  .glow-b { bottom: -220px; right: 260px; width: 560px; height: 560px; background: rgba(70,188,255,0.14); }
+
+  .content {
+    position: relative;
+    padding: 0 0 0 72px;
+    width: 720px;
+  }
+
+  .logo { height: 34px; width: auto; opacity: 0.95; }
+
+  h1 {
+    margin-top: 44px;
+    font-size: 76px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .role {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #75c8ff;
+    letter-spacing: -0.01em;
+  }
+
+  .desc {
+    margin-top: 26px;
+    font-size: 23px;
+    line-height: 1.45;
+    color: #cbd5e1;
+    max-width: 600px;
+  }
+
+  .meta {
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .chip {
+    font-size: 18px;
+    color: #e2e8f0;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 9px;
+    padding: 9px 16px;
+    white-space: nowrap;
+  }
+
+  /* Portrait, bleeding off the right edge with a fade into the background */
+  .portrait {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 440px;
+    height: 630px;
+    overflow: hidden;
+  }
+  .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 18%;
+  }
+  .portrait::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #1A1E24 0%, rgba(26,30,36,0.55) 24%, rgba(26,30,36,0) 58%);
+  }
+</style>
+</head>
+<body>
+  <div class="glow-a"></div>
+  <div class="glow-b"></div>
+
+  <div class="portrait">
+    <img src="../../public/img/alex-1.webp" alt="">
+  </div>
+
+  <div class="content">
+    <img class="logo" src="../../public/logo.svg" alt="Fullstack Labs">
+    <h1>Alejandro<br>Martos</h1>
+    <div class="role">Full-stack developer</div>
+    <div class="desc">
+      Web applications, SaaS platforms and AI automation &mdash; designed,
+      built and operated end to end.
+    </div>
+    <div class="meta">
+      <span class="chip">fullstacklabs.org/me</span>
+      <span class="chip">Tijuana / San Diego</span>
+    </div>
+  </div>
+</body>
+</html>

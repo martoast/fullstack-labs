@@ -319,24 +319,50 @@ const projects = [
   }
 ]
 
+// Share card. The image is versioned (og-me-N.jpg) because /img/** is served
+// with a 1-year immutable cache-control — and because WhatsApp, iMessage and
+// Facebook all cache a URL's preview indefinitely. Changing the card means
+// rendering a new number via assets/og/render.sh and updating it here;
+// overwriting the old file changes nothing for anyone who has seen it.
+const shareTitle = 'Alejandro Martos — Full-stack developer'
+const shareDescription =
+  'Web applications, SaaS platforms and AI automation — designed, built and operated end to end. Selected work, stack and contact.'
+const shareImage = 'https://fullstacklabs.org/img/og-me-1.jpg'
+const shareUrl = 'https://fullstacklabs.org/me'
+
 useHead({
-  htmlAttrs: { lang: 'en' }
+  htmlAttrs: { lang: 'en' },
+  link: [{ rel: 'canonical', href: shareUrl }]
 })
 
 useSeoMeta({
   title: 'Alejandro Martos — Full-stack developer | Fullstack Labs',
-  ogTitle: 'Alejandro Martos — Full-stack developer',
   author: 'Alejandro Martos',
   charset: 'utf-8',
-  description:
-    'Full-stack developer building web applications, SaaS platforms and AI automation. Selected work, stack and contact details.',
-  ogDescription:
-    'Full-stack developer building web applications, SaaS platforms and AI automation. Selected work, stack and contact details.',
+  description: shareDescription,
   robots: 'index, follow',
-  ogImage: 'https://fullstacklabs.org/logo.png',
-  ogUrl: 'https://fullstacklabs.org/me',
-  ogType: 'profile',
-  twitterCard: 'summary_large_image'
+
+  // OpenGraph — this is what WhatsApp, iMessage, Telegram, LinkedIn,
+  // Facebook and Slack all read.
+  ogTitle: shareTitle,
+  ogDescription: shareDescription,
+  ogImage: shareImage,
+  ogImageSecureUrl: shareImage,
+  ogImageType: 'image/jpeg',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: 'Alejandro Martos — full-stack developer, Fullstack Labs',
+  ogUrl: shareUrl,
+  ogType: 'website',
+  ogSiteName: 'Fullstack Labs',
+  ogLocale: 'en_US',
+
+  // Twitter/X reads its own namespace and ignores OG when these are present.
+  twitterCard: 'summary_large_image',
+  twitterTitle: shareTitle,
+  twitterDescription: shareDescription,
+  twitterImage: shareImage,
+  twitterImageAlt: 'Alejandro Martos — full-stack developer, Fullstack Labs'
 })
 </script>
 
