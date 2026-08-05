@@ -6,6 +6,19 @@
       <div class="absolute top-1/3 -right-40 h-[32rem] w-[32rem] rounded-full bg-blue-500/10 blur-3xl"></div>
     </div>
 
+    <!-- Save as PDF -->
+    <div class="fixed top-4 right-4 z-50 print:hidden">
+      <button
+        type="button"
+        @click="printPage"
+        class="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-medium text-white shadow-lg backdrop-blur transition-colors duration-200 hover:border-white/30 hover:bg-white/20"
+      >
+        <ArrowDownTrayIcon class="h-4 w-4 flex-none" />
+        <span class="hidden sm:inline">Save as PDF</span>
+        <span class="sm:hidden">PDF</span>
+      </button>
+    </div>
+
     <div class="relative mx-auto max-w-5xl px-6 py-16 sm:py-24 lg:px-8">
 
       <!-- Header -->
@@ -15,10 +28,10 @@
         <div class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:items-center lg:gap-12">
           <!-- Portrait: above the name on mobile, to the right on desktop -->
           <div class="order-first lg:order-last lg:col-span-2">
-            <div class="relative mx-auto w-48 sm:w-56 lg:mx-0 lg:w-full">
+            <div class="portrait relative mx-auto w-48 sm:w-56 lg:mx-0 lg:w-full">
               <div class="overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-2xl shadow-black/40 print:shadow-none">
                 <img
-                  src="/img/alex.webp"
+                  src="/img/alex-1.webp"
                   alt="Alejandro Martos"
                   width="720"
                   height="1081"
@@ -187,9 +200,12 @@
 </template>
 
 <script setup>
-import { ArrowUpRightIcon, EnvelopeIcon, PhoneIcon, GlobeAltIcon, MapPinIcon } from '@heroicons/vue/24/outline'
+import { ArrowUpRightIcon, ArrowDownTrayIcon, EnvelopeIcon, PhoneIcon, GlobeAltIcon, MapPinIcon } from '@heroicons/vue/24/outline'
 
 const year = new Date().getFullYear()
+
+// Browser print dialog — "Save as PDF" is the destination the user picks there.
+const printPage = () => window.print()
 
 const contact = [
   { label: 'alexmartos96@gmail.com', href: 'mailto:alexmartos96@gmail.com', icon: EnvelopeIcon },
@@ -351,6 +367,15 @@ useSeoMeta({
     border-color: #e5e7eb !important;
   }
   article {
+    break-inside: avoid;
+  }
+  /* On paper the layout stacks (page width < lg), so a full-size portrait
+     eats most of page 1 and orphans the contact chips onto page 2. */
+  .portrait {
+    width: 150px !important;
+    margin: 0 !important;
+  }
+  header {
     break-inside: avoid;
   }
 }
