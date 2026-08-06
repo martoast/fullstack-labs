@@ -110,24 +110,6 @@
       </div>
     </section>
 
-    <!-- ================= QUÉ APRENDES ================= -->
-    <section class="relative border-t border-white/10 py-20">
-      <div class="mx-auto max-w-5xl px-6 lg:px-8">
-        <h2 class="text-3xl font-bold sm:text-4xl">Qué te llevas</h2>
-        <div class="mt-12 grid gap-x-12 gap-y-8 sm:grid-cols-2">
-          <div v-for="item in learnings" :key="item.title" class="flex gap-4">
-            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-blue-500/15 text-blue-300">
-              <component :is="item.icon" class="h-6 w-6" />
-            </div>
-            <div>
-              <h3 class="font-semibold text-white">{{ item.title }}</h3>
-              <p class="mt-1 text-gray-400">{{ item.description }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= PRUEBA: GITHUB ================= -->
     <section class="relative border-t border-white/10 py-20">
       <div class="mx-auto max-w-5xl px-6 lg:px-8">
@@ -454,10 +436,6 @@ import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
 import {
   CheckCircleIcon,
   ArrowUpRightIcon,
-  ChatBubbleLeftRightIcon,
-  BoltIcon,
-  WrenchScrewdriverIcon,
-  ExclamationTriangleIcon,
   BuildingStorefrontIcon,
   MegaphoneIcon,
   UserGroupIcon,
@@ -622,47 +600,6 @@ const audience = [
   { icon: SparklesIcon, title: 'Curiosos', note: 'Que probaron ChatGPT y ahí se quedaron' }
 ]
 
-const learnings = [
-  {
-    icon: ChatBubbleLeftRightIcon,
-    title: 'Atender clientes 24/7',
-    description: 'Un agente que responde, cotiza y agenda por WhatsApp mientras duermes.'
-  },
-  {
-    icon: BoltIcon,
-    title: 'Automatizar lo repetitivo',
-    description: 'Cotizaciones, seguimientos, reportes y cobranza que se hacen solos.'
-  },
-  {
-    icon: WrenchScrewdriverIcon,
-    title: 'Qué herramienta usar',
-    description: 'Cuáles valen la pena, cuáles son gratis y cuáles no sirven. Sin patrocinios.'
-  },
-  {
-    icon: ExclamationTriangleIcon,
-    title: 'Dónde se equivoca',
-    description: 'Qué nunca debes darle y cómo revisar su trabajo antes de que llegue al cliente.'
-  }
-]
-
-/**
- * First year of one of Alex's own businesses. The brand is deliberately NOT
- * named on this page (his call) — the numbers carry it, and naming it invites
- * scrutiny of a co-owned business he does not want attached here.
- *
- * Growth metrics only: revenue, expenses, net profit, margin and the partner
- * distribution stay unpublished. Figures cross-check (ROAS = revenue/ad spend,
- * CAC = ad spend/customers, conversion = orders/leads). Currency is MXN.
- */
-const businessStats = [
-  { value: '12,627', label: 'Leads generados' },
-  { value: '1,081', label: 'Clientes' },
-  { value: '1,015', label: 'Envíos completados' },
-  { value: '19.49×', label: 'ROAS' },
-  { value: '8.0%', label: 'De lead a compra' },
-  { value: '$127', label: 'Costo por cliente (MXN)' }
-]
-
 /**
  * The agent roles offered in Fullstack Suite (suite.fullstacklabs.org).
  * Kept in sync with the specialists actually listed there — do not invent
@@ -686,11 +623,14 @@ const faq = [
 
 /* ---------- SEO / share ---------- */
 const shareTitle = 'Te enseño a usar la IA en tu negocio | Webinar gratis'
+// Kept short and front-loaded: WhatsApp shows roughly two lines and truncates
+// the rest, so the offer and the time have to come first.
 const shareDescription =
-  'En vivo y gratis, cada miércoles. No necesitas saber nada de tecnología. 45 minutos, casos reales y preguntas en vivo.'
-// Bumped to -2 with the new headline: the card art must match the page, and a
-// preview already cached against -1 can never be updated in place.
-const shareImage = 'https://fullstacklabs.org/img/og-webinar-2.jpg'
+  'Gratis, en vivo, cada miércoles a las 10:00 AM. No necesitas saber nada de tecnología.'
+// -3 is redrawn for the thumbnail size chat apps actually render (see
+// assets/og/webinar.html). Each bump needs a NEW filename: /img/** is
+// immutable for a year and WhatsApp caches a URL's preview indefinitely.
+const shareImage = 'https://fullstacklabs.org/img/og-webinar-3.jpg'
 
 useHead({
   htmlAttrs: { lang: 'es' },
@@ -740,7 +680,7 @@ useSeoMeta({
   ogImageType: 'image/jpeg',
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogImageAlt: 'Webinar gratuito: IA para tu Negocio, todos los miércoles',
+  ogImageAlt: 'Webinar gratis: te enseño a usar la IA en tu negocio, miércoles 10:00 AM',
   ogUrl: 'https://fullstacklabs.org/webinar',
   ogType: 'website',
   ogSiteName: 'Fullstack Labs',

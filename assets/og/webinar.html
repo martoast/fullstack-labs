@@ -2,6 +2,12 @@
 <!--
   Source for the /webinar share card (public/img/og-webinar-N.jpg).
   Rendered at 1200x630 — see assets/og/render.sh webinar <version>.
+
+  DESIGNED FOR THE THUMBNAIL, NOT THE FULL SIZE. WhatsApp and iMessage render
+  this around 300px wide on a phone — roughly a 4x downscale — so anything
+  under ~30px here becomes illegible. That is why there is no paragraph, no
+  URL line and no small print: only a headline, one line of when, and a face.
+  Check any change by downscaling to 320px before shipping it.
 -->
 <html>
 <head>
@@ -21,118 +27,78 @@
   }
 
   .glow-a, .glow-b { position: absolute; border-radius: 9999px; filter: blur(120px); }
-  .glow-a { top: -200px; left: -140px; width: 620px; height: 620px; background: rgba(130,152,176,0.28); }
-  .glow-b { bottom: -240px; right: 180px; width: 600px; height: 600px; background: rgba(70,188,255,0.16); }
+  .glow-a { top: -200px; left: -140px; width: 640px; height: 640px; background: rgba(130,152,176,0.30); }
+  .glow-b { bottom: -240px; right: 120px; width: 620px; height: 620px; background: rgba(70,188,255,0.18); }
 
-  .content { position: relative; padding: 0 0 0 72px; width: 790px; }
+  .content { position: relative; padding: 0 0 0 72px; width: 800px; }
 
-  .logo { height: 30px; width: auto; opacity: 0.9; }
+  .logo { height: 40px; width: auto; }
 
   .badge {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 30px;
-    padding: 9px 20px;
-    border: 1px solid rgba(130,176,152,0.45);
-    background: rgba(130,176,152,0.14);
+    gap: 12px;
+    margin-top: 34px;
+    padding: 12px 26px;
+    border: 2px solid rgba(130,176,152,0.55);
+    background: rgba(130,176,152,0.16);
     border-radius: 999px;
-    font-size: 19px;
-    font-weight: 600;
+    font-size: 27px;
+    font-weight: 700;
     color: #9BCB9F;
   }
-  .dot { width: 9px; height: 9px; border-radius: 999px; background: #82B098; }
+  .dot { width: 13px; height: 13px; border-radius: 999px; background: #82B098; }
 
   h1 {
-    margin-top: 26px;
-    /* Sized so "Te enseño a usar la IA" stays on one line — at 72px it wrapped
-       and orphaned "IA". Re-check this if the headline text changes. */
-    font-size: 58px;
+    margin-top: 30px;
+    /* Sized so each line stays unbroken at this width — re-check on edit. */
+    font-size: 66px;
     font-weight: 900;
     letter-spacing: -0.03em;
-    line-height: 1.08;
+    line-height: 1.09;
     white-space: nowrap;
   }
   h1 .accent { color: #75c8ff; }
 
-  .sub {
-    margin-top: 24px;
-    font-size: 25px;
-    line-height: 1.4;
-    color: #cbd5e1;
-    max-width: 660px;
-  }
-
   .when {
-    margin-top: 32px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    font-size: 23px;
-    font-weight: 600;
+    margin-top: 38px;
+    display: inline-block;
+    font-size: 34px;
+    font-weight: 700;
     color: #fff;
-  }
-  .when .pill {
-    background: rgba(255,255,255,0.09);
-    border: 1px solid rgba(255,255,255,0.16);
-    border-radius: 10px;
-    padding: 10px 18px;
+    background: rgba(255,255,255,0.10);
+    border: 2px solid rgba(255,255,255,0.20);
+    border-radius: 14px;
+    padding: 14px 28px;
   }
 
-  .host {
+  /* A face reads even at thumbnail size — the name next to it does not, so
+     there is no name. */
+  .portrait {
     position: absolute;
-    right: 64px;
-    bottom: 56px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    text-align: right;
-  }
-  .host img {
-    width: 86px; height: 86px;
+    right: 70px;
+    bottom: 78px;
+    width: 224px;
+    height: 224px;
     border-radius: 999px;
     object-fit: cover;
-    object-position: 50% 15%;
-    border: 2px solid rgba(255,255,255,0.25);
-  }
-  .host .name { font-size: 21px; font-weight: 700; }
-  .host .role { font-size: 17px; color: #94a3b8; margin-top: 3px; }
-
-  .url {
-    position: absolute;
-    right: 64px;
-    top: 56px;
-    font-size: 18px;
-    color: #8298B0;
+    object-position: 50% 12%;
+    border: 4px solid rgba(255,255,255,0.28);
   }
 </style>
 </head>
+
 <body>
   <div class="glow-a"></div>
   <div class="glow-b"></div>
 
-  <div class="url">fullstacklabs.org/webinar</div>
+  <img class="portrait" src="../../public/img/alex-1.webp" alt="">
 
   <div class="content">
     <img class="logo" src="../../public/logo.svg" alt="Fullstack Labs">
-    <div class="badge"><span class="dot"></span> Webinar gratuito · En vivo</div>
+    <div class="badge"><span class="dot"></span> Webinar gratis · En vivo</div>
     <h1>Te enseño a usar la IA<br><span class="accent">en tu negocio.</span></h1>
-    <div class="sub">
-      En vivo y gratis, cada miércoles.
-      No necesitas saber nada de tecnología.
-    </div>
-    <div class="when">
-      <span class="pill">Todos los miércoles</span>
-      <span class="pill">10:00 AM</span>
-    </div>
-  </div>
-
-  <div class="host">
-    <div>
-      <div class="name">Alejandro Martos</div>
-      <div class="role">Fullstack Labs</div>
-    </div>
-    <img src="../../public/img/alex-1.webp" alt="">
+    <div class="when">Miércoles · 10:00 AM</div>
   </div>
 </body>
 </html>
