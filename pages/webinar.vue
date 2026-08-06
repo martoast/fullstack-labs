@@ -93,7 +93,7 @@
     <section class="relative border-t border-white/10 py-20">
       <div class="mx-auto max-w-5xl px-6 lg:px-8">
         <h2 class="text-3xl font-bold sm:text-4xl">Para quién es</h2>
-        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           <div
             v-for="who in audience"
             :key="who.title"
@@ -461,7 +461,8 @@ import {
   BuildingStorefrontIcon,
   MegaphoneIcon,
   UserGroupIcon,
-  SparklesIcon
+  SparklesIcon,
+  CodeBracketIcon
 } from '@heroicons/vue/24/outline'
 import contributions from '~/assets/data/contributions.json'
 
@@ -617,6 +618,7 @@ const audience = [
   { icon: BuildingStorefrontIcon, title: 'Dueños de negocio', note: 'De cualquier industria' },
   { icon: MegaphoneIcon, title: 'Ventas y marketing', note: 'Que quieren vender y responder mejor' },
   { icon: UserGroupIcon, title: 'Equipos de cualquier tamaño', note: 'De una persona a una operación completa' },
+  { icon: CodeBracketIcon, title: 'Desarrolladores', note: 'Que quieren construir lo que antes no era posible' },
   { icon: SparklesIcon, title: 'Curiosos', note: 'Que probaron ChatGPT y ahí se quedaron' }
 ]
 
