@@ -45,10 +45,13 @@
 
   h1 {
     margin-top: 26px;
-    font-size: 72px;
+    /* Sized so "Te enseño a usar la IA" stays on one line — at 72px it wrapped
+       and orphaned "IA". Re-check this if the headline text changes. */
+    font-size: 58px;
     font-weight: 900;
-    letter-spacing: -0.035em;
-    line-height: 1.02;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    white-space: nowrap;
   }
   h1 .accent { color: #75c8ff; }
 
@@ -113,10 +116,10 @@
   <div class="content">
     <img class="logo" src="../../public/logo.svg" alt="Fullstack Labs">
     <div class="badge"><span class="dot"></span> Webinar gratuito · En vivo</div>
-    <h1>IA para tu negocio.<br><span class="accent">Sin tecnicismos.</span></h1>
+    <h1>Te enseño a usar la IA<br><span class="accent">en tu negocio.</span></h1>
     <div class="sub">
-      Aprende a usar inteligencia artificial en tu negocio —
-      sin importar tu industria ni tu nivel técnico.
+      En vivo y gratis, cada miércoles.
+      No necesitas saber nada de tecnología.
     </div>
     <div class="when">
       <span class="pill">Todos los miércoles</span>

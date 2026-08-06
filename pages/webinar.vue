@@ -29,13 +29,13 @@
         Gratis · En vivo · Cada miércoles
       </div>
 
-      <h1 class="mt-8 text-5xl font-bold leading-[1.02] tracking-tight sm:text-7xl">
-        IA para tu negocio.<br />
-        <span class="text-blue-300">Sin tecnicismos.</span>
+      <h1 class="mt-8 text-5xl font-bold leading-[1.05] tracking-tight sm:text-7xl">
+        Te enseño a usar la IA<br />
+        <span class="text-blue-300">en tu negocio.</span>
       </h1>
 
       <p class="mx-auto mt-7 max-w-xl text-xl text-gray-300">
-        45 minutos. Casos reales. Sales con algo que puedes aplicar hoy.
+        En vivo y gratis, cada miércoles. No necesitas saber nada de tecnología.
       </p>
 
       <!-- Next session + countdown -->
@@ -630,10 +630,12 @@ const faq = [
 ]
 
 /* ---------- SEO / share ---------- */
-const shareTitle = 'Webinar gratis: IA para tu Negocio | Todos los miércoles'
+const shareTitle = 'Te enseño a usar la IA en tu negocio | Webinar gratis'
 const shareDescription =
-  'Aprende a usar inteligencia artificial en tu negocio, sin importar tu industria ni tu nivel técnico. En vivo, gratis, todos los miércoles. 45 min + preguntas.'
-const shareImage = 'https://fullstacklabs.org/img/og-webinar-1.jpg'
+  'En vivo y gratis, cada miércoles. No necesitas saber nada de tecnología. 45 minutos, casos reales y preguntas en vivo.'
+// Bumped to -2 with the new headline: the card art must match the page, and a
+// preview already cached against -1 can never be updated in place.
+const shareImage = 'https://fullstacklabs.org/img/og-webinar-2.jpg'
 
 useHead({
   htmlAttrs: { lang: 'es' },
