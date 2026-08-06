@@ -154,6 +154,32 @@
       </div>
     </section>
 
+    <!-- ================= CASO: BOXLY ================= -->
+    <section class="relative border-t border-white/10 py-20">
+      <div class="mx-auto max-w-5xl px-6 lg:px-8">
+        <p class="text-sm font-semibold uppercase tracking-widest text-accent">Caso destacado</p>
+        <h2 class="mt-4 text-3xl font-bold sm:text-5xl">
+          Boxly, operado con IA<br class="hidden sm:block" />
+          <span class="text-gray-400">desde el primer día.</span>
+        </h2>
+        <p class="mt-5 max-w-xl text-lg text-gray-400">
+          Mi propia empresa de paquetería. Un año de operación — estos son los números.
+        </p>
+
+        <dl class="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-3">
+          <div v-for="stat in boxlyStats" :key="stat.label" class="bg-background/80 px-5 py-8 text-center">
+            <dt class="text-3xl font-bold tabular-nums text-white sm:text-4xl">{{ stat.value }}</dt>
+            <dd class="mt-2 text-sm text-gray-400">{{ stat.label }}</dd>
+          </div>
+        </dl>
+
+        <p class="mt-6 text-sm text-gray-500">
+          Primer año de operación ·
+          <a href="https://boxly.mx" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-white">boxly.mx</a>
+        </p>
+      </div>
+    </section>
+
     <!-- ================= QUÉ APRENDES ================= -->
     <section class="relative border-t border-white/10 py-20">
       <div class="mx-auto max-w-5xl px-6 lg:px-8">
@@ -535,6 +561,23 @@ const learnings = [
     title: 'Dónde se equivoca',
     description: 'Qué nunca debes darle y cómo revisar su trabajo antes de que llegue al cliente.'
   }
+]
+
+/**
+ * Boxly, first year of operation. Growth metrics only — revenue, expenses,
+ * net profit, margin and the partner distribution are deliberately NOT
+ * published: it is a co-owned business and a shared link is permanent.
+ * Figures cross-check (ROAS = revenue/ad spend, CAC = ad spend/customers,
+ * conversion = orders/leads), so they can be quoted with confidence.
+ * Currency is MXN.
+ */
+const boxlyStats = [
+  { value: '12,627', label: 'Leads generados' },
+  { value: '1,081', label: 'Clientes' },
+  { value: '1,015', label: 'Envíos completados' },
+  { value: '19.49×', label: 'ROAS' },
+  { value: '8.0%', label: 'De lead a compra' },
+  { value: '$127', label: 'Costo por cliente (MXN)' }
 ]
 
 /**
