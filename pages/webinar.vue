@@ -205,11 +205,12 @@
           <p class="text-sm font-semibold uppercase tracking-widest text-accent">Incluido al asistir</p>
           <h2 class="mt-4 text-3xl font-bold sm:text-5xl">
             No solo aprendes.<br class="hidden sm:block" />
-            <span class="text-accent">Sales con tu equipo armado.</span>
+            <span class="text-accent">Sales con qué aplicarlo.</span>
           </h2>
           <p class="mt-5 max-w-2xl text-lg text-gray-300">
-            Te damos acceso a <strong class="text-white">Fullstack Suite</strong>, la oficina virtual
-            donde contratas agentes de IA que trabajan por ti.
+            Te llevas lo que viste listo para usar, más acceso a
+            <strong class="text-white">Fullstack Suite</strong>: la oficina virtual donde contratas
+            agentes de IA que trabajan por ti.
           </p>
 
           <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -598,6 +599,24 @@ const audience = [
   { icon: UserGroupIcon, title: 'Equipos de cualquier tamaño', note: 'De una persona a una operación completa' },
   { icon: CodeBracketIcon, title: 'Desarrolladores', note: 'Que quieren construir lo que antes no era posible' },
   { icon: SparklesIcon, title: 'Curiosos', note: 'Que probaron ChatGPT y ahí se quedaron' }
+]
+
+/**
+ * First year of one of Alex's own businesses. The brand is deliberately NOT
+ * named on this page (his call) — the numbers carry it, and naming it invites
+ * scrutiny of a co-owned business he does not want attached here.
+ *
+ * Growth metrics only: revenue, expenses, net profit, margin and the partner
+ * distribution stay unpublished. Figures cross-check (ROAS = revenue/ad spend,
+ * CAC = ad spend/customers, conversion = orders/leads). Currency is MXN.
+ */
+const businessStats = [
+  { value: '12,627', label: 'Leads generados' },
+  { value: '1,081', label: 'Clientes' },
+  { value: '1,015', label: 'Envíos completados' },
+  { value: '19.49×', label: 'ROAS' },
+  { value: '8.0%', label: 'De lead a compra' },
+  { value: '$127', label: 'Costo por cliente (MXN)' }
 ]
 
 /**
