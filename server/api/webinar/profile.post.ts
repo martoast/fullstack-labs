@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer'
+import { recordRegistration } from '../../utils/registrations'
 
 /**
  * Optional details captured AFTER a registration has already succeeded.
@@ -50,6 +51,14 @@ export default defineEventHandler(async (event) => {
     getRequestHeader(event, 'x-forwarded-for')?.split(',')[0]?.trim() ||
     'unknown'
   if (rateLimited(ip)) return { ok: true }
+
+  // Store it too, not just email it — the DB row is what reminders address by
+  // name. The upsert never blanks fields, so this only ever fills them in.
+  try {
+    recordRegistration({ email, name, business })
+  } catch (err: any) {
+    console.error('[webinar] could not persist profile:', { email }, err?.message)
+  }
 
   if (!config.mailHost || !config.mailUser) {
     console.error('[webinar] SMTP not configured — profile NOT emailed:', { email, name, business })

@@ -25,6 +25,8 @@ export default defineNuxtConfig({
     mailPassword: '',
     mailFrom: '',
     webinarNotifyTo: '',
+    // Guards the reminder blast endpoint. Without it that route refuses to run.
+    webinarAdminToken: '',
     public: {
       // Overridable without a rebuild: set NUXT_PUBLIC_WEBINAR_* in .env and
       // restart the container. Both point at the real recurring event.

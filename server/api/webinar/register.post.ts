@@ -1,15 +1,17 @@
-import nodemailer from 'nodemailer'
-import { WEBINAR, nextSession } from '../../utils/webinar'
+import { nextSession } from '../../utils/webinar'
+import { confirmationEmail } from '../../utils/emails'
+import { recordRegistration } from '../../utils/registrations'
+import { mailer, mailIdentity } from '../../utils/mailer'
 
 /**
  * Webinar registration.
  *
- * There is no database on this app, by design — a registration is two emails:
- * a notification to Alex (that inbox IS the attendee list) and a confirmation
- * to the registrant carrying the join link and the calendar buttons.
+ * Persists the registrant to SQLite and sends two emails: a confirmation to
+ * them and a notification to Alex. The stored row is what the reminder blasts
+ * (see send-reminder.post.ts) send to — without it there is no list.
  *
- * The confirmation matters more than the record: reminders are what actually
- * get people to show up.
+ * The confirmation's CTA is the calendar, not the Meet link: the session is
+ * days away, and getting it into their calendar is what makes them show up.
  */
 
 interface Body {
@@ -36,9 +38,6 @@ function rateLimited(ip: string): boolean {
   if (recent.size > 5000) recent.clear() // crude bound on memory
   return hits.length > MAX_PER_WINDOW
 }
-
-const escapeHtml = (s: string) =>
-  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
@@ -77,33 +76,27 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 500, statusMessage: 'No pudimos completar el registro. Escríbenos a alexmartos96@gmail.com.' })
   }
 
-  const transporter = nodemailer.createTransport({
-    host: config.mailHost,
-    port: Number(config.mailPort || 587),
-    secure: false,
-    auth: { user: config.mailUser, pass: config.mailPassword }
-  })
+  const transporter = mailer()!
 
   const when = `${session.dateLabel}, ${session.timeLabel} (hora de Tijuana)`
-  // The form only collects an email, so the greeting has to read correctly
-  // with no name at all.
-  const greeting = name ? `¡Listo, ${escapeHtml(name)}!` : '¡Listo!'
 
-  const confirmationHtml = `
-<div style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px;margin:0 auto;color:#111827;line-height:1.6">
-  <p style="font-size:18px;margin:0 0 16px"><strong>${greeting} Tu lugar está apartado.</strong></p>
-  <p style="margin:0 0 20px">Nos vemos en el webinar <strong>IA para tu Negocio</strong>.</p>
-  <table role="presentation" style="width:100%;background:#f3f4f6;border-radius:10px;padding:18px;margin:0 0 22px">
-    <tr><td style="padding:2px 0"><strong>Cuándo:</strong> ${escapeHtml(when)}</td></tr>
-    <tr><td style="padding:2px 0"><strong>Dónde:</strong> Google Meet (en línea)</td></tr>
-    <tr><td style="padding:2px 0"><strong>Costo:</strong> Gratis</td></tr>
-  </table>
-  <p style="margin:0 0 12px"><a href="${meetUrl}" style="display:inline-block;background:#0284c7;color:#fff;text-decoration:none;padding:13px 24px;border-radius:9px;font-weight:600">Entrar al webinar</a></p>
-  <p style="margin:0 0 24px"><a href="${googleUrl}" style="color:#0369a1">Agregar a mi calendario</a> &nbsp;·&nbsp; <a href="${WEBINAR.pageUrl}" style="color:#0369a1">Ver detalles</a></p>
-  <p style="margin:0 0 8px"><strong>Un consejo:</strong> agrégalo a tu calendario ahora. Es la diferencia entre apartar el lugar y olvidarlo.</p>
-  <p style="margin:24px 0 0;font-size:14px;color:#6b7280">El webinar se repite todos los miércoles — el mismo enlace sirve cada semana.</p>
-  <p style="margin:16px 0 0;font-size:14px;color:#6b7280">Alejandro Martos · Fullstack Labs<br>¿Dudas? Responde a este correo.</p>
-</div>`.trim()
+  // Persist BEFORE emailing. A signup that is stored but not emailed can be
+  // recovered and re-sent; one that is emailed but not stored is invisible to
+  // every reminder that follows. Never let a storage failure reject the
+  // registration itself.
+  try {
+    recordRegistration({ email, name, business })
+  } catch (err: any) {
+    console.error('[webinar] could not persist registration:', { email }, err?.message)
+  }
+
+  const confirmation = confirmationEmail({
+    name: name || undefined,
+    when,
+    dateLabel: session.dateLabel,
+    meetUrl,
+    googleUrl
+  })
 
   const notificationText = [
     'Nuevo registro al webinar',
@@ -116,8 +109,7 @@ export default defineEventHandler(async (event) => {
     `Recibido: ${new Date().toISOString()}`
   ].join('\n')
 
-  const from = `"Fullstack Labs" <${config.mailFrom || config.mailUser}>`
-  const notifyTo = config.webinarNotifyTo || 'alexmartos96@gmail.com'
+  const { from, replyTo: notifyTo } = mailIdentity()
 
   try {
     // The registrant's confirmation is the one that must not fail — send it first.
@@ -125,9 +117,9 @@ export default defineEventHandler(async (event) => {
       from,
       to: email,
       replyTo: notifyTo,
-      subject: `Confirmado: IA para tu Negocio — ${session.dateLabel}`,
-      html: confirmationHtml,
-      text: `${name ? `¡Listo, ${name}!` : '¡Listo!'} Tu lugar está apartado.\n\nCuándo: ${when}\nEntrar: ${meetUrl}\nAgregar al calendario: ${googleUrl}\n\nEl webinar se repite todos los miércoles.\n\nAlejandro Martos · Fullstack Labs`
+      subject: confirmation.subject,
+      html: confirmation.html,
+      text: confirmation.text
     })
 
     await transporter.sendMail({

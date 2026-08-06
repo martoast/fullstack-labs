@@ -15,7 +15,8 @@ export const WEBINAR = {
   timeZone: 'America/Tijuana',
   title: 'IA para tu Negocio — Webinar Gratuito Semanal',
   organizer: 'Fullstack Labs',
-  pageUrl: 'https://fullstacklabs.org/webinar'
+  pageUrl: 'https://fullstacklabs.org/webinar',
+  icsUrl: 'https://fullstacklabs.org/api/webinar/invite'
 } as const
 
 /**
