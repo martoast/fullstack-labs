@@ -47,12 +47,15 @@ export default defineEventHandler(async (event) => {
   // Honeypot: accept and drop, so the bot sees success and does not retry.
   if (body?.website) return { ok: true }
 
+  // Email is the ONLY required field — the form asks for one input on purpose.
+  // Name and business are still accepted so the endpoint keeps working if they
+  // are ever reintroduced, but nothing depends on them being present.
   const name = (body?.name ?? '').trim().slice(0, 120)
   const email = (body?.email ?? '').trim().slice(0, 200).toLowerCase()
   const business = (body?.business ?? '').trim().slice(0, 160)
 
-  if (!name || !EMAIL_RE.test(email)) {
-    throw createError({ statusCode: 400, statusMessage: 'Nombre y correo válidos son requeridos.' })
+  if (!EMAIL_RE.test(email)) {
+    throw createError({ statusCode: 400, statusMessage: 'Escribe un correo válido.' })
   }
 
   const ip =
@@ -82,10 +85,13 @@ export default defineEventHandler(async (event) => {
   })
 
   const when = `${session.dateLabel}, ${session.timeLabel} (hora de Tijuana)`
+  // The form only collects an email, so the greeting has to read correctly
+  // with no name at all.
+  const greeting = name ? `¡Listo, ${escapeHtml(name)}!` : '¡Listo!'
 
   const confirmationHtml = `
 <div style="font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:560px;margin:0 auto;color:#111827;line-height:1.6">
-  <p style="font-size:18px;margin:0 0 16px"><strong>¡Listo, ${escapeHtml(name)}! Tu lugar está apartado.</strong></p>
+  <p style="font-size:18px;margin:0 0 16px"><strong>${greeting} Tu lugar está apartado.</strong></p>
   <p style="margin:0 0 20px">Nos vemos en el webinar <strong>IA para tu Negocio</strong>.</p>
   <table role="presentation" style="width:100%;background:#f3f4f6;border-radius:10px;padding:18px;margin:0 0 22px">
     <tr><td style="padding:2px 0"><strong>Cuándo:</strong> ${escapeHtml(when)}</td></tr>
@@ -102,7 +108,7 @@ export default defineEventHandler(async (event) => {
   const notificationText = [
     'Nuevo registro al webinar',
     '',
-    `Nombre:   ${name}`,
+    `Nombre:   ${name || '—'}`,
     `Correo:   ${email}`,
     `Negocio:  ${business || '—'}`,
     `Sesión:   ${when}`,
@@ -121,14 +127,14 @@ export default defineEventHandler(async (event) => {
       replyTo: notifyTo,
       subject: `Confirmado: IA para tu Negocio — ${session.dateLabel}`,
       html: confirmationHtml,
-      text: `¡Listo, ${name}! Tu lugar está apartado.\n\nCuándo: ${when}\nEntrar: ${meetUrl}\nAgregar al calendario: ${googleUrl}\n\nEl webinar se repite todos los miércoles.\n\nAlejandro Martos · Fullstack Labs`
+      text: `${name ? `¡Listo, ${name}!` : '¡Listo!'} Tu lugar está apartado.\n\nCuándo: ${when}\nEntrar: ${meetUrl}\nAgregar al calendario: ${googleUrl}\n\nEl webinar se repite todos los miércoles.\n\nAlejandro Martos · Fullstack Labs`
     })
 
     await transporter.sendMail({
       from,
       to: notifyTo,
       replyTo: email,
-      subject: `Registro webinar: ${name}${business ? ` (${business})` : ''}`,
+      subject: `Registro webinar: ${name || email}${business ? ` (${business})` : ''}`,
       text: notificationText
     })
   } catch (err: any) {

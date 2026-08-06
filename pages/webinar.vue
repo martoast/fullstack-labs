@@ -89,6 +89,45 @@
       </div>
     </section>
 
+    <!-- ================= PARA QUIÉN ES ================= -->
+    <section class="relative border-t border-white/10 py-20">
+      <div class="mx-auto max-w-5xl px-6 lg:px-8">
+        <h2 class="text-3xl font-bold sm:text-4xl">Para quién es</h2>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            v-for="who in audience"
+            :key="who.title"
+            class="rounded-2xl border border-white/10 bg-white/5 p-6"
+          >
+            <component :is="who.icon" class="h-7 w-7 text-accent" />
+            <h3 class="mt-4 font-semibold text-white">{{ who.title }}</h3>
+            <p class="mt-1 text-sm text-gray-400">{{ who.note }}</p>
+          </div>
+        </div>
+        <p class="mt-8 text-gray-400">
+          Si sabes usar WhatsApp, puedes seguir la sesión completa.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= QUÉ APRENDES ================= -->
+    <section class="relative border-t border-white/10 py-20">
+      <div class="mx-auto max-w-5xl px-6 lg:px-8">
+        <h2 class="text-3xl font-bold sm:text-4xl">Qué te llevas</h2>
+        <div class="mt-12 grid gap-x-12 gap-y-8 sm:grid-cols-2">
+          <div v-for="item in learnings" :key="item.title" class="flex gap-4">
+            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-blue-500/15 text-blue-300">
+              <component :is="item.icon" class="h-6 w-6" />
+            </div>
+            <div>
+              <h3 class="font-semibold text-white">{{ item.title }}</h3>
+              <p class="mt-1 text-gray-400">{{ item.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= PRUEBA: GITHUB ================= -->
     <section class="relative border-t border-white/10 py-20">
       <div class="mx-auto max-w-5xl px-6 lg:px-8">
@@ -180,24 +219,6 @@
       </div>
     </section>
 
-    <!-- ================= QUÉ APRENDES ================= -->
-    <section class="relative border-t border-white/10 py-20">
-      <div class="mx-auto max-w-5xl px-6 lg:px-8">
-        <h2 class="text-3xl font-bold sm:text-4xl">Qué te llevas</h2>
-        <div class="mt-12 grid gap-x-12 gap-y-8 sm:grid-cols-2">
-          <div v-for="item in learnings" :key="item.title" class="flex gap-4">
-            <div class="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-blue-500/15 text-blue-300">
-              <component :is="item.icon" class="h-6 w-6" />
-            </div>
-            <div>
-              <h3 class="font-semibold text-white">{{ item.title }}</h3>
-              <p class="mt-1 text-gray-400">{{ item.description }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= CASOS ================= -->
     <section class="relative border-t border-white/10 py-20">
       <div class="mx-auto max-w-5xl px-6 lg:px-8">
@@ -283,35 +304,20 @@
         <!-- Form -->
         <div v-else>
           <h2 class="text-center text-3xl font-bold sm:text-4xl">Aparta tu lugar</h2>
-          <p class="mt-3 text-center text-lg text-gray-400">Gratis. Toma 15 segundos.</p>
+          <p class="mt-3 text-center text-lg text-gray-400">Gratis. Solo tu correo.</p>
 
+          <!-- One field on purpose: every extra input costs signups, and the
+               email is the only thing actually needed to send the invite. -->
           <form class="mt-10 space-y-4" @submit.prevent="submit">
-            <input
-              v-model="form.name"
-              type="text"
-              required
-              autocomplete="name"
-              placeholder="Tu nombre"
-              aria-label="Tu nombre"
-              class="w-full rounded-xl border-white/15 bg-white/5 px-4 py-4 text-white placeholder-gray-500 focus:border-blue-300 focus:ring-blue-300"
-            />
             <input
               v-model="form.email"
               type="email"
               required
               autocomplete="email"
               inputmode="email"
-              placeholder="Tu correo"
+              placeholder="tu@correo.com"
               aria-label="Tu correo"
-              class="w-full rounded-xl border-white/15 bg-white/5 px-4 py-4 text-white placeholder-gray-500 focus:border-blue-300 focus:ring-blue-300"
-            />
-            <input
-              v-model="form.business"
-              type="text"
-              autocomplete="organization"
-              placeholder="Tu negocio (opcional)"
-              aria-label="Tu negocio"
-              class="w-full rounded-xl border-white/15 bg-white/5 px-4 py-4 text-white placeholder-gray-500 focus:border-blue-300 focus:ring-blue-300"
+              class="w-full rounded-xl border-white/15 bg-white/5 px-5 py-5 text-center text-lg text-white placeholder-gray-500 focus:border-blue-300 focus:ring-blue-300"
             />
 
             <!-- Honeypot: hidden from people, irresistible to bots -->
@@ -412,7 +418,11 @@ import {
   ChatBubbleLeftRightIcon,
   BoltIcon,
   WrenchScrewdriverIcon,
-  ExclamationTriangleIcon
+  ExclamationTriangleIcon,
+  BuildingStorefrontIcon,
+  MegaphoneIcon,
+  UserGroupIcon,
+  SparklesIcon
 } from '@heroicons/vue/24/outline'
 import contributions from '~/assets/data/contributions.json'
 
@@ -431,7 +441,8 @@ const registered = ref(false)
 const loading = ref(false)
 const error = ref('')
 
-const form = reactive({ name: '', email: '', business: '', website: '' })
+// `website` is the honeypot, not a real field.
+const form = reactive({ email: '', website: '' })
 
 const submit = async () => {
   error.value = ''
@@ -539,6 +550,13 @@ onMounted(() => {
 })
 
 /* ---------- Content ---------- */
+
+const audience = [
+  { icon: BuildingStorefrontIcon, title: 'Dueños de negocio', note: 'Que quieren producir más sin contratar más' },
+  { icon: MegaphoneIcon, title: 'Ventas y marketing', note: 'Que atienden prospectos por WhatsApp' },
+  { icon: UserGroupIcon, title: 'Equipos chicos', note: 'Sin área de sistemas ni presupuesto de software' },
+  { icon: SparklesIcon, title: 'Curiosos', note: 'Que probaron ChatGPT y ahí se quedaron' }
+]
 
 const learnings = [
   {
