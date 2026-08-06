@@ -611,10 +611,12 @@ onMounted(() => {
 
 /* ---------- Content ---------- */
 
+// Kept deliberately broad: nothing here should read as "this is only for
+// small/simple businesses" or narrow a role down to one channel.
 const audience = [
-  { icon: BuildingStorefrontIcon, title: 'Dueños de negocio', note: 'Que quieren producir más sin contratar más' },
-  { icon: MegaphoneIcon, title: 'Ventas y marketing', note: 'Que atienden prospectos por WhatsApp' },
-  { icon: UserGroupIcon, title: 'Equipos chicos', note: 'Sin área de sistemas ni presupuesto de software' },
+  { icon: BuildingStorefrontIcon, title: 'Dueños de negocio', note: 'De cualquier industria' },
+  { icon: MegaphoneIcon, title: 'Ventas y marketing', note: 'Que quieren vender y responder mejor' },
+  { icon: UserGroupIcon, title: 'Equipos de cualquier tamaño', note: 'De una persona a una operación completa' },
   { icon: SparklesIcon, title: 'Curiosos', note: 'Que probaron ChatGPT y ahí se quedaron' }
 ]
 
