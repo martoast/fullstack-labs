@@ -244,29 +244,15 @@
             </div>
           </div>
 
-          <div class="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <div class="mt-10">
             <a
               href="https://suite.fullstacklabs.org/"
               target="_blank"
               rel="noopener"
-              class="rounded-xl bg-white px-7 py-4 font-semibold text-background transition-transform duration-200 hover:scale-105"
+              class="inline-block rounded-xl bg-white px-7 py-4 font-semibold text-background transition-transform duration-200 hover:scale-105"
             >
               Conocer Fullstack Suite
             </a>
-            <p class="text-sm text-gray-400">Prueba gratis de 14 días · Sin tarjeta</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= AGENDA ================= -->
-    <section class="relative border-t border-white/10 py-20">
-      <div class="mx-auto max-w-5xl px-6 lg:px-8">
-        <h2 class="text-3xl font-bold sm:text-4xl">45 minutos, sin relleno</h2>
-        <div class="mt-10 space-y-px overflow-hidden rounded-2xl border border-white/10">
-          <div v-for="block in agenda" :key="block.label" class="flex items-baseline gap-6 bg-white/5 px-6 py-5">
-            <span class="w-14 flex-none font-mono text-sm text-blue-300">{{ block.time }}</span>
-            <p class="font-medium text-white">{{ block.label }}</p>
           </div>
         </div>
       </div>
@@ -685,13 +671,6 @@ const suiteAgents = [
   { role: 'Anuncios', does: 'Lanza y vigila tus campañas de Meta' },
   { role: 'Sitios y landings', does: 'Los arma y publica desde un chat' },
   { role: 'Seguimiento automático', does: 'Corre solo, según tu calendario' }
-]
-
-const agenda = [
-  { time: '00:00', label: 'Qué cambió y qué es ruido' },
-  { time: '05:00', label: 'Casos reales, en pantalla' },
-  { time: '20:00', label: 'Automatizamos una tarea en vivo' },
-  { time: '35:00', label: 'Tus preguntas' }
 ]
 
 const faq = [
