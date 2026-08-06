@@ -187,9 +187,16 @@
           Un año de operación — estos son los números.
         </p>
 
-        <dl class="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-3">
-          <div v-for="stat in businessStats" :key="stat.label" class="bg-background/80 px-5 py-8 text-center">
-            <dt class="text-3xl font-bold tabular-nums text-white sm:text-4xl">{{ stat.value }}</dt>
+        <!-- Separate bordered cards rather than a gap-px grid: with a count
+             that doesn't fill the last row, the gap trick leaves a lit empty
+             cell. This degrades cleanly at any number of stats. -->
+        <dl class="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          <div
+            v-for="stat in businessStats"
+            :key="stat.label"
+            class="rounded-2xl border border-white/10 bg-white/5 px-4 py-7 text-center"
+          >
+            <dt class="text-3xl font-bold tabular-nums text-white">{{ stat.value }}</dt>
             <dd class="mt-2 text-sm text-gray-400">{{ stat.label }}</dd>
           </div>
         </dl>
@@ -613,7 +620,6 @@ const audience = [
 const businessStats = [
   { value: '12,627', label: 'Leads generados' },
   { value: '1,081', label: 'Clientes' },
-  { value: '1,015', label: 'Envíos completados' },
   { value: '19.49×', label: 'ROAS' },
   { value: '8.0%', label: 'De lead a compra' },
   { value: '$127', label: 'Costo por cliente (MXN)' }
