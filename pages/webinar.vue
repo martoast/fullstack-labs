@@ -219,32 +219,45 @@
       </div>
     </section>
 
-    <!-- ================= CASOS ================= -->
+    <!-- ================= FULLSTACK SUITE ================= -->
     <section class="relative border-t border-white/10 py-20">
       <div class="mx-auto max-w-5xl px-6 lg:px-8">
-        <h2 class="text-3xl font-bold sm:text-4xl">Negocios que ya lo hacen</h2>
-        <p class="mt-4 text-lg text-gray-400">Sistemas que construí y que corren hoy. Los vemos en pantalla.</p>
+        <div class="rounded-3xl border border-accent/25 bg-accent/5 p-8 sm:p-12">
+          <p class="text-sm font-semibold uppercase tracking-widest text-accent">Incluido al asistir</p>
+          <h2 class="mt-4 text-3xl font-bold sm:text-5xl">
+            No solo aprendes.<br class="hidden sm:block" />
+            <span class="text-accent">Sales con tu equipo armado.</span>
+          </h2>
+          <p class="mt-5 max-w-2xl text-lg text-gray-300">
+            Te damos acceso a <strong class="text-white">Fullstack Suite</strong>, la oficina virtual
+            donde contratas agentes de IA que trabajan por ti. En la sesión lo configuramos juntos.
+          </p>
 
-        <div class="mt-12 grid gap-5 sm:grid-cols-3">
-          <article
-            v-for="study in caseStudies"
-            :key="study.client"
-            class="rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors duration-200 hover:border-white/20"
-          >
-            <h3 class="text-xl font-bold text-white">{{ study.client }}</h3>
-            <p class="mt-1 text-sm text-gray-500">{{ study.industry }}</p>
-            <p class="mt-4 text-gray-300">{{ study.summary }}</p>
-            <p class="mt-4 border-t border-white/10 pt-4 text-accent">{{ study.result }}</p>
+          <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+              v-for="agent in suiteAgents"
+              :key="agent.role"
+              class="flex items-start gap-3 rounded-xl border border-white/10 bg-background/60 p-4"
+            >
+              <CheckCircleIcon class="mt-0.5 h-5 w-5 flex-none text-accent" />
+              <div>
+                <p class="font-semibold text-white">{{ agent.role }}</p>
+                <p class="mt-0.5 text-sm text-gray-400">{{ agent.does }}</p>
+              </div>
+            </div>
+          </div>
 
-            <!-- Renders only when a real quote exists. Never ship a placeholder
-                 testimonial attributed to a real company. -->
-            <blockquote v-if="study.quote" class="mt-5 border-l-2 border-accent/60 pl-4">
-              <p class="italic text-gray-200">"{{ study.quote }}"</p>
-              <footer class="mt-2 text-sm text-gray-500">
-                — {{ study.quoteAuthor }}<span v-if="study.quoteRole">, {{ study.quoteRole }}</span>
-              </footer>
-            </blockquote>
-          </article>
+          <div class="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+            <a
+              href="https://suite.fullstacklabs.org/"
+              target="_blank"
+              rel="noopener"
+              class="rounded-xl bg-white px-7 py-4 font-semibold text-background transition-transform duration-200 hover:scale-105"
+            >
+              Conocer Fullstack Suite
+            </a>
+            <p class="text-sm text-gray-400">Prueba gratis de 14 días · Sin tarjeta</p>
+          </div>
         </div>
       </div>
     </section>
@@ -299,6 +312,50 @@
           >
             {{ meetUrl }}
           </a>
+
+          <!-- Optional details, asked only AFTER the signup is banked, so they
+               cannot cost a registration. Failure here is swallowed on the
+               server — someone who is already registered must never be shown
+               an error. -->
+          <div class="mt-10 border-t border-white/15 pt-8 text-left">
+            <p v-if="profileSaved" class="text-center text-accent">
+              ¡Gracias! Con eso preparo ejemplos que te sirvan.
+            </p>
+            <form v-else class="space-y-3" @submit.prevent="submitProfile">
+              <p class="text-center text-sm text-gray-400">
+                Opcional: cuéntame quién eres y preparo ejemplos para tu caso.
+              </p>
+              <div class="flex flex-col gap-3 sm:flex-row">
+                <input
+                  v-model="profile.name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Tu nombre"
+                  aria-label="Tu nombre"
+                  class="w-full rounded-xl border-white/15 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-accent focus:ring-accent"
+                />
+                <input
+                  v-model="profile.business"
+                  type="text"
+                  autocomplete="organization"
+                  placeholder="Tu negocio"
+                  aria-label="Tu negocio"
+                  class="w-full rounded-xl border-white/15 bg-black/20 px-4 py-3 text-white placeholder-gray-500 focus:border-accent focus:ring-accent"
+                />
+              </div>
+              <div class="absolute -left-[9999px]" aria-hidden="true">
+                <label for="pwebsite">No llenar</label>
+                <input id="pwebsite" v-model="profile.website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              <button
+                type="submit"
+                :disabled="profileLoading || (!profile.name && !profile.business)"
+                class="w-full rounded-xl border border-white/25 px-6 py-3 font-medium text-white transition-colors duration-200 hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                {{ profileLoading ? 'Enviando...' : 'Enviar' }}
+              </button>
+            </form>
+          </div>
         </div>
 
         <!-- Form -->
@@ -443,6 +500,27 @@ const error = ref('')
 
 // `website` is the honeypot, not a real field.
 const form = reactive({ email: '', website: '' })
+
+// Asked on the success screen only — see the note in the template.
+const profile = reactive({ name: '', business: '', website: '' })
+const profileLoading = ref(false)
+const profileSaved = ref(false)
+
+const submitProfile = async () => {
+  profileLoading.value = true
+  try {
+    await $fetch('/api/webinar/profile', {
+      method: 'POST',
+      body: { email: form.email, ...profile }
+    })
+  } catch {
+    // Intentionally ignored: the registration already succeeded, and this is
+    // a bonus. Showing an error here would only make people doubt their signup.
+  } finally {
+    profileLoading.value = false
+    profileSaved.value = true
+  }
+}
 
 const submit = async () => {
   error.value = ''
@@ -599,38 +677,17 @@ const boxlyStats = [
 ]
 
 /**
- * Real engagements. Descriptions are factual — no invented metrics.
- * `quote` stays empty until the client provides one in writing; the template
- * hides the blockquote entirely while it is blank.
+ * The agent roles offered in Fullstack Suite (suite.fullstacklabs.org).
+ * Kept in sync with the specialists actually listed there — do not invent
+ * roles the product does not ship.
  */
-const caseStudies = [
-  {
-    client: 'Bolt Media',
-    industry: 'Agencia de marketing',
-    summary: 'Sitio bilingüe y un CRM a la medida. Los formularios entran como prospectos y el CRM se consulta desde un asistente de IA.',
-    result: 'Ningún prospecto se pierde en un correo compartido.',
-    quote: '',
-    quoteAuthor: '',
-    quoteRole: ''
-  },
-  {
-    client: 'Campestre Media',
-    industry: 'Medios y publicidad',
-    summary: 'Catálogo, contratos por edición y cobranza conectada a Stripe. El sistema genera cada edición y factura solo.',
-    result: 'La facturación quincenal dejó de ser trabajo manual.',
-    quote: '',
-    quoteAuthor: '',
-    quoteRole: ''
-  },
-  {
-    client: 'WhatsApp Suite',
-    industry: 'Producto propio',
-    summary: 'El negocio conecta su número, entrena a la IA con su información y la deja responder — bilingüe y con notas de voz.',
-    result: 'Respuesta al instante a cualquier hora.',
-    quote: '',
-    quoteAuthor: '',
-    quoteRole: ''
-  }
+const suiteAgents = [
+  { role: 'Respuesta a prospectos', does: 'Contesta cada lead en segundos' },
+  { role: 'Cierre de ventas', does: 'Trabaja tu pipeline y agenda la llamada' },
+  { role: 'WhatsApp', does: 'Atiende de día, de noche y en fin de semana' },
+  { role: 'Anuncios', does: 'Lanza y vigila tus campañas de Meta' },
+  { role: 'Sitios y landings', does: 'Los arma y publica desde un chat' },
+  { role: 'Seguimiento automático', does: 'Corre solo, según tu calendario' }
 ]
 
 const agenda = [
