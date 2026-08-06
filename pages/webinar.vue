@@ -193,29 +193,26 @@
       </div>
     </section>
 
-    <!-- ================= CASO: BOXLY ================= -->
+    <!-- ================= CASO: NEGOCIO PROPIO (sin nombrar la marca) ================= -->
     <section class="relative border-t border-white/10 py-20">
       <div class="mx-auto max-w-5xl px-6 lg:px-8">
         <p class="text-sm font-semibold uppercase tracking-widest text-accent">Caso destacado</p>
         <h2 class="mt-4 text-3xl font-bold sm:text-5xl">
-          Boxly, operado con IA<br class="hidden sm:block" />
+          Un negocio operado con IA<br class="hidden sm:block" />
           <span class="text-gray-400">desde el primer día.</span>
         </h2>
         <p class="mt-5 max-w-xl text-lg text-gray-400">
-          Mi propia empresa de paquetería. Un año de operación — estos son los números.
+          Un año de operación — estos son los números.
         </p>
 
         <dl class="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-3">
-          <div v-for="stat in boxlyStats" :key="stat.label" class="bg-background/80 px-5 py-8 text-center">
+          <div v-for="stat in businessStats" :key="stat.label" class="bg-background/80 px-5 py-8 text-center">
             <dt class="text-3xl font-bold tabular-nums text-white sm:text-4xl">{{ stat.value }}</dt>
             <dd class="mt-2 text-sm text-gray-400">{{ stat.label }}</dd>
           </div>
         </dl>
 
-        <p class="mt-6 text-sm text-gray-500">
-          Primer año de operación ·
-          <a href="https://boxly.mx" target="_blank" rel="noopener" class="underline underline-offset-4 hover:text-white">boxly.mx</a>
-        </p>
+        <p class="mt-6 text-sm text-gray-500">Primer año de operación</p>
       </div>
     </section>
 
@@ -230,7 +227,7 @@
           </h2>
           <p class="mt-5 max-w-2xl text-lg text-gray-300">
             Te damos acceso a <strong class="text-white">Fullstack Suite</strong>, la oficina virtual
-            donde contratas agentes de IA que trabajan por ti. En la sesión lo configuramos juntos.
+            donde contratas agentes de IA que trabajan por ti.
           </p>
 
           <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -411,7 +408,6 @@
           <p class="mt-1 text-gray-400">Desarrollador full-stack · Fullstack Labs</p>
           <p class="mt-4 text-gray-300">
             Construyo y opero plataformas para negocios en Tijuana, San Diego y CDMX.
-            Todo lo que muestro corre en producción.
           </p>
           <a href="https://fullstacklabs.org/me" class="mt-4 inline-flex items-center gap-1.5 font-medium text-blue-300 hover:text-white">
             Ver mi trabajo
@@ -660,14 +656,15 @@ const learnings = [
 ]
 
 /**
- * Boxly, first year of operation. Growth metrics only — revenue, expenses,
- * net profit, margin and the partner distribution are deliberately NOT
- * published: it is a co-owned business and a shared link is permanent.
- * Figures cross-check (ROAS = revenue/ad spend, CAC = ad spend/customers,
- * conversion = orders/leads), so they can be quoted with confidence.
- * Currency is MXN.
+ * First year of one of Alex's own businesses. The brand is deliberately NOT
+ * named on this page (his call) — the numbers carry it, and naming it invites
+ * scrutiny of a co-owned business he does not want attached here.
+ *
+ * Growth metrics only: revenue, expenses, net profit, margin and the partner
+ * distribution stay unpublished. Figures cross-check (ROAS = revenue/ad spend,
+ * CAC = ad spend/customers, conversion = orders/leads). Currency is MXN.
  */
-const boxlyStats = [
+const businessStats = [
   { value: '12,627', label: 'Leads generados' },
   { value: '1,081', label: 'Clientes' },
   { value: '1,015', label: 'Envíos completados' },
