@@ -1,29 +1,35 @@
 #!/usr/bin/env bash
-# Render the /me share card to public/img/og-me-<version>.jpg
+# Render a share card to public/img/og-<card>-<version>.jpg
 #
-#   ./assets/og/render.sh 2      -> public/img/og-me-2.jpg
+#   ./assets/og/render.sh me 1        -> public/img/og-me-1.jpg      (assets/og/me.html)
+#   ./assets/og/render.sh webinar 1   -> public/img/og-webinar-1.jpg (assets/og/webinar.html)
 #
-# Bump the version whenever the card changes: /img/** carries a 1-year
-# immutable cache-control, so an existing filename can never be updated at
-# the edge. Remember to point pages/me.vue at the new filename too.
+# Bump the version whenever a card changes. Two independent caches make an
+# in-place update impossible: /img/** carries a 1-year immutable
+# cache-control, and WhatsApp/iMessage/Facebook cache a URL's preview
+# indefinitely. Point the page's ogImage at the new filename too.
 #
-# JPEG (not webp/png) because that is what the WhatsApp, iMessage and
-# Facebook crawlers reliably decode, and it keeps the file small — these
-# crawlers skip images that are slow or large to fetch.
+# JPEG (not webp/png) because that is what those crawlers reliably decode,
+# and it keeps the file small enough that they bother fetching it.
 set -euo pipefail
 
-version="${1:?usage: render.sh <version-number>}"
+card="${1:?usage: render.sh <card-name> <version-number>}"
+version="${2:?usage: render.sh <card-name> <version-number>}"
+
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repo="$(cd "$here/../.." && pwd)"
-out="$repo/public/img/og-me-${version}.jpg"
-tmp_png="$here/.render.png"
+src="$here/${card}.html"
+out="$repo/public/img/og-${card}-${version}.jpg"
+tmp_png="$here/.render-${card}.png"
+
+[ -f "$src" ] || { echo "no such card: $src" >&2; exit 1; }
 
 # chromium runs under snap confinement here: it cannot write to /tmp or to
 # dotdirs, so the intermediate PNG must live in a normal dir under $HOME.
 chromium --headless --disable-gpu --hide-scrollbars \
   --window-size=1200,630 --force-device-scale-factor=1 \
   --default-background-color=00000000 \
-  --screenshot="$tmp_png" "file://$here/me.html" 2>/dev/null
+  --screenshot="$tmp_png" "file://$src" 2>/dev/null
 
 python3 - "$tmp_png" "$out" <<'PY'
 import sys

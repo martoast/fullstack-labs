@@ -2,3 +2,9 @@ node_modules
 .nuxt
 .output
 .git
+
+# Secrets: these are passed in at run time via compose env_file. Without this
+# line `COPY . .` would bake the live SMTP password into the image layers.
+.env
+.env.*
+!.env.example
