@@ -315,15 +315,28 @@
     <section id="registro" class="relative scroll-mt-8 border-t border-white/10 py-20">
       <div class="mx-auto max-w-2xl px-6 lg:px-8">
         <!-- Success -->
-        <div v-if="registered" class="rounded-3xl border border-accent/30 bg-accent/10 p-8 text-center sm:p-12">
-          <CheckCircleIcon class="mx-auto h-16 w-16 text-accent" />
-          <h2 class="mt-6 text-3xl font-bold">¡Listo! Tu lugar está apartado.</h2>
-          <p class="mt-3 text-gray-300">Te mandamos la confirmación a {{ form.email }}.</p>
+        <div v-if="registered" ref="successCard" class="success-card rounded-3xl border border-accent/30 bg-accent/10 p-8 text-center sm:p-12">
+          <!-- Checkmark draws itself rather than popping in -->
+          <svg viewBox="0 0 52 52" class="mx-auto h-20 w-20 text-accent" aria-hidden="true">
+            <circle class="check-circle" cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="2" />
+            <path
+              class="check-mark"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M14 27l8 8 16-16"
+            />
+          </svg>
 
-          <p class="mt-8 font-semibold text-accent">Agrégalo a tu calendario</p>
-          <p class="mt-1 text-sm text-gray-400">Es la diferencia entre registrarse y asistir.</p>
+          <h2 class="reveal reveal-1 mt-6 text-3xl font-bold">¡Listo! Tu lugar está apartado.</h2>
+          <p class="reveal reveal-2 mt-3 text-gray-300">Te mandamos la confirmación a {{ form.email }}.</p>
 
-          <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
+          <p class="reveal reveal-3 mt-8 font-semibold text-accent">Agrégalo a tu calendario</p>
+          <p class="reveal reveal-3 mt-1 text-sm text-gray-400">Es la diferencia entre registrarse y asistir.</p>
+
+          <div class="reveal reveal-4 mt-6 flex flex-col justify-center gap-3 sm:flex-row">
             <a
               :href="googleUrl"
               target="_blank"
@@ -344,7 +357,7 @@
             :href="meetUrl"
             target="_blank"
             rel="noopener"
-            class="mt-8 inline-block break-all border-t border-white/15 pt-6 font-mono text-sm text-blue-300 hover:text-white"
+            class="reveal reveal-5 mt-8 inline-block break-all border-t border-white/15 pt-6 font-mono text-sm text-blue-300 hover:text-white"
           >
             {{ meetUrl }}
           </a>
@@ -353,13 +366,14 @@
                cannot cost a registration. Failure here is swallowed on the
                server — someone who is already registered must never be shown
                an error. -->
-          <div class="mt-10 border-t border-white/15 pt-8 text-left">
+          <div class="reveal reveal-6 mt-10 border-t border-white/15 pt-8 text-left">
             <p v-if="profileSaved" class="text-center text-accent">
               ¡Gracias! Con eso preparo ejemplos que te sirvan.
             </p>
             <form v-else class="space-y-3" @submit.prevent="submitProfile">
-              <p class="text-center text-sm text-gray-400">
-                Opcional: cuéntame quién eres y preparo ejemplos para tu caso.
+              <p class="text-center font-medium text-white">Una última cosa (opcional)</p>
+              <p class="pb-1 text-center text-sm text-gray-400">
+                Cuéntame quién eres y preparo ejemplos para tu caso.
               </p>
               <div class="flex flex-col gap-3 sm:flex-row">
                 <input
@@ -467,6 +481,15 @@
       </footer>
     </section>
 
+    <!-- Confetti overlay. Only mounted after a successful registration, and
+         never interactive. -->
+    <canvas
+      v-if="registered"
+      ref="confettiCanvas"
+      class="pointer-events-none fixed inset-0 z-50 h-full w-full"
+      aria-hidden="true"
+    ></canvas>
+
     <!-- Sticky mobile CTA -->
     <div
       v-if="!registered"
@@ -481,7 +504,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
+import { ref, reactive, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import {
   CheckCircleIcon,
   ArrowUpRightIcon,
@@ -510,6 +533,90 @@ const error = ref('')
 
 // `website` is the honeypot, not a real field.
 const form = reactive({ email: '', website: '' })
+
+/* ---------- Registration celebration ----------
+   Hand-rolled rather than pulling in a confetti dependency: it is ~40 lines,
+   it stops on its own, and it can respect prefers-reduced-motion. The canvas
+   only exists after a successful signup and is never interactive. */
+const confettiCanvas = ref(null)
+const successCard = ref(null)
+let confettiFrame = null
+
+const celebrate = () => {
+  // Honour the OS setting — the card and checkmark still animate via CSS,
+  // which is also disabled under the same query in the stylesheet.
+  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return
+
+  const canvas = confettiCanvas.value
+  if (!canvas) return
+  const ctx = canvas.getContext('2d')
+  if (!ctx) return
+
+  const dpr = window.devicePixelRatio || 1
+  canvas.width = window.innerWidth * dpr
+  canvas.height = window.innerHeight * dpr
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+
+  // Burst from the checkmark, so the effect reads as coming from the message.
+  const rect = successCard.value?.getBoundingClientRect()
+  const originX = rect ? rect.left + rect.width / 2 : window.innerWidth / 2
+  const originY = rect ? rect.top + 90 : window.innerHeight / 3
+
+  const COLORS = ['#82B098', '#9BCB9F', '#75c8ff', '#46bcff', '#ffffff']
+  const pieces = Array.from({ length: 150 }, () => {
+    const angle = Math.random() * Math.PI * 2
+    const speed = 6 + Math.random() * 11
+    return {
+      x: originX,
+      y: originY,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - 5, // bias upward so it arcs
+      w: 6 + Math.random() * 7,
+      h: 4 + Math.random() * 6,
+      rot: Math.random() * Math.PI,
+      vr: (Math.random() - 0.5) * 0.35,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      life: 0
+    }
+  })
+
+  const DURATION = 150 // frames, ~2.5s
+  const step = () => {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+    let alive = false
+    for (const p of pieces) {
+      p.life++
+      p.vy += 0.32 // gravity
+      p.vx *= 0.99 // drag
+      p.vy *= 0.99
+      p.x += p.vx
+      p.y += p.vy
+      p.rot += p.vr
+      const alpha = Math.max(0, 1 - p.life / DURATION)
+      if (alpha <= 0 || p.y > window.innerHeight + 40) continue
+      alive = true
+      ctx.save()
+      ctx.globalAlpha = alpha
+      ctx.translate(p.x, p.y)
+      ctx.rotate(p.rot)
+      ctx.fillStyle = p.color
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h)
+      ctx.restore()
+    }
+    if (alive) {
+      confettiFrame = requestAnimationFrame(step)
+    } else {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+      confettiFrame = null
+    }
+  }
+  confettiFrame = requestAnimationFrame(step)
+}
+
+onUnmounted(() => {
+  if (confettiFrame) cancelAnimationFrame(confettiFrame)
+})
+
 
 // Asked on the success screen only — see the note in the template.
 const profile = reactive({ name: '', business: '', website: '' })
@@ -540,6 +647,9 @@ const submit = async () => {
     registered.value = true
     if (import.meta.client) {
       window.scrollTo({ top: document.getElementById('registro').offsetTop - 40, behavior: 'smooth' })
+      // Wait for the success card to exist before measuring it for the burst.
+      await nextTick()
+      celebrate()
     }
   } catch (e) {
     error.value =
@@ -762,6 +872,73 @@ useSeoMeta({
 </script>
 
 <style scoped>
+/* ---------- Registration celebration ---------- */
+.success-card {
+  animation: card-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Circumference of r=24 is ~150.8 — the dash length must match or the stroke
+   will not fully hide before it draws. */
+.check-circle {
+  stroke-dasharray: 151;
+  stroke-dashoffset: 151;
+  animation: draw 0.55s ease-out 0.15s forwards;
+}
+.check-mark {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: draw 0.35s ease-out 0.6s forwards;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: reveal-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal-1 { animation-delay: 0.75s; }
+.reveal-2 { animation-delay: 0.85s; }
+.reveal-3 { animation-delay: 0.98s; }
+.reveal-4 { animation-delay: 1.08s; }
+.reveal-5 { animation-delay: 1.2s; }
+.reveal-6 { animation-delay: 1.32s; }
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Anyone who asked the OS for less motion gets the content, instantly. */
+@media (prefers-reduced-motion: reduce) {
+  .success-card,
+  .reveal,
+  .check-circle,
+  .check-mark {
+    animation: none;
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transform: none;
+  }
+}
+
 /* GitHub-style contribution grid: 7 rows (days), one column per week. */
 .gh-grid {
   display: grid;
