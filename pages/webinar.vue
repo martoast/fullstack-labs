@@ -110,13 +110,76 @@
       </div>
     </section>
 
+    <!-- ================= INSTRUCTOR ================= -->
+    <section class="relative border-t border-white/10 py-20">
+      <div class="mx-auto max-w-4xl px-6 lg:px-8">
+        <p class="text-sm font-semibold uppercase tracking-widest text-blue-300">Quién lo imparte</p>
+
+        <div class="mt-8 flex flex-col gap-8 sm:flex-row sm:gap-10">
+          <img
+            src="/img/alex-1.webp"
+            alt="Alejandro Martos"
+            class="h-40 w-40 flex-none self-start rounded-2xl object-cover object-top ring-1 ring-white/15"
+          />
+
+          <div>
+            <p class="text-3xl font-bold">Alejandro Martos</p>
+            <p class="mt-1 text-gray-400">Fundador de Fullstack Labs</p>
+
+            <p class="mt-5 text-gray-300">
+              He diseñado e implementado herramientas para bienes raíces, finanzas, criptomonedas,
+              marketing y logística — sistemas empresariales, automatizaciones, agentes de IA e
+              infraestructura hecha a la medida de cada negocio.
+            </p>
+
+            <!-- Industries taken from the Campestre Media profile — verifiable,
+                 not invented. -->
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span
+                v-for="industry in industries"
+                :key="industry"
+                class="rounded-md bg-white/5 px-2.5 py-1 text-sm text-gray-300 ring-1 ring-inset ring-white/10"
+              >{{ industry }}</span>
+            </div>
+
+            <blockquote class="mt-6 border-l-2 border-blue-300/50 pl-5 text-lg italic text-gray-200">
+              La tecnología debe estar al servicio de las empresas y adaptarse a sus objetivos.
+            </blockquote>
+
+            <!-- Presented as the article it is, with its real headline —
+                 reads as a feature rather than a bare link. -->
+            <a
+              href="https://campestre.media/alex-martos-tecnologia-e-inteligencia-artificial-para-transformar-la-manera-de-hacer-negocios/"
+              target="_blank"
+              rel="noopener"
+              class="group mt-7 flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-5 transition-colors duration-200 hover:border-white/25 hover:bg-white/10"
+            >
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-widest text-blue-300">Artículo</p>
+                <p class="mt-1.5 font-medium leading-snug text-white">
+                  Tecnología e inteligencia artificial para transformar la manera de hacer negocios
+                </p>
+                <p class="mt-1.5 text-sm text-gray-500">campestre.media</p>
+              </div>
+              <ArrowUpRightIcon class="ml-auto h-5 w-5 flex-none text-gray-500 transition-colors duration-200 group-hover:text-white" />
+            </a>
+
+            <a href="https://fullstacklabs.org/me" class="mt-6 inline-flex items-center gap-1.5 font-medium text-blue-300 hover:text-white">
+              Ver mi trabajo
+              <ArrowUpRightIcon class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= PRUEBA: GITHUB ================= -->
     <section class="relative border-t border-white/10 py-20">
       <div class="mx-auto max-w-5xl px-6 lg:px-8">
         <p class="text-sm font-semibold uppercase tracking-widest text-blue-300">La prueba</p>
         <h2 class="mt-4 text-3xl font-bold sm:text-5xl">
           Esto no es teoría.<br class="hidden sm:block" />
-          <span class="text-gray-400">Es mi propio código.</span>
+          <span class="text-gray-400">Son mis resultados reales.</span>
         </h2>
         <p class="mt-5 max-w-xl text-lg text-gray-400">
           Cada cuadro es un día de trabajo real en GitHub. Mismo desarrollador, antes y después de la IA.
@@ -367,62 +430,6 @@
             </button>
             <p class="text-center text-sm text-gray-500">Sin costo, sin tarjeta.</p>
           </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= INSTRUCTOR ================= -->
-    <section class="relative border-t border-white/10 py-20">
-      <div class="mx-auto max-w-4xl px-6 lg:px-8">
-        <p class="text-sm font-semibold uppercase tracking-widest text-blue-300">Quién lo imparte</p>
-
-        <div class="mt-8 flex flex-col gap-8 sm:flex-row sm:gap-10">
-          <img
-            src="/img/alex-1.webp"
-            alt="Alejandro Martos"
-            class="h-40 w-40 flex-none self-start rounded-2xl object-cover object-top ring-1 ring-white/15"
-          />
-
-          <div>
-            <p class="text-3xl font-bold">Alejandro Martos</p>
-            <p class="mt-1 text-gray-400">Fundador de Fullstack Labs</p>
-
-            <p class="mt-5 text-gray-300">
-              He diseñado e implementado herramientas para bienes raíces, finanzas, criptomonedas,
-              marketing y logística — sistemas empresariales, automatizaciones, agentes de IA e
-              infraestructura hecha a la medida de cada negocio.
-            </p>
-
-            <!-- Industries taken from the Campestre Media profile — verifiable,
-                 not invented. -->
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span
-                v-for="industry in industries"
-                :key="industry"
-                class="rounded-md bg-white/5 px-2.5 py-1 text-sm text-gray-300 ring-1 ring-inset ring-white/10"
-              >{{ industry }}</span>
-            </div>
-
-            <blockquote class="mt-6 border-l-2 border-blue-300/50 pl-5 text-lg italic text-gray-200">
-              La tecnología debe estar al servicio de las empresas y adaptarse a sus objetivos.
-            </blockquote>
-
-            <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
-              <a href="https://fullstacklabs.org/me" class="inline-flex items-center gap-1.5 font-medium text-blue-300 hover:text-white">
-                Ver mi trabajo
-                <ArrowUpRightIcon class="h-4 w-4" />
-              </a>
-              <a
-                href="https://campestre.media/alex-martos-tecnologia-e-inteligencia-artificial-para-transformar-la-manera-de-hacer-negocios/"
-                target="_blank"
-                rel="noopener"
-                class="inline-flex items-center gap-1.5 font-medium text-gray-400 hover:text-white"
-              >
-                Perfil en Campestre Media
-                <ArrowUpRightIcon class="h-4 w-4" />
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -679,7 +686,7 @@ const industries = ['Bienes raíces', 'Finanzas', 'Criptomonedas', 'Marketing', 
 const faq = [
   { q: '¿De verdad es gratis?', a: 'Sí. Sin tarjeta y sin versión de pago al final.' },
   { q: '¿Necesito saber de tecnología?', a: 'No. Si usas WhatsApp, puedes seguir la sesión.' },
-  { q: '¿Es lo mismo cada semana?', a: 'La base se repite, pero los casos y las preguntas cambian.' },
+  { q: '¿Es lo mismo cada semana?', a: 'No. Cada sesión es distinta — otros casos, otras herramientas y otras preguntas. Puedes venir todas las semanas.' },
   { q: '¿Es una junta de ventas?', a: 'No. Son 45 minutos de contenido. No hay presentación de precios.' }
 ]
 
