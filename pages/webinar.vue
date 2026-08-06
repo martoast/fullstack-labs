@@ -373,22 +373,56 @@
 
     <!-- ================= INSTRUCTOR ================= -->
     <section class="relative border-t border-white/10 py-20">
-      <div class="mx-auto flex max-w-3xl flex-col items-center gap-8 px-6 text-center sm:flex-row sm:text-left lg:px-8">
-        <img
-          src="/img/alex-1.webp"
-          alt="Alejandro Martos"
-          class="h-32 w-32 flex-none rounded-2xl object-cover object-top ring-1 ring-white/15"
-        />
-        <div>
-          <p class="text-2xl font-bold">Alejandro Martos</p>
-          <p class="mt-1 text-gray-400">Desarrollador full-stack · Fullstack Labs</p>
-          <p class="mt-4 text-gray-300">
-            Construyo y opero plataformas para negocios en Tijuana, San Diego y CDMX.
-          </p>
-          <a href="https://fullstacklabs.org/me" class="mt-4 inline-flex items-center gap-1.5 font-medium text-blue-300 hover:text-white">
-            Ver mi trabajo
-            <ArrowUpRightIcon class="h-4 w-4" />
-          </a>
+      <div class="mx-auto max-w-4xl px-6 lg:px-8">
+        <p class="text-sm font-semibold uppercase tracking-widest text-blue-300">Quién lo imparte</p>
+
+        <div class="mt-8 flex flex-col gap-8 sm:flex-row sm:gap-10">
+          <img
+            src="/img/alex-1.webp"
+            alt="Alejandro Martos"
+            class="h-40 w-40 flex-none self-start rounded-2xl object-cover object-top ring-1 ring-white/15"
+          />
+
+          <div>
+            <p class="text-3xl font-bold">Alejandro Martos</p>
+            <p class="mt-1 text-gray-400">Fundador de Fullstack Labs</p>
+
+            <p class="mt-5 text-gray-300">
+              He diseñado e implementado herramientas para bienes raíces, finanzas, criptomonedas,
+              marketing y logística — sistemas empresariales, automatizaciones, agentes de IA e
+              infraestructura hecha a la medida de cada negocio.
+            </p>
+
+            <!-- Industries taken from the Campestre Media profile — verifiable,
+                 not invented. -->
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span
+                v-for="industry in industries"
+                :key="industry"
+                class="rounded-md bg-white/5 px-2.5 py-1 text-sm text-gray-300 ring-1 ring-inset ring-white/10"
+              >{{ industry }}</span>
+            </div>
+
+            <blockquote class="mt-6 border-l-2 border-blue-300/50 pl-5 text-lg italic text-gray-200">
+              La tecnología debe estar al servicio de las empresas y adaptarse a sus objetivos.
+            </blockquote>
+
+            <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+              <a href="https://fullstacklabs.org/me" class="inline-flex items-center gap-1.5 font-medium text-blue-300 hover:text-white">
+                Ver mi trabajo
+                <ArrowUpRightIcon class="h-4 w-4" />
+              </a>
+              <a
+                href="https://campestre.media/alex-martos-tecnologia-e-inteligencia-artificial-para-transformar-la-manera-de-hacer-negocios/"
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-1.5 font-medium text-gray-400 hover:text-white"
+              >
+                Perfil en Campestre Media
+                <ArrowUpRightIcon class="h-4 w-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -638,6 +672,9 @@ const suiteAgents = [
   { role: 'Sitios y landings', does: 'Los arma y publica desde un chat' },
   { role: 'Seguimiento automático', does: 'Corre solo, según tu calendario' }
 ]
+
+// Industries from the published Campestre Media profile.
+const industries = ['Bienes raíces', 'Finanzas', 'Criptomonedas', 'Marketing', 'Logística']
 
 const faq = [
   { q: '¿De verdad es gratis?', a: 'Sí. Sin tarjeta y sin versión de pago al final.' },
