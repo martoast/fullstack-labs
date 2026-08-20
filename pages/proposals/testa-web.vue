@@ -145,7 +145,7 @@
               </p>
             </div>
             <p class="text-2xl sm:text-3xl font-bold text-sky-700 whitespace-nowrap">
-              $350 <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
+              $450 <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
             </p>
           </div>
         </div>
