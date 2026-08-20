@@ -207,7 +207,7 @@ useSeoMeta({
   ogTitle: 'Propuesta — Bolt Media | Fullstack Labs',
   ogDescription: 'Migración de infraestructura, integración del formulario existente con el CRM, y un CRM personalizado con dashboard en tiempo real y seguimiento de entregables por cliente.',
   ogUrl: 'https://fullstacklabs.org/proposals/bolt-media',
-  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'Fullstack Labs',
@@ -215,7 +215,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Propuesta — Bolt Media | Fullstack Labs',
   twitterDescription: 'Migración de infraestructura, integración del formulario existente con el CRM, y un CRM personalizado con dashboard en tiempo real y seguimiento de entregables por cliente.',
-  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 

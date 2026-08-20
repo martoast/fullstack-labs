@@ -236,7 +236,7 @@ useSeoMeta({
   ogTitle: 'Propuesta — Plataforma de encuestas telefónicas con IA | Fullstack Labs',
   ogDescription: 'Plataforma a la medida para Testa Marketing: campañas telefónicas con agentes de voz IA, resultados por pregunta, dashboard, exportación a CSV y cuentas por cliente.',
   ogUrl: 'https://fullstacklabs.org/proposals/testa-encuestas',
-  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'Fullstack Labs',
@@ -244,7 +244,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Propuesta — Plataforma de encuestas telefónicas con IA | Fullstack Labs',
   twitterDescription: 'Campañas telefónicas con agentes de voz IA, resultados por pregunta, dashboard, exportación a CSV y cuentas por cliente.',
-  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 

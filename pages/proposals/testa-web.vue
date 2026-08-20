@@ -236,7 +236,7 @@ useSeoMeta({
   ogTitle: 'Propuesta — Sitio web Testa Marketing | Fullstack Labs',
   ogDescription: 'Desarrollo del nuevo sitio de Testa Marketing siguiendo la arquitectura en 5 niveles definida por el cliente: Soluciones, Técnicas, Sectores y Experiencia, Aprende, Nosotros y Contacto.',
   ogUrl: 'https://fullstacklabs.org/proposals/testa-web',
-  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'Fullstack Labs',
@@ -244,7 +244,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Propuesta — Sitio web Testa Marketing | Fullstack Labs',
   twitterDescription: 'Desarrollo del nuevo sitio de Testa Marketing siguiendo la arquitectura en 5 niveles definida por el cliente.',
-  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 

@@ -153,7 +153,7 @@ useSeoMeta({
   ogTitle: 'Accesos para arrancar — Bolt Media | Fullstack Labs',
   ogDescription: 'Accesos que necesitamos de Bolt Media para arrancar la migración: cuenta de GoDaddy y hosting actual.',
   ogUrl: 'https://fullstacklabs.org/proposals/bolt-media-kickoff',
-  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'Fullstack Labs',
@@ -161,7 +161,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Accesos para arrancar — Bolt Media | Fullstack Labs',
   twitterDescription: 'Accesos que necesitamos de Bolt Media para arrancar la migración: cuenta de GoDaddy y hosting actual.',
-  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 

@@ -235,7 +235,7 @@ useSeoMeta({
   ogTitle: 'Alcance de trabajo — CRM Campestre Media | Fullstack Labs',
   ogDescription: 'Plataforma CRM y de gestión comercial para Campestre Media: contactos, ventas, entregables por edición y cobros vía Stripe.',
   ogUrl: 'https://fullstacklabs.org/proposals/campestre',
-  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'Fullstack Labs',
@@ -243,7 +243,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Alcance de trabajo — CRM Campestre Media | Fullstack Labs',
   twitterDescription: 'Plataforma CRM y de gestión comercial para Campestre Media: contactos, ventas, entregables por edición y cobros vía Stripe.',
-  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 

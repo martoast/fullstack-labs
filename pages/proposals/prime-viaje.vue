@@ -236,7 +236,7 @@ useSeoMeta({
   ogTitle: 'Propuesta — Prime Viaje | Fullstack Labs',
   ogDescription: 'Plataforma de reservas de vans al Valle de Guadalupe: grupos con invitaciones, división de pagos vía Stripe, planeador de ruta con vinícolas y panel administrativo.',
   ogUrl: 'https://fullstacklabs.org/proposals/prime-viaje',
-  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'Fullstack Labs',
@@ -244,7 +244,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Propuesta — Prime Viaje | Fullstack Labs',
   twitterDescription: 'Plataforma de reservas de vans al Valle de Guadalupe: grupos, división de pagos vía Stripe, planeador de ruta con vinícolas y panel administrativo.',
-  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 

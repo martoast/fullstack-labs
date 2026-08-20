@@ -238,7 +238,7 @@ useSeoMeta({
   ogTitle: 'Propuesta — CDT Tijuana 2040 | Fullstack Labs',
   ogDescription: 'Plataforma digital metropolitana del CDT: Plan Estratégico Tijuana 2040, mapa interactivo, foro ciudadano, observatorio de datos, portafolio de proyectos e inteligencia artificial.',
   ogUrl: 'https://fullstacklabs.org/proposals/cdt',
-  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'Fullstack Labs',
@@ -246,7 +246,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Propuesta — CDT Tijuana 2040 | Fullstack Labs',
   twitterDescription: 'Plataforma digital metropolitana del CDT: Plan Estratégico Tijuana 2040, mapa interactivo, foro ciudadano, observatorio de datos, portafolio de proyectos e inteligencia artificial.',
-  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 

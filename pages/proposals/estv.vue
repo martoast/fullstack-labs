@@ -224,7 +224,7 @@ useSeoMeta({
   ogTitle: 'Propuesta — ESTV | Fullstack Labs',
   ogDescription: 'Sistema integral de control escolar: preinscripción por CURP, control escolar, portales para alumnos y docentes, finanzas, reportes y página web pública.',
   ogUrl: 'https://fullstacklabs.org/proposals/estv',
-  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'Fullstack Labs',
@@ -232,7 +232,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Propuesta — ESTV | Fullstack Labs',
   twitterDescription: 'Sistema integral de control escolar: preinscripción por CURP, control escolar, portales para alumnos y docentes, finanzas, reportes y página web pública.',
-  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 

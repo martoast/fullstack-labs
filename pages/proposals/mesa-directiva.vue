@@ -226,7 +226,7 @@ useSeoMeta({
   ogTitle: 'Confirmación de trabajo — Mesa Directiva | Fullstack Labs',
   ogDescription: 'Tres cuentas de Stripe con finanzas separadas, pagos en parcialidades dependientes, mejoras al checkout y reportes personalizados por nivel de usuario.',
   ogUrl: 'https://fullstacklabs.org/proposals/mesa-directiva',
-  ogImage: 'https://fullstacklabs.org/logo.png',
+  ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
   ogImageAlt: 'Fullstack Labs',
@@ -234,7 +234,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterTitle: 'Confirmación de trabajo — Mesa Directiva | Fullstack Labs',
   twitterDescription: 'Tres cuentas de Stripe con finanzas separadas, pagos en parcialidades dependientes, mejoras al checkout y reportes personalizados por nivel de usuario.',
-  twitterImage: 'https://fullstacklabs.org/logo.png',
+  twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 
