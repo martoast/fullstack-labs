@@ -77,10 +77,31 @@
         </div>
       </section>
 
-      <!-- Deliverables -->
+      <!-- Timeline -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">2</span>
+          Cronograma — 2 semanas
+        </h3>
+        <div class="sm:ml-11 space-y-3">
+          <div
+            v-for="(week, i) in timeline"
+            :key="i"
+            class="border border-gray-200 rounded-lg p-4 flex items-start gap-3 scope-card"
+          >
+            <span class="bg-sky-100 text-sky-700 rounded-md px-2 py-1 text-xs font-bold shrink-0 whitespace-nowrap">{{ week.label }}</span>
+            <div>
+              <p class="font-semibold text-gray-900 text-sm">{{ week.title }}</p>
+              <p class="text-gray-500 text-xs mt-1 leading-relaxed">{{ week.detail }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deliverables -->
+      <section class="px-5 sm:px-10 py-5 sm:py-6">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
           Entregables
         </h3>
         <div class="sm:ml-11 space-y-3 text-sm">
@@ -94,7 +115,7 @@
       <!-- Pricing -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">4</span>
           Inversión
         </h3>
 
@@ -133,7 +154,7 @@
       <!-- Payment -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">4</span>
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">5</span>
           Métodos de pago
         </h3>
         <div class="sm:ml-11 grid grid-cols-3 gap-3 sm:gap-4">
@@ -294,6 +315,19 @@ const scopeCards = [
       'Liga directa para agendar cita con el Director (Calendly)',
       'Teléfono, correo, WhatsApp y ubicaciones'
     ]
+  }
+]
+
+const timeline = [
+  {
+    label: 'Semana 1',
+    title: 'Arquitectura, diseño y secciones principales',
+    detail: 'Diseño visual, página de Inicio, y las páginas principales de Soluciones, Técnicas y Sectores con sus páginas internas.'
+  },
+  {
+    label: 'Semana 2',
+    title: 'Aprende, Nosotros, Contacto y lanzamiento',
+    detail: 'Centro de Conocimiento, Testa Academy, sección Nosotros, formulario de contacto con Calendly y WhatsApp, revisión con Testa y salida a producción.'
   }
 ]
 
