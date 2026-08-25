@@ -142,12 +142,31 @@
               <p class="font-semibold text-sky-900">Total del proyecto</p>
               <p class="text-xs text-sky-500 mt-1 leading-relaxed">
                 Plataforma completa: campañas, agente de voz IA, resultados, dashboard, exportación y multi-cuenta<br />
-                <span class="font-medium">Forma de pago flexible: 50% para iniciar y 50% a la entrega, o plan de pagos a convenir.</span>
+                <span class="font-medium">En 5 pagos de $550 USD, ligados al avance del proyecto — ver plan de pagos.</span>
               </p>
             </div>
             <p class="text-2xl sm:text-3xl font-bold text-sky-700 whitespace-nowrap">
               $2,750 <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
             </p>
+          </div>
+
+          <!-- Plan de pagos -->
+          <div class="mt-5 sm:mt-6 avoid-break">
+            <p class="font-semibold text-gray-900 text-sm mb-3">Plan de pagos — 5 pagos por avance</p>
+            <div class="space-y-2">
+              <div
+                v-for="(pago, i) in paymentPlan"
+                :key="i"
+                class="border border-gray-200 rounded-lg p-3 sm:p-4 flex items-center gap-3 scope-card"
+              >
+                <span class="w-7 h-7 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs font-bold shrink-0">{{ i + 1 }}</span>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-gray-900 text-sm">{{ pago.title }}</p>
+                  <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">{{ pago.detail }}</p>
+                </div>
+                <p class="font-bold text-sky-700 text-sm sm:text-base whitespace-nowrap shrink-0">$550 <span class="font-normal text-sky-400 text-xs">USD</span></p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -353,6 +372,29 @@ const lineItems = [
   {
     name: 'Multi-cuenta y panel de administración',
     detail: 'Cuentas por cliente de Testa con datos aislados, altas fáciles y administración central'
+  }
+]
+
+const paymentPlan = [
+  {
+    title: 'Para iniciar el proyecto',
+    detail: 'Al aprobar la propuesta — arranca el desarrollo de la plataforma'
+  },
+  {
+    title: 'Motor de campañas listo',
+    detail: 'Carga de CSV, cuestionarios y marcación automática vía Twilio funcionando (semanas 1-2)'
+  },
+  {
+    title: 'Agente de voz con IA funcionando',
+    detail: 'El agente aplica la encuesta por teléfono y captura respuestas, probado con llamadas reales (semanas 3-4)'
+  },
+  {
+    title: 'Dashboard y exportación listos',
+    detail: 'Gráficas y métricas por campaña, interpretación de resultados y exportación a CSV (semanas 5-6)'
+  },
+  {
+    title: 'Entrega y salida a producción',
+    detail: 'Plataforma en producción con las cuentas de los primeros clientes, documentación y accesos'
   }
 ]
 
