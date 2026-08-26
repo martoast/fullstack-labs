@@ -322,7 +322,8 @@ const scopeCards = [
       'Cuentas separadas para cada cliente de Testa — cada una con sus campañas, resultados y usuarios',
       'Agregar una cuenta nueva es fácil y no requiere desarrollo adicional',
       'Panel de administración para Testa: gestión de cuentas, usuarios y acceso a todo',
-      'Los datos de cada cliente permanecen aislados de los demás'
+      'Los datos de cada cliente permanecen aislados de los demás',
+      'Posibilidad de white label: la plataforma puede operar con otra marca, por si una empresa quiere rentar a Testa el servicio completo del sistema'
     ]
   }
 ]
