@@ -246,9 +246,9 @@
 definePageMeta({ layout: false })
 
 // ── Montos: actualizar antes de enviar ──
-const PRECIO_TOTAL = '$0,000'
-const PRECIO_MENSUAL = '$000'
-const PRECIO_PAGO = '$0,000'
+const PRECIO_TOTAL = '$2,500'
+const PRECIO_MENSUAL = '$350'
+const PRECIO_PAGO = '$625'
 
 useHead({
   htmlAttrs: { lang: 'es' },
