@@ -297,6 +297,7 @@ const scopeCards = [
       'Pipeline claro por etapas: nuevo → atendido por el agente → registrado → en cierre con asesor → pago enviado → convertido',
       'Los registrados aparecen como leads filtrados: la cola de trabajo diaria de tus asesores',
       'Filtros por programa, plantel y campaña — con cinco planteles, cada quien ve lo suyo',
+      'Usuarios para tu equipo con distintos niveles de acceso: tú administras todo, y cada asesor entra con su propia cuenta a trabajar sus leads y tareas',
       'Historial completo por lead: la conversación con el agente, notas del asesor y cada cambio de etapa',
       'Métricas del embudo: cuántos leads llegan, cuántos se registran y cuántos se convierten, por campaña y por plantel'
     ]
@@ -351,7 +352,7 @@ const lineItems = [
   },
   {
     name: 'CRM con pipeline de inscripción',
-    detail: 'Leads filtrados, etapas de nuevo a convertido, historial por lead y filtros por programa y plantel'
+    detail: 'Leads filtrados, etapas de nuevo a convertido, historial por lead, filtros por programa y plantel, y usuarios con niveles de acceso para tu equipo'
   },
   {
     name: 'Cierre con enlace de pago y métricas',
