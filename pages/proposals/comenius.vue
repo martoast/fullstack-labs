@@ -83,7 +83,7 @@
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">2</span>
-          Cronograma — 4 a 6 semanas
+          Cronograma — 3 semanas
         </h3>
         <div class="sm:ml-11 space-y-3">
           <div
@@ -140,23 +140,23 @@
           <!-- Total -->
           <div class="mt-5 sm:mt-6 bg-sky-50 border border-sky-200 rounded-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
             <div>
-              <p class="font-semibold text-sky-900">Implementación del sistema</p>
+              <p class="font-semibold text-sky-900">Para arrancar — pago único</p>
               <p class="text-xs text-sky-500 mt-1 leading-relaxed">
-                Agente IA, registro en el sitio, CRM con pipeline de inscripción y cierre con enlace de pago<br />
-                <span class="font-medium">En {{ paymentPlan.length }} pagos ligados al avance del proyecto — ver plan de pagos.</span>
+                Instalación y configuración del sistema ($400) + primer mes de la plataforma ($350)<br />
+                <span class="font-medium">Incluye la puesta en marcha completa: agente, formulario, CRM y cierre con pago.</span>
               </p>
             </div>
             <p class="text-2xl sm:text-3xl font-bold text-sky-700 whitespace-nowrap">
-              {{ PRECIO_TOTAL }} <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
+              {{ PRECIO_INICIO }} <span class="text-sm sm:text-base font-normal text-sky-400">USD</span>
             </p>
           </div>
 
           <!-- Mensualidad -->
           <div class="mt-3 bg-white border border-gray-200 rounded-lg p-4 sm:p-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4">
             <div>
-              <p class="font-semibold text-gray-900">Plataforma y agentes en operación</p>
+              <p class="font-semibold text-gray-900">A partir del segundo mes</p>
               <p class="text-xs text-gray-400 mt-1 leading-relaxed">
-                Uso de la plataforma, operación de los agentes, mantenimiento y mejoras continuas — a partir de la salida a producción
+                Uso de la plataforma, operación de los agentes, mantenimiento y mejoras continuas — sin plazos forzosos
               </p>
             </div>
             <p class="text-xl sm:text-2xl font-bold text-gray-700 whitespace-nowrap">
@@ -164,24 +164,6 @@
             </p>
           </div>
 
-          <!-- Plan de pagos -->
-          <div class="mt-5 sm:mt-6 avoid-break">
-            <p class="font-semibold text-gray-900 text-sm mb-3">Plan de pagos — {{ paymentPlan.length }} pagos por avance</p>
-            <div class="space-y-2">
-              <div
-                v-for="(pago, i) in paymentPlan"
-                :key="i"
-                class="border border-gray-200 rounded-lg p-3 sm:p-4 flex items-center gap-3 scope-card"
-              >
-                <span class="w-7 h-7 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs font-bold shrink-0">{{ i + 1 }}</span>
-                <div class="flex-1 min-w-0">
-                  <p class="font-semibold text-gray-900 text-sm">{{ pago.title }}</p>
-                  <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">{{ pago.detail }}</p>
-                </div>
-                <p class="font-bold text-sky-700 text-sm sm:text-base whitespace-nowrap shrink-0">{{ PRECIO_PAGO }} <span class="font-normal text-sky-400 text-xs">USD</span></p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -219,7 +201,7 @@
           <li>El enlace de pago se conecta al procesador de cobro de COMENIUS (Stripe u otro); las comisiones del procesador corren por cuenta del cliente.</li>
           <li>Los costos de dominio y hosting son pagos directos del cliente y no están incluidos en esta propuesta.</li>
           <li>Cambios significativos fuera del alcance descrito pueden requerir un ajuste en costo y tiempo.</li>
-          <li>El proyecto inicia una vez aprobada la propuesta y recibido el primer pago.</li>
+          <li>El proyecto inicia una vez aprobada la propuesta y recibido el pago inicial.</li>
         </ul>
       </section>
 
@@ -245,10 +227,8 @@
 <script setup>
 definePageMeta({ layout: false })
 
-// ── Montos: actualizar antes de enviar ──
-const PRECIO_TOTAL = '$2,500'
+const PRECIO_INICIO = '$750'
 const PRECIO_MENSUAL = '$350'
-const PRECIO_PAGO = '$625'
 
 useHead({
   htmlAttrs: { lang: 'es' },
@@ -334,17 +314,17 @@ const scopeCards = [
 
 const timeline = [
   {
-    label: 'Semanas 1-2',
-    title: 'CRM y registro en el sitio',
+    label: 'Semana 1',
+    title: 'CRM y formulario de registro',
     detail: 'CRM con pipeline de inscripción, etapas y filtros por programa y plantel; formulario de registro integrado en el sitio actual de COMENIUS y conectado al CRM, con enlaces por programa.'
   },
   {
-    label: 'Semanas 3-4',
+    label: 'Semana 2',
     title: 'Agente IA conectado a WhatsApp y Meta',
     detail: 'Conexión con WhatsApp Business y los formularios de leads de Meta; el agente entrenado con la información de COMENIUS, respondiendo y llevando prospectos al registro. Pruebas con leads reales.'
   },
   {
-    label: 'Semanas 5-6',
+    label: 'Semana 3',
     title: 'Cierre con pago, métricas y salida a producción',
     detail: 'Enlace de pago conectado al procesador de COMENIUS con conversión automática, métricas del embudo, entrenamiento del equipo de asesores y salida a producción.'
   }
@@ -379,24 +359,6 @@ const lineItems = [
   }
 ]
 
-const paymentPlan = [
-  {
-    title: 'Para iniciar el proyecto',
-    detail: 'Al aprobar la propuesta — arranca la implementación'
-  },
-  {
-    title: 'CRM y registro funcionando',
-    detail: 'Pipeline de inscripción listo y formulario de registro en el sitio conectado al CRM (semanas 1-2)'
-  },
-  {
-    title: 'Agente IA respondiendo leads reales',
-    detail: 'Conectado a WhatsApp y Meta, entrenado y probado con prospectos reales (semanas 3-4)'
-  },
-  {
-    title: 'Entrega y salida a producción',
-    detail: 'Cierre con enlace de pago, métricas del embudo, equipo entrenado y sistema en producción (semanas 5-6)'
-  }
-]
 
 function printPage() {
   if (typeof window !== 'undefined') window.print()
