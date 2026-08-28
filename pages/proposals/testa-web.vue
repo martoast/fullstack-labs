@@ -24,7 +24,7 @@
           </div>
           <div class="text-left sm:text-right">
             <p class="text-xl sm:text-2xl font-semibold tracking-wide">PROPUESTA</p>
-            <p class="text-sky-200 text-xs sm:text-sm mt-1">19 de agosto, 2026</p>
+            <p class="text-sky-200 text-xs sm:text-sm mt-1">28 de agosto, 2026</p>
           </div>
         </div>
       </div>
