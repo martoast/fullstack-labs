@@ -40,7 +40,7 @@
         <div>
           <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Para</p>
           <p class="font-semibold text-gray-900">Ariosto Manrique</p>
-          <p class="text-gray-600">Testa Marketing</p>
+          <p class="text-gray-600">Testa Marketing Inc.</p>
         </div>
       </div>
 
