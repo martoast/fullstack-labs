@@ -142,7 +142,8 @@
               <p class="font-semibold text-sky-900">Total del proyecto</p>
               <p class="text-xs text-sky-500 mt-1 leading-relaxed">
                 Plataforma completa: campañas, agente de voz IA, resultados, dashboard, exportación y multi-cuenta<br />
-                <span class="font-medium">En 5 pagos de $550 USD, ligados al avance del proyecto — ver plan de pagos.</span>
+                <span class="font-medium">En 5 pagos de $550 USD, ligados al avance del proyecto — ver plan de pagos.</span><br />
+                <span class="font-semibold text-green-600">✓ Primer pago recibido ($550 USD) · Restante: $2,200 USD</span>
               </p>
             </div>
             <p class="text-2xl sm:text-3xl font-bold text-sky-700 whitespace-nowrap">
@@ -157,14 +158,17 @@
               <div
                 v-for="(pago, i) in paymentPlan"
                 :key="i"
-                class="border border-gray-200 rounded-lg p-3 sm:p-4 flex items-center gap-3 scope-card"
+                :class="['rounded-lg p-3 sm:p-4 flex items-center gap-3 scope-card border', pago.paid ? 'border-green-300 bg-green-50' : 'border-gray-200']"
               >
-                <span class="w-7 h-7 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs font-bold shrink-0">{{ i + 1 }}</span>
+                <span :class="['w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0', pago.paid ? 'bg-green-600 text-white' : 'bg-sky-100 text-sky-700']">{{ pago.paid ? '✓' : i + 1 }}</span>
                 <div class="flex-1 min-w-0">
                   <p class="font-semibold text-gray-900 text-sm">{{ pago.title }}</p>
                   <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">{{ pago.detail }}</p>
                 </div>
-                <p class="font-bold text-sky-700 text-sm sm:text-base whitespace-nowrap shrink-0">$550 <span class="font-normal text-sky-400 text-xs">USD</span></p>
+                <div class="text-right shrink-0">
+                  <p :class="['font-bold text-sm sm:text-base whitespace-nowrap', pago.paid ? 'text-green-700' : 'text-sky-700']">$550 <span :class="['font-normal text-xs', pago.paid ? 'text-green-500' : 'text-sky-400']">USD</span></p>
+                  <p v-if="pago.paid" class="text-[10px] font-bold text-green-600 uppercase tracking-wider mt-0.5">Pagado · {{ pago.paidDate }}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -379,7 +383,9 @@ const lineItems = [
 const paymentPlan = [
   {
     title: 'Para iniciar el proyecto',
-    detail: 'Al aprobar la propuesta — arranca el desarrollo de la plataforma'
+    detail: 'Al aprobar la propuesta — arranca el desarrollo de la plataforma',
+    paid: true,
+    paidDate: '28 de agosto, 2026'
   },
   {
     title: 'Motor de campañas listo',
