@@ -142,7 +142,8 @@
               <p class="text-xs text-sky-500 mt-1 leading-relaxed">
                 Sitio completo en 5 niveles siguiendo la arquitectura definida por Testa Marketing<br />
                 <span class="font-medium">50% para iniciar y 50% a la entrega.</span><br />
-                <span class="font-semibold text-green-600">✓ Pago inicial recibido ($225 USD, 28 de agosto, 2026) · Restante: $225 USD a la entrega</span>
+                <span class="font-semibold text-green-600">✓ Pago inicial recibido ($225 USD, 28 de agosto, 2026)</span><br />
+                <span class="font-semibold text-sky-700">✓ Sitio entregado · Pago final facturado ($225 USD, factura #6F72A30A-0013, 16 de septiembre, 2026) — pendiente de pago</span>
               </p>
             </div>
             <p class="text-2xl sm:text-3xl font-bold text-sky-700 whitespace-nowrap">
