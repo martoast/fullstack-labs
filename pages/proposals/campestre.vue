@@ -110,7 +110,7 @@
                 <p class="text-xs text-sky-700 mt-0.5">Editor propio, cuatro sitios, ajustes al CRM y capacitación.</p>
               </div>
               <div class="text-right whitespace-nowrap shrink-0">
-                <span class="text-2xl font-bold text-sky-700">$2,000</span>
+                <span class="text-2xl font-bold text-sky-700">$2,050</span>
                 <span class="text-xs text-sky-400 ml-1">USD</span>
               </div>
             </div>
@@ -142,7 +142,7 @@
                     <p class="text-xs text-sky-700 mt-0.5">Editor propio, cuatro sitios, ajustes al CRM y capacitación al equipo.</p>
                   </td>
                   <td class="px-3 py-3 text-right whitespace-nowrap">
-                    <span class="text-2xl sm:text-3xl font-bold text-sky-700">$2,000</span>
+                    <span class="text-2xl sm:text-3xl font-bold text-sky-700">$2,050</span>
                     <span class="text-xs sm:text-sm text-sky-400 ml-1">USD</span>
                   </td>
                 </tr>
@@ -417,7 +417,7 @@ const projects = [
   { name: 'Sitio corporativo del grupo', detail: 'Corrección de fallas, revisión de inglés y móvil, migración de WordPress al editor propio', price: '$300' },
   { name: 'Campestre Guatemala', detail: 'Rediseño moderno sobre la estructura actual, construido en el editor', price: '$250' },
   { name: 'City Inmobiliaria', detail: 'Rediseño completo a partir de las referencias, con formulario al pipeline', price: '$250' },
-  { name: 'Campestre México', detail: 'Actualización de la página principal con los criterios de Guatemala', price: '$200' },
+  { name: 'Campestre México', detail: 'Actualización de la página principal con los criterios de Guatemala', price: '$250' },
   { name: 'Ajustes al CRM', detail: 'Permisos por departamento, sectores y duplicados, ficha y filtros, adjuntos y dominio de correo, vistas del dashboard', price: '$200' },
   { name: 'Capacitación al equipo', detail: 'Sesión + guía de uso, tras implementar el editor', price: '$200' }
 ]
