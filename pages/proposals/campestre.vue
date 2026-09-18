@@ -163,27 +163,34 @@
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-2 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
-          Inversión — Esquema B: plan mensual
+          Inversión — Esquema B: plan mensual (iguala)
         </h3>
         <p class="sm:ml-11 text-sm text-gray-500 mb-4 leading-relaxed">
-          El mismo alcance, repartido en mensualidades iguales. Cada mes se entrega lo que corresponde al
-          orden de prioridad, y el equipo va usando el editor conforme se publica cada sitio.
+          En lugar de cotizar proyecto por proyecto, una cuota fija al mes que cubre todo lo que el grupo
+          quiera trabajar ese mes: sitios, ajustes al CRM, funciones nuevas, soporte. Cada mes se acuerda
+          la lista de prioridades y se va entregando en ese orden. Sin cotizaciones sueltas, sin esperar
+          aprobaciones por cada cambio.
         </p>
         <div class="sm:ml-11 rounded-lg p-4 border border-sky-200 bg-sky-50 scope-card">
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div>
-              <p class="font-semibold text-sky-900">4 mensualidades</p>
-              <p class="text-xs text-sky-700 mt-0.5">Mismo total que el Esquema A. La primera mensualidad se cubre al arrancar.</p>
+              <p class="font-semibold text-sky-900">Iguala mensual — todo incluido</p>
+              <p class="text-xs text-sky-700 mt-0.5">Se cobra al inicio de cada mes. Sin plazo forzoso; se cancela con 30 días de aviso.</p>
             </div>
             <div class="text-left sm:text-right whitespace-nowrap">
-              <span class="text-2xl sm:text-3xl font-bold text-sky-700">$500</span>
+              <span class="text-2xl sm:text-3xl font-bold text-sky-700">$1,500</span>
               <span class="text-xs sm:text-sm text-sky-400 ml-1">USD / mes</span>
             </div>
           </div>
           <ul class="text-sm mt-3 space-y-1 list-disc list-inside text-sky-700">
-            <li v-for="(m, i) in monthly" :key="i"><strong class="text-sky-900">{{ m.label }}:</strong> {{ m.detail }}</li>
+            <li v-for="(m, i) in monthly" :key="i">{{ m }}</li>
           </ul>
         </div>
+        <p class="sm:ml-11 text-xs text-gray-500 mt-3 leading-relaxed">
+          Como referencia: todo el paquete del Esquema A cabe en los primeros dos meses de la iguala, y a
+          partir de ahí el mismo ritmo sigue con los demás sitios del ecosistema, el pipeline de
+          reclutamiento, la carga de contratos PDF y lo que vaya surgiendo — sin volver a cotizar.
+        </p>
       </section>
 
       <!-- Timeline -->
@@ -268,7 +275,7 @@
       <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-200 mt-2 sm:mt-4">
         <h3 class="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Notas</h3>
         <ul class="text-sm text-gray-500 space-y-1.5 list-disc list-outside pl-5">
-          <li>En el Esquema A cada proyecto arranca una vez aprobado y recibido su pago. En el Esquema B el trabajo arranca con la primera mensualidad.</li>
+          <li>En el Esquema A cada proyecto arranca una vez aprobado y recibido su pago. En el Esquema B el trabajo arranca con el pago del primer mes y las prioridades se fijan juntos ese mismo día.</li>
           <li>Antes de iniciar cada sitio se confirma por escrito el alcance, el nombre definitivo del sitio y quién aprueba de parte de Campestre; sin eso la semana estimada no corre.</li>
           <li>Los dominios ya están bajo control de la empresa; las renovaciones de dominio y los planes de Google Workspace son pagos directos del cliente y no forman parte de esta cotización.</li>
           <li>Los sitios se publican priorizando rendimiento móvil y tiempos de carga; las animaciones y elementos 3D se incorporan sin comprometer eso.</li>
@@ -423,10 +430,11 @@ const later = [
 ]
 
 const monthly = [
-  { label: 'Mes 1', detail: 'ajustes al CRM, corrección de fallas del sitio corporativo y arranque del editor' },
-  { label: 'Mes 2', detail: 'editor en producción y sitio corporativo migrado y publicado en él' },
-  { label: 'Mes 3', detail: 'Campestre Guatemala y City Inmobiliaria' },
-  { label: 'Mes 4', detail: 'Campestre México, capacitación al equipo y cierre' }
+  'Todo lo que el grupo quiera trabajar ese mes: sitios nuevos o rediseños, cambios en el CRM, funciones nuevas, integraciones',
+  'Lista de prioridades acordada al inicio de cada mes; se entrega en ese orden y se ajusta sobre la marcha',
+  'Capacidad de referencia: alrededor de cuatro páginas al mes, o su equivalente en funciones del CRM',
+  'Soporte y mantenimiento de todo lo entregado: correcciones, ajustes menores y dudas del equipo por WhatsApp',
+  'Incluye lo que en el Esquema A queda "por cotizar aparte": sitios adicionales, pipeline de reclutamiento, contratos PDF ligados al calendario, WhatsApp de asesores'
 ]
 
 const timeline = [
