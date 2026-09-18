@@ -276,7 +276,6 @@
         <h3 class="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Notas</h3>
         <ul class="text-sm text-gray-500 space-y-1.5 list-disc list-outside pl-5">
           <li>En el Esquema A cada proyecto arranca una vez aprobado y recibido su pago. En el Esquema B el contrato de 6 meses arranca con el pago del primer mes y las prioridades se fijan juntos ese mismo día.</li>
-          <li>Antes de iniciar cada sitio se confirma por escrito el alcance, el nombre definitivo del sitio y quién aprueba de parte de Campestre; sin eso la semana estimada no corre.</li>
           <li>Los dominios ya están bajo control de la empresa; las renovaciones de dominio y los planes de Google Workspace son pagos directos del cliente y no forman parte de esta cotización.</li>
           <li>Los sitios se publican priorizando rendimiento móvil y tiempos de carga; las animaciones y elementos 3D se incorporan sin comprometer eso.</li>
           <li>No se implementa un bot de IA para atención de leads en esta etapa; la atención se mantiene manual y se registra en el CRM. La integración del WhatsApp de cada asesor se evaluará después.</li>
