@@ -396,7 +396,7 @@ const scopeCards = [
     ]
   },
   {
-    priority: 'Incluida',
+    priority: 'Al cierre',
     title: 'Capacitación al equipo',
     items: [
       'Sesión de capacitación una vez implementado el editor, para que el equipo haga cambios menores en las páginas por su cuenta',
@@ -411,8 +411,8 @@ const projects = [
   { name: 'Campestre Guatemala', detail: 'Rediseño moderno sobre la estructura actual, construido en el editor', price: '$250' },
   { name: 'City Inmobiliaria', detail: 'Rediseño completo a partir de las referencias, con formulario al pipeline', price: '$250' },
   { name: 'Campestre México', detail: 'Actualización de la página principal con los criterios de Guatemala', price: '$200' },
-  { name: 'Ajustes al CRM', detail: 'Permisos por departamento, sectores y duplicados, ficha y filtros, adjuntos y dominio de correo, vistas del dashboard', price: '$400' },
-  { name: 'Capacitación al equipo', detail: 'Sesión + guía de uso, tras implementar el editor', price: 'Incluida' }
+  { name: 'Ajustes al CRM', detail: 'Permisos por departamento, sectores y duplicados, ficha y filtros, adjuntos y dominio de correo, vistas del dashboard', price: '$200' },
+  { name: 'Capacitación al equipo', detail: 'Sesión + guía de uso, tras implementar el editor', price: '$200' }
 ]
 
 const later = [
