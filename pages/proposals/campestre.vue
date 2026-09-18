@@ -370,9 +370,9 @@ const scopeCards = [
     priority: 'Prioridad 2',
     title: 'Campestre Guatemala',
     items: [
-      'Modernización del diseño de la página principal (landing) conservando, en principio, la estructura de secciones existente',
-      'La landing se construye y se publica desde el editor propio; sirve de base de criterios para Campestre México',
-      'El sitio de contenidos (blog y notas) sigue en su WordPress actual, aparte, y se enlaza desde la landing — no se migra'
+      'Modernización del diseño conservando, en principio, la estructura de secciones existente',
+      'Este sitio vive en WordPress y ahí se queda: los cambios se hacen directamente en su WordPress, no se migra al editor',
+      'Sirve de base de criterios para Campestre México'
     ]
   },
   {
@@ -416,7 +416,7 @@ const scopeCards = [
 const projects = [
   { name: 'Editor de sitios web con IA dentro del CRM', detail: 'Módulo de Sitios, editor asistido por IA, biblioteca de activos, publicación con historial y formularios ligados al pipeline', price: '$600' },
   { name: 'Sitio corporativo del grupo', detail: 'Corrección de fallas, revisión de inglés y móvil, migración de WordPress al editor propio', price: '$300' },
-  { name: 'Campestre Guatemala', detail: 'Landing rediseñada en el editor; el blog sigue en su WordPress aparte', price: '$250' },
+  { name: 'Campestre Guatemala', detail: 'Rediseño moderno sobre la estructura actual, hecho directamente en su WordPress', price: '$250' },
   { name: 'City Inmobiliaria', detail: 'Rediseño completo a partir de las referencias, con formulario al pipeline', price: '$250' },
   { name: 'Campestre México', detail: 'Actualización de la página principal con los criterios de Guatemala', price: '$250' },
   { name: 'Ajustes al CRM', detail: 'Permisos por departamento, sectores y duplicados, ficha y filtros, adjuntos y dominio de correo, vistas del dashboard', price: '$200' },
@@ -452,7 +452,7 @@ const timeline = [
   {
     label: 'Semana 4',
     title: 'Campestre Guatemala',
-    detail: 'Una semana desde el arranque: landing elaborada, retroalimentación del equipo y entrega en el editor. El WordPress de contenidos no se toca.'
+    detail: 'Una semana desde el arranque: rediseño aplicado directamente en su WordPress, retroalimentación del equipo y publicación.'
   },
   {
     label: 'Semana 5',
@@ -469,7 +469,7 @@ const timeline = [
 const deliverables = [
   { title: 'Módulo de Sitios en el CRM', detail: 'editor asistido por IA, biblioteca de activos, publicación con historial de versiones y formularios ligados al pipeline de cada empresa' },
   { title: 'Sitio corporativo del grupo', detail: 'corregido, revisado en inglés y móvil, y publicado desde el editor propio' },
-  { title: 'Campestre Guatemala', detail: 'landing rediseñada y publicada desde el editor, enlazada al blog que sigue en WordPress' },
+  { title: 'Campestre Guatemala', detail: 'rediseñado y publicado en su propio WordPress' },
   { title: 'City Inmobiliaria', detail: 'rediseñado a partir de las referencias y publicado desde el editor, con formulario al pipeline' },
   { title: 'Campestre México', detail: 'página principal actualizada y publicada desde el editor' },
   { title: 'CRM ajustado', detail: 'permisos por departamento y por asesor, sectores administrables, prevención de duplicados, ficha y filtros nuevos, adjuntos en correo, dominio remitente correcto y vistas del dashboard por rol' },
