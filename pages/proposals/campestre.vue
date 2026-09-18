@@ -358,7 +358,7 @@ const scopeCards = [
   },
   {
     priority: 'Prioridad 1',
-    title: 'Sitio corporativo del grupo (Bolt / Bolt Business — nombre por confirmar)',
+    title: 'Bolt Business — sitio corporativo del grupo (bolt.business)',
     items: [
       'Corrección inmediata de las fallas visibles: el cambio de empresa que no desplaza la sección correctamente, navegación y presentación',
       'Revisión de la versión en inglés, adaptación móvil, tipografías e imágenes',
@@ -414,7 +414,7 @@ const scopeCards = [
 
 const projects = [
   { name: 'Editor de sitios web con IA dentro del CRM', detail: 'Módulo de Sitios, editor asistido por IA, biblioteca de activos, publicación con historial y formularios ligados al pipeline', price: '$600' },
-  { name: 'Sitio corporativo del grupo', detail: 'Corrección de fallas, revisión de inglés y móvil, migración de WordPress al editor propio', price: '$300' },
+  { name: 'Bolt Business (bolt.business)', detail: 'Corrección de fallas, revisión de inglés y móvil, migración de WordPress al editor propio', price: '$300' },
   { name: 'Campestre Guatemala', detail: 'Rediseño moderno sobre la estructura actual, hecho directamente en su WordPress', price: '$250' },
   { name: 'City Inmobiliaria', detail: 'Rediseño completo a partir de las referencias, con formulario al pipeline', price: '$250' },
   { name: 'Campestre México', detail: 'Actualización de la página principal con los criterios de Guatemala', price: '$250' },
@@ -467,7 +467,7 @@ const timeline = [
 
 const deliverables = [
   { title: 'Módulo de Sitios en el CRM', detail: 'editor asistido por IA, biblioteca de activos, publicación con historial de versiones y formularios ligados al pipeline de cada empresa' },
-  { title: 'Sitio corporativo del grupo', detail: 'corregido, revisado en inglés y móvil, y publicado desde el editor propio' },
+  { title: 'Bolt Business (bolt.business)', detail: 'corregido, revisado en inglés y móvil, y publicado desde el editor propio' },
   { title: 'Campestre Guatemala', detail: 'rediseñado y publicado en su propio WordPress' },
   { title: 'City Inmobiliaria', detail: 'rediseñado a partir de las referencias y publicado desde el editor, con formulario al pipeline' },
   { title: 'Campestre México', detail: 'página principal actualizada y publicada desde el editor' },
@@ -477,7 +477,6 @@ const deliverables = [
 
 const needs = [
   'Referencias y estructura de sitios para Campestre y City (se mencionaron en la reunión; confirmar que la entrega esté completa)',
-  'Nombre definitivo de cada sitio y quién aprueba de parte de Campestre antes de arrancar cada uno',
   'Descripción de la función de carga de propuestas / contratos PDF vinculados al calendario (Jocsan, coordinación por confirmar) para poder cotizarla',
   'Listado y secuencia de los demás sitios del ecosistema (Printify y las marcas restantes) antes de programarlos',
   'El dominio de correo con el que debe salir la correspondencia del CRM, para configurarlo como remitente'
