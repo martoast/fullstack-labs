@@ -95,7 +95,29 @@
         </p>
 
         <div class="sm:ml-11">
-          <div class="overflow-x-auto">
+          <!-- Phone: stacked cards -->
+          <div class="sm:hidden space-y-3">
+            <div v-for="(p, i) in projects" :key="'m' + i" class="border border-gray-200 rounded-lg p-4 scope-card">
+              <div class="flex items-start justify-between gap-3">
+                <p class="font-semibold text-gray-900 text-sm"><span class="text-gray-400 mr-1">{{ i + 1 }}.</span>{{ p.name }}</p>
+                <span class="text-sky-700 font-bold text-sm shrink-0 whitespace-nowrap">{{ p.price }}</span>
+              </div>
+              <p class="text-gray-500 text-xs mt-1 leading-relaxed">{{ p.detail }}</p>
+            </div>
+            <div class="rounded-lg p-4 border border-sky-200 bg-sky-50 scope-card flex items-center justify-between gap-3">
+              <div>
+                <p class="font-semibold text-sky-900 text-sm">Total del paquete completo</p>
+                <p class="text-xs text-sky-700 mt-0.5">Editor propio, cuatro sitios, ajustes al CRM y capacitación.</p>
+              </div>
+              <div class="text-right whitespace-nowrap shrink-0">
+                <span class="text-2xl font-bold text-sky-700">$2,000</span>
+                <span class="text-xs text-sky-400 ml-1">USD</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tablet and up: table -->
+          <div class="hidden sm:block overflow-x-auto">
             <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
               <thead>
                 <tr class="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wider">
