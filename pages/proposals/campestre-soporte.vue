@@ -50,10 +50,10 @@
           Soporte técnico e infraestructura — Campestre Media
         </h2>
         <p class="text-gray-500 text-sm sm:text-base mt-2 leading-relaxed">
-          Servicio mensual para que todo lo que Campestre Media usa todos los días siga funcionando:
-          los servidores arriba, las fallas corregidas, y las altas de cuentas y correos atendidas
-          sin que nadie del equipo tenga que esperar. Es el acompañamiento continuo, no un proyecto
-          con fecha de entrega.
+          Servicio mensual sobre el servidor de Campestre Media y todo lo que vive en él —
+          sitio, correo, DNS y CRM— para que siga funcionando: los servicios arriba, las fallas
+          corregidas, y las altas de cuentas y correos atendidas sin que nadie del equipo tenga que
+          esperar. Es el acompañamiento continuo, no un proyecto con fecha de entrega.
         </p>
       </div>
 
@@ -100,8 +100,9 @@
             </div>
           </div>
           <p class="text-gray-500 text-xs mt-3 leading-relaxed">
-            Conforme se publiquen los demás sitios del grupo, quedan cubiertos por este mismo servicio
-            sin costo adicional.
+            La cuota cubre el servidor del grupo como un todo, no un servicio suelto: si se publica un
+            sitio nuevo o se levanta un servicio más en esa misma máquina, queda cubierto sin costo
+            adicional.
           </p>
         </div>
       </section>
@@ -240,13 +241,13 @@ useHead({
 
 useSeoMeta({
   title: 'Soporte técnico e infraestructura — Campestre Media | Fullstack Labs',
-  description: 'Servicio mensual de soporte técnico e infraestructura para Campestre Media: servidores en operación, corrección de fallas, altas de cuentas y correos, y monitoreo de los servicios del grupo.',
+  description: 'Servicio mensual de soporte técnico e infraestructura para Campestre Media: su servidor completo — sitio, correo, DNS, bases de datos y CRM — en operación, con corrección de fallas y altas de cuentas y correos.',
   author: 'Alejandro Martos — Fullstack Labs',
   robots: 'noindex, nofollow',
   ogType: 'website',
   ogSiteName: 'Fullstack Labs',
   ogTitle: 'Soporte técnico e infraestructura — Campestre Media | Fullstack Labs',
-  ogDescription: 'Servidores arriba, fallas corregidas y altas de cuentas y correos atendidas. Cuota mensual fija.',
+  ogDescription: 'Su servidor completo — sitio, correo, DNS y CRM — arriba y atendido. Cuota mensual fija.',
   ogUrl: 'https://fullstacklabs.org/proposals/campestre-soporte',
   ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
@@ -255,7 +256,7 @@ useSeoMeta({
   ogLocale: 'es_MX',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Soporte técnico e infraestructura — Campestre Media | Fullstack Labs',
-  twitterDescription: 'Servidores arriba, fallas corregidas y altas de cuentas y correos atendidas. Cuota mensual fija.',
+  twitterDescription: 'Su servidor completo — sitio, correo, DNS y CRM — arriba y atendido. Cuota mensual fija.',
   twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
@@ -266,8 +267,9 @@ const scopeCards = [
     highlight: true,
     title: 'Que sus servicios estén arriba',
     items: [
-      'Vigilancia continua de los servicios del grupo: si algo deja de responder, se levanta solo y queda registrado',
-      'Revisión de que el CRM y los sitios contesten correctamente, no sólo que el servidor esté encendido',
+      'Vigilancia continua del servidor y de los servicios que corren en él: si algo deja de responder, se levanta solo y queda registrado',
+      'Revisión de que el sitio, el correo y el CRM contesten correctamente — no sólo de que el servidor esté encendido',
+      'Espacio en disco, memoria y carga: avisar y actuar antes de que el servidor se llene o se frene',
       'Atención inmediata cuando algo se cae, sin esperar a que alguien del equipo lo reporte',
       'Recuperación después de un corte de luz o de internet: que todo vuelva solo y verificar que así fue',
       'Certificados, dominios y rutas públicas vigentes — que nadie se tope con un "sitio no seguro"'
@@ -277,9 +279,9 @@ const scopeCards = [
     icon: '🔧',
     title: 'Arreglos y mantenimiento',
     items: [
-      'Corrección de fallas en el CRM y en los sitios: lo que se reporta se atiende y se comunica cuando queda',
+      'Corrección de fallas en el servidor, en los sitios, en el correo y en el CRM: lo que se reporta se atiende y se comunica cuando queda',
       'Publicación de las correcciones sin tirar el servicio — el equipo sigue trabajando mientras se despliega',
-      'Actualizaciones de seguridad de la plataforma y de sus dependencias',
+      'Actualizaciones de seguridad del servidor, de WordPress y de las dependencias de cada servicio',
       'Ajustes de configuración: permisos, catálogos, parámetros de la cuenta y de los departamentos',
       'Revisión de que los procesos automáticos del CRM (ediciones, cobranza, avisos) sigan corriendo'
     ]
@@ -308,10 +310,30 @@ const scopeCards = [
 ]
 
 const servicios = [
-  { name: 'CRM de Campestre Media', detail: 'La plataforma completa: contactos, negocios, contratos, ediciones, cobranza y calendario de producción' },
-  { name: 'Correo del CRM', detail: 'El dominio de envío de Campestre, su reputación y la entrega de lo que el sistema manda' },
-  { name: 'Sitios web del grupo', detail: 'Los sitios operados por Fullstack Labs, conforme se vayan publicando' },
-  { name: 'Servidores e infraestructura', detail: 'El servidor donde corre todo, sus servicios, sus rutas públicas y su recuperación' }
+  {
+    name: 'Su servidor',
+    detail: 'El servidor de Campestre Media completo: los servicios que corren en él, su espacio y memoria, sus actualizaciones, sus certificados y su recuperación. Hoy ese mismo servidor carga el sitio, el correo y los nameservers del grupo, así que atenderlo es atender las tres cosas.'
+  },
+  {
+    name: 'Correo del grupo',
+    detail: 'Los buzones @campestre.media: que entreguen y que reciban, su reputación frente a Gmail y Outlook, salida de listas negras, y los registros que lo sostienen (MX, SPF, DKIM y rutas de rebote) — más el dominio de envío del CRM.'
+  },
+  {
+    name: 'Dominios y DNS',
+    detail: 'Las zonas y los registros del grupo, incluidos sus propios nameservers, los certificados y las vigencias de los dominios. Un registro mal puesto tira el correo o el sitio entero, y es de lo más rápido de arreglar si alguien lo está viendo.'
+  },
+  {
+    name: 'Sitios web',
+    detail: 'campestre.media y los demás sitios del grupo — los que ya existen y los que se vayan publicando — incluyendo WordPress y sus actualizaciones.'
+  },
+  {
+    name: 'CRM de Campestre Media',
+    detail: 'La plataforma completa: contactos, negocios, contratos, ediciones, cobranza y calendario de producción, con sus procesos automáticos.'
+  },
+  {
+    name: 'Bases de datos',
+    detail: 'Las bases que están detrás del sitio, del correo y del CRM: que estén arriba, que respondan y que no se llenen sin avisar.'
+  }
 ]
 
 const tiempos = [
