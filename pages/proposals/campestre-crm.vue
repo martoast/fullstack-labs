@@ -72,25 +72,9 @@
         </h3>
         <div class="sm:ml-11">
           <p class="text-sm text-gray-600 leading-relaxed">
-            La observación central de la sesión fue correcta, y al revisarla en la base de datos resultó
-            ser más grande de lo que se veía en pantalla:
+            La observación central de la sesión fue correcta, y al revisarla a fondo resultó ser más
+            grande de lo que se veía en pantalla.
           </p>
-          <div class="mt-3 rounded-lg border border-gray-200 p-4 sm:p-5">
-            <div class="grid grid-cols-3 gap-3 text-center">
-              <div>
-                <p class="text-2xl font-bold text-gray-900">8</p>
-                <p class="text-xs text-gray-500 mt-0.5 leading-snug">negocios marcados como cerrados</p>
-              </div>
-              <div>
-                <p class="text-2xl font-bold text-gray-900">$208,000</p>
-                <p class="text-xs text-gray-500 mt-0.5 leading-snug">valor de esos cierres</p>
-              </div>
-              <div>
-                <p class="text-2xl font-bold text-sky-700">0</p>
-                <p class="text-xs text-gray-500 mt-0.5 leading-snug">contratos ligados a ellos</p>
-              </div>
-            </div>
-          </div>
           <p class="text-sm text-gray-600 leading-relaxed mt-3">
             El tablero comercial y el módulo de contratos funcionan hoy como dos sistemas separados:
             marcar un negocio como cerrado no produce contrato, ni calendario de pagos, ni entregables,
@@ -376,12 +360,12 @@ const modulos = [
     icon: '🔗',
     highlight: true,
     title: 'Unir el tablero comercial con los contratos',
-    porque: 'Es el punto que detonó la revisión: hoy hay ocho cierres marcados y ningún contrato detrás.',
+    porque: 'Es el punto que detonó la revisión: marcar un cierre en el tablero no deja hoy ningún contrato detrás.',
     items: [
       'Cerrar un negocio lleva a generar su contrato, en lugar de quedarse como una marca suelta en el tablero',
       'El contrato queda ligado al negocio que lo originó, y el negocio refleja el estado real del contrato',
       'La cifra de ventas del mes deja de depender de que alguien marque una casilla y pasa a salir de contratos reales',
-      'Revisión de los ocho cierres que hoy existen sin contrato, para dejarlos consistentes'
+      'Revisión de los cierres que hoy existen sin contrato, para dejarlos consistentes'
     ]
   },
   {
