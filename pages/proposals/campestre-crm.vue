@@ -24,7 +24,7 @@
           </div>
           <div class="text-left sm:text-right">
             <p class="text-xl sm:text-2xl font-semibold tracking-wide">ALCANCE DE TRABAJO</p>
-            <p class="text-sky-200 text-xs sm:text-sm mt-1">24 de septiembre, 2026</p>
+            <p class="text-sky-200 text-xs sm:text-sm mt-1">10 de octubre, 2026</p>
           </div>
         </div>
       </div>
@@ -41,64 +41,138 @@
           <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Para</p>
           <p class="font-semibold text-gray-900">Ricardo Ochoa</p>
           <p class="text-gray-600">Campestre Media</p>
+          <p class="text-gray-600">Proyecto: Reestructuración del CRM</p>
         </div>
       </div>
 
       <!-- Project Title -->
       <div class="px-5 sm:px-10 pt-6 sm:pt-8 pb-3 sm:pb-4">
         <h2 class="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">
-          Siguiente etapa del CRM — Campestre Media
+          Reestructuración del CRM — Campestre Media
         </h2>
         <p class="text-gray-500 text-sm sm:text-base mt-2 leading-relaxed">
-          Este documento recoge, punto por punto, lo que se revisó en la sesión del 24 de septiembre
-          con Ricardo Ochoa navegando el sistema en vivo. Cada punto quedó verificado contra la
-          plataforma real antes de escribirse aquí: lo que ya está hecho, lo que está a medias y lo
-          que hay que construir.
+          Este documento recoge lo que se acordó en la llamada del 10 de octubre con Ricardo Ochoa, y
+          <strong class="text-gray-700">sustituye al alcance del 24 de septiembre</strong>. La dirección
+          cambió: Campestre Media va a seguir cotizando fuera de la plataforma, y el CRM deja de ser un
+          cotizador para convertirse en el lugar donde esa cotización, una vez aprobada, se vuelve
+          tareas, calendario y cobranza. Cada punto fue verificado contra la plataforma y los datos
+          reales de la cuenta antes de escribirse aquí.
         </p>
         <div class="mt-4 rounded-lg bg-sky-50 border border-sky-200 p-4">
           <p class="text-sm text-sky-900 font-semibold">Este documento no incluye precios.</p>
           <p class="text-xs text-sky-700 mt-1 leading-relaxed">
-            El propósito es acordar primero <strong>qué</strong> se va a hacer. Una vez que Campestre
-            Media valide el alcance —y descarte lo que no quiera— se cotiza sobre lo aprobado.
+            El propósito es acordar primero <strong>qué</strong> se va a hacer y en qué orden. Una vez
+            que Campestre Media valide el alcance —y descarte lo que no quiera— se cotiza sobre lo aprobado.
           </p>
         </div>
       </div>
 
-      <!-- 1. Punto de partida -->
+      <!-- 1. La nueva forma de trabajar -->
       <section class="px-5 sm:px-10 py-5 sm:py-6">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">1</span>
-          Punto de partida
+          La nueva forma de trabajar
         </h3>
         <div class="sm:ml-11">
           <p class="text-sm text-gray-600 leading-relaxed">
-            La observación central de la sesión fue correcta, y al revisarla a fondo resultó ser más
-            grande de lo que se veía en pantalla.
+            La plataforma se construyó para cotizar desde adentro: catálogo de paquetes, contratos,
+            propuesta impresa, calendario de pagos y cobro por Stripe. Campestre Media ya tiene una forma
+            de cotizar que le funciona y no la va a cambiar. Así que el CRM se simplifica alrededor de
+            un solo flujo, en el lenguaje del equipo:
           </p>
-          <p class="text-sm text-gray-600 leading-relaxed mt-3">
-            El tablero comercial y el módulo de contratos funcionan hoy como dos sistemas separados:
-            marcar un negocio como cerrado no produce contrato, ni calendario de pagos, ni entregables,
-            ni cobranza. Por eso el asesor tiene razón cuando dice que cerró, la dirección tiene razón
-            cuando dice que no aparece, y el sistema no está mintiendo — simplemente nadie le pidió
-            todavía que uniera las dos mitades. <strong class="text-gray-800">Cerrar esa costura es el
-            primer punto de este alcance</strong>, y de ella cuelga casi todo lo demás.
+          <div class="mt-4 grid grid-cols-1 sm:grid-cols-5 gap-2">
+            <div v-for="(f, i) in flujo" :key="i" class="rounded-lg border border-sky-200 bg-sky-50 p-3 text-center avoid-break">
+              <p class="text-sky-700 text-xs font-bold tracking-wider">{{ i + 1 }}</p>
+              <p class="text-sky-900 text-sm font-semibold mt-1 leading-snug">{{ f.title }}</p>
+              <p class="text-sky-700 text-xs mt-1 leading-relaxed">{{ f.detail }}</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mt-4">
+            Y dos palabras en lugar de diez: <strong class="text-gray-800">prospecto</strong> mientras no
+            haya una cotización aprobada, <strong class="text-gray-800">cliente</strong> a partir de que la
+            hay. Todo lo que no cabe en ese flujo se retira de la pantalla.
           </p>
         </div>
       </section>
 
-      <!-- 2. Lo que ya está hecho -->
+      <!-- 2. Lo que se retira -->
       <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">2</span>
-          Lo que ya está hecho y no hay que volver a pedir
+          Lo que se retira de la plataforma
         </h3>
         <div class="sm:ml-11">
           <p class="text-sm text-gray-600 leading-relaxed mb-3">
-            Varias de las solicitudes de la sesión ya están construidas y en uso. Se listan aquí para
-            que no entren a la cotización y para que el equipo sepa dónde encontrarlas.
+            Se quita de los menús y de las pantallas todo lo que pertenecía al cotizador o que el equipo
+            no usa. Los datos que podrían servir después se conservan apagados, no se destruyen.
           </p>
           <div class="space-y-2">
-            <div v-for="(y, i) in yaHecho" :key="i" class="border border-gray-200 rounded-lg p-3 sm:p-4 flex items-start gap-3">
+            <div v-for="(r, i) in retira" :key="i" class="border border-gray-200 rounded-lg p-3 sm:p-4 flex items-start gap-3 avoid-break">
+              <span class="text-red-400 mt-0.5 shrink-0">✕</span>
+              <div class="min-w-0">
+                <p class="font-semibold text-gray-900 text-sm">{{ r.name }}</p>
+                <p class="text-gray-400 text-xs mt-1 leading-relaxed">{{ r.detail }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-4">
+            <p class="text-xs font-semibold text-gray-700 mb-1">Lo que se queda en la ficha del cliente</p>
+            <p class="text-xs text-gray-500 leading-relaxed">
+              Datos, etiquetas, campos personalizados, <strong class="text-gray-700">Expediente</strong> (que pasa a
+              decir «Sube tu cotización aquí»), Seguimiento (la bitácora de llamadas y WhatsApp),
+              Conversación y correo, Notas, y <strong class="text-gray-700">Tareas</strong> — que hoy existe pero
+              está oculto, y es el panel desde donde una tarea nace ligada a un cliente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Lo que se construye -->
+      <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
+          Lo que se construye
+        </h3>
+        <div class="sm:ml-11 space-y-4">
+          <div
+            v-for="(m, i) in modulos"
+            :key="i"
+            :class="['rounded-lg p-4 sm:p-5 scope-card avoid-break', m.highlight ? 'bg-sky-50 border border-sky-200' : 'border border-gray-200']"
+          >
+            <div class="flex items-start gap-3">
+              <span class="text-lg sm:text-xl shrink-0">{{ m.icon }}</span>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-start justify-between gap-3">
+                  <h4 :class="['font-semibold', m.highlight ? 'text-sky-900' : 'text-gray-900']">{{ m.title }}</h4>
+                  <span v-if="m.tag" class="bg-white border border-sky-200 text-sky-700 rounded-md px-2 py-0.5 text-xs font-bold shrink-0 whitespace-nowrap">{{ m.tag }}</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-1 leading-relaxed italic">{{ m.porque }}</p>
+                <ul class="mt-2 space-y-1.5">
+                  <li v-for="(item, j) in m.items" :key="j" class="flex items-start text-sm text-gray-600">
+                    <span :class="['mr-2 mt-0.5 shrink-0', m.highlight ? 'text-sky-500' : 'text-gray-300']">▸</span>
+                    <span class="leading-relaxed">{{ item }}</span>
+                  </li>
+                </ul>
+                <p v-if="m.nota" class="text-xs text-gray-500 mt-3 leading-relaxed border-t border-gray-200/70 pt-2"><span class="font-medium text-gray-700">Nota:</span> {{ m.nota }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Lo que ya existe -->
+      <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">4</span>
+          Lo que ya existe y es la base de lo nuevo
+        </h3>
+        <div class="sm:ml-11">
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            Buena parte del flujo nuevo se apoya en piezas que ya están construidas y en uso. Se listan
+            para que no entren a la cotización y para dejar claro sobre qué se construye.
+          </p>
+          <div class="space-y-2">
+            <div v-for="(y, i) in yaHecho" :key="i" class="border border-gray-200 rounded-lg p-3 sm:p-4 flex items-start gap-3 avoid-break">
               <span class="text-green-600 mt-0.5 shrink-0">✓</span>
               <div class="min-w-0">
                 <p class="font-semibold text-gray-900 text-sm">{{ y.name }}</p>
@@ -109,74 +183,66 @@
         </div>
       </section>
 
-      <!-- 3. Ajustes -->
-      <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
-        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">3</span>
-          Ajustes al sistema actual
-        </h3>
-        <div class="sm:ml-11">
-          <p class="text-sm text-gray-600 leading-relaxed mb-3">
-            Cosas que ya existen pero se quedaron a medias. Son de bajo esfuerzo y alto efecto: varias
-            de ellas son la razón por la que la plataforma se siente incompleta al usarla.
-          </p>
-          <div class="space-y-2">
-            <div v-for="(a, i) in ajustes" :key="i" class="border border-gray-200 rounded-lg p-3 sm:p-4">
-              <p class="font-semibold text-gray-900 text-sm">{{ a.name }}</p>
-              <p class="text-gray-500 text-xs mt-1 leading-relaxed"><span class="font-medium text-gray-600">Hoy:</span> {{ a.hoy }}</p>
-              <p class="text-gray-500 text-xs mt-0.5 leading-relaxed"><span class="font-medium text-sky-700">Queda:</span> {{ a.queda }}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. Modulos nuevos -->
-      <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
-        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">4</span>
-          Módulos nuevos
-        </h3>
-        <div class="sm:ml-11 space-y-4">
-          <div
-            v-for="(m, i) in modulos"
-            :key="i"
-            :class="['rounded-lg p-4 sm:p-5 scope-card avoid-break', m.highlight ? 'bg-sky-50 border border-sky-200' : 'border border-gray-200']"
-          >
-            <div class="flex items-start gap-3">
-              <span class="text-lg sm:text-xl shrink-0">{{ m.icon }}</span>
-              <div class="min-w-0">
-                <h4 :class="['font-semibold', m.highlight ? 'text-sky-900' : 'text-gray-900']">{{ m.title }}</h4>
-                <p class="text-xs text-gray-500 mt-1 leading-relaxed italic">{{ m.porque }}</p>
-                <ul class="mt-2 space-y-1.5">
-                  <li v-for="(item, j) in m.items" :key="j" class="flex items-start text-sm text-gray-600">
-                    <span :class="['mr-2 mt-0.5 shrink-0', m.highlight ? 'text-sky-500' : 'text-gray-300']">▸</span>
-                    <span class="leading-relaxed">{{ item }}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. Decisiones -->
+      <!-- 5. Orden y entregas -->
       <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">5</span>
-          Decisiones que hay que tomar antes de empezar
+          Orden de trabajo y entregas
         </h3>
-        <div class="sm:ml-11 space-y-3">
-          <div v-for="(d, i) in decisiones" :key="i" class="rounded-lg border border-gray-200 p-4 avoid-break">
-            <p class="font-semibold text-gray-900 text-sm">{{ d.pregunta }}</p>
-            <p class="text-gray-500 text-xs mt-1 leading-relaxed">{{ d.detalle }}</p>
+        <div class="sm:ml-11">
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            Ricardo lo necesita operando el lunes 12. Lo honesto es separar lo que cabe en un fin de
+            semana de lo que no, y entregar el flujo completo primero aunque una pieza llegue después.
+          </p>
+          <div class="space-y-3">
+            <div v-for="(e, i) in entregas" :key="i" :class="['rounded-lg p-4 avoid-break', e.highlight ? 'bg-sky-50 border border-sky-200' : 'border border-gray-200']">
+              <div class="flex items-start gap-3">
+                <span :class="['rounded-md px-2 py-1 text-xs font-bold shrink-0 whitespace-nowrap', e.highlight ? 'bg-sky-600 text-white' : 'bg-gray-100 text-gray-600']">{{ e.label }}</span>
+                <div class="min-w-0">
+                  <p :class="['font-semibold text-sm', e.highlight ? 'text-sky-900' : 'text-gray-900']">{{ e.title }}</p>
+                  <ul class="mt-2 space-y-1">
+                    <li v-for="(item, j) in e.items" :key="j" class="flex items-start text-xs sm:text-sm text-gray-600">
+                      <span :class="['mr-2 mt-0.5 shrink-0', e.highlight ? 'text-sky-500' : 'text-gray-300']">▸</span>
+                      <span class="leading-relaxed">{{ item }}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-500 text-xs mt-3 leading-relaxed">
+            El atajo que hace posible el lunes: el asistente de revisión que el lector de PDF necesita de
+            todas formas se construye primero y se alimenta a mano. Así el flujo cotización aprobada →
+            tareas → cobranza funciona desde el primer día, y la lectura automática del PDF llega encima,
+            como acelerador, no como requisito.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. Decisiones -->
+      <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">6</span>
+          Decisiones de Campestre Media antes de empezar
+        </h3>
+        <div class="sm:ml-11">
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            Ninguna se puede adivinar desde el código, y varias escriben datos en la base: elegir mal
+            significa volver a capturar, no un arreglo de software.
+          </p>
+          <div class="space-y-3">
+            <div v-for="(d, i) in decisiones" :key="i" class="rounded-lg border border-gray-200 p-4 avoid-break">
+              <p class="font-semibold text-gray-900 text-sm">{{ d.pregunta }}</p>
+              <p class="text-gray-500 text-xs mt-1 leading-relaxed">{{ d.detalle }}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- 6. Lo que necesitamos de Campestre -->
+      <!-- 7. Lo que necesitamos -->
       <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">6</span>
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">7</span>
           Lo que necesitamos de Campestre Media
         </h3>
         <div class="sm:ml-11">
@@ -186,39 +252,41 @@
               <span class="leading-relaxed">{{ n }}</span>
             </li>
           </ul>
-          <p class="text-gray-500 text-xs mt-3 leading-relaxed">
-            Sin estos tres insumos el trabajo se detiene a media construcción, que es exactamente lo que
-            ha pasado hasta ahora: se avanza por lo que se alcanza a definir en cada sesión en lugar de
-            trabajar contra un alcance completo.
-          </p>
         </div>
       </section>
 
-      <!-- 7. Orden -->
-      <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
-        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
-          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">7</span>
-          Orden sugerido
-        </h3>
-        <div class="sm:ml-11 space-y-2">
-          <div v-for="(o, i) in orden" :key="i" class="rounded-lg border border-gray-200 p-3 sm:p-4 flex items-start gap-3 avoid-break">
-            <span class="w-7 h-7 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-bold shrink-0">{{ i + 1 }}</span>
-            <div class="min-w-0">
-              <p class="font-semibold text-gray-900 text-sm">{{ o.title }}</p>
-              <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">{{ o.detail }}</p>
-            </div>
-          </div>
-          <p class="text-gray-500 text-xs mt-2 leading-relaxed">
-            Es una propuesta de prioridad, no un calendario. Las fechas se fijan al cotizar, sobre el
-            alcance que Campestre Media haya aprobado.
-          </p>
-        </div>
-      </section>
-
-      <!-- 8. Fuera de alcance -->
+      <!-- 8. Datos -->
       <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">8</span>
+          Qué pasa con los datos que ya están en la cuenta
+        </h3>
+        <div class="sm:ml-11">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border border-gray-200 rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-gray-50 text-left text-xs text-gray-500 uppercase tracking-wider">
+                  <th class="px-3 py-2 font-semibold">Dato</th>
+                  <th class="px-3 py-2 font-semibold">Hoy</th>
+                  <th class="px-3 py-2 font-semibold">Qué pasa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(d, i) in datos" :key="i" class="border-t border-gray-200 align-top">
+                  <td class="px-3 py-2 font-medium text-gray-900 whitespace-nowrap">{{ d.name }}</td>
+                  <td class="px-3 py-2 text-gray-500 text-xs">{{ d.hoy }}</td>
+                  <td class="px-3 py-2 text-gray-600 text-xs">{{ d.que }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Fuera de alcance -->
+      <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
+        <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
+          <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">9</span>
           Fuera de este alcance
         </h3>
         <div class="sm:ml-11">
@@ -235,11 +303,12 @@
       <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-200 mt-2 sm:mt-4">
         <h3 class="text-xs sm:text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Notas</h3>
         <ul class="text-sm text-gray-500 space-y-1.5 list-disc list-outside pl-5">
-          <li>Este documento es un alcance, no una cotización. No contiene precios ni fechas: el propósito es acordar primero qué se construye.</li>
-          <li>Cada punto fue verificado contra la plataforma en producción antes de escribirse. Lo que aparece en la sección 2 ya está hecho y no forma parte de lo que haya que cotizar.</li>
-          <li>Campestre Media puede descartar cualquier punto de las secciones 3 y 4; lo que quede aprobado es lo que se cotiza.</li>
-          <li>Durante la sesión del 24 de septiembre quedaron registros de prueba en la base de datos — un contacto, tres contratos en borrador y uno activo. Se eliminan en cuanto Campestre Media lo indique, para que no afecten sus cifras.</li>
-          <li>La secuencia de la sección 7 es una recomendación de prioridad basada en las dependencias técnicas entre módulos, no un compromiso de calendario.</li>
+          <li>Este documento es un alcance, no una cotización. No contiene precios: el propósito es acordar primero qué se construye y en qué orden.</li>
+          <li>Sustituye al alcance del 24 de septiembre. Lo que ahí se planteaba —unir el tablero comercial con los contratos, el catálogo por duración, la aprobación de la propuesta desde el CRM— se resuelve de otra manera o deja de aplicar con el flujo nuevo.</li>
+          <li>Al retirar el cotizador se retira también lo que se había construido para él: la propuesta comercial impresa, el catálogo de ocho paquetes con sus cuarenta partidas, el cobro por Stripe y el reparto de entregables desde un contrato firmado. Nada de eso llegó a usarse en producción con un cliente real, y los datos se conservan apagados.</li>
+          <li>La cobranza es un registro interno: el sistema no emite facturas ni cobra a nadie. Los cobros automáticos por Stripe que existían para los contratos se apagan en el mismo cambio.</li>
+          <li>Campestre Media puede descartar cualquier punto de la sección 3; lo que quede aprobado es lo que se cotiza.</li>
+          <li>La vista del cliente con evidencias (sección 9) quedó acordada como fase posterior, y se cotiza aparte cuando toque.</li>
         </ul>
       </section>
 
@@ -281,14 +350,14 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Alcance de trabajo — Siguiente etapa del CRM, Campestre Media | Fullstack Labs',
-  description: 'Alcance de la siguiente etapa del CRM de Campestre Media, levantado de la sesión del 24 de septiembre: unir el pipeline con los contratos, tablero por asesor, lectura de cotizaciones en PDF y calendario de entregables.',
+  title: 'Alcance de trabajo — Reestructuración del CRM, Campestre Media | Fullstack Labs',
+  description: 'Alcance de trabajo de Fullstack Labs para Campestre Media: el CRM deja de ser un cotizador. Cotización aprobada → tareas con subtareas → calendario → cobranza. Sin precios.',
   author: 'Alejandro Martos — Fullstack Labs',
   robots: 'noindex, nofollow',
   ogType: 'website',
   ogSiteName: 'Fullstack Labs',
-  ogTitle: 'Alcance de trabajo — Siguiente etapa del CRM, Campestre Media | Fullstack Labs',
-  ogDescription: 'Lo que ya está hecho, lo que está a medias y lo que falta construir. Sin precios: primero se acuerda el alcance.',
+  ogTitle: 'Alcance de trabajo — Reestructuración del CRM, Campestre Media | Fullstack Labs',
+  ogDescription: 'El CRM deja de ser un cotizador: cotización aprobada → tareas → calendario → cobranza.',
   ogUrl: 'https://fullstacklabs.org/proposals/campestre-crm',
   ogImage: 'https://fullstacklabs.org/og.png',
   ogImageWidth: 1200,
@@ -296,175 +365,225 @@ useSeoMeta({
   ogImageAlt: 'Fullstack Labs',
   ogLocale: 'es_MX',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Alcance de trabajo — Siguiente etapa del CRM, Campestre Media | Fullstack Labs',
-  twitterDescription: 'Lo que ya está hecho, lo que está a medias y lo que falta construir. Sin precios: primero se acuerda el alcance.',
+  twitterTitle: 'Alcance de trabajo — Reestructuración del CRM, Campestre Media | Fullstack Labs',
+  twitterDescription: 'El CRM deja de ser un cotizador: cotización aprobada → tareas → calendario → cobranza.',
   twitterImage: 'https://fullstacklabs.org/og.png',
   twitterImageAlt: 'Fullstack Labs'
 })
 
-const yaHecho = [
-  { name: 'Sector del cliente, administrable por la cuenta', detail: 'Se captura desde la ficha del contacto y la lista la administra Campestre. Hoy son 19 sectores y 64 de 109 contactos ya están clasificados.' },
-  { name: 'El selector de responsable sólo ofrece asesores comerciales', detail: 'Ya está filtrado a los 13 del equipo comercial. En la sesión se vio con cuenta de administrador, que por diseño ve a todos.' },
-  { name: 'Registro manual de llamadas y WhatsApp', detail: 'Desde la ficha del cliente y desde el negocio, con la hora real de la llamada, el resultado y el siguiente paso. El equipo ya lleva 18 gestiones registradas.' },
-  { name: 'Marcar un pago como realmente cobrado', detail: 'Administración puede registrar el pago de cada mensualidad — efectivo, transferencia o tarjeta — y queda reflejado en la cobranza.' },
-  { name: 'Envío de la propuesta al cliente por correo', detail: 'Sale a nombre de Campestre Media desde su propio dominio. Se probó en vivo durante la sesión y llegó correctamente.' },
-  { name: 'Permisos por departamento', detail: 'Producción, diseño y multimedia no alcanzan contactos, negocios, contratos ni cifras; cada asesor ve su propia cartera; gerencia y dirección ven todo.' },
-  { name: 'Cada asesor con su cartera', detail: 'Verificado sobre los datos reales: cada asesor ve exactamente los contactos que tiene asignados, y dirección los 109.' }
+const flujo = [
+  { title: 'Prospecto', detail: 'El asesor lo da de alta y lleva su seguimiento en la ficha.' },
+  { title: 'Cotización', detail: 'Se hace fuera, como hoy, y se sube en PDF a su ficha. Varias versiones, cada una con fecha.' },
+  { title: 'Aprobada', detail: 'Un botón por versión: «ésta fue la que aprobó el cliente». Ahí se vuelve cliente.' },
+  { title: 'Tareas', detail: 'El sistema crea los entregables mes a mes con sus subtareas; la coordinación les pone día y responsable.' },
+  { title: 'Cobranza', detail: 'Los pagos mensuales comprometidos quedan registrados para que Administración los marque cobrados.' }
 ]
 
-const ajustes = [
-  {
-    name: 'Enviar la propuesta debe cambiar el estatus del contrato',
-    hoy: 'Al enviarla se registra la fecha de envío, pero el contrato sigue diciendo "borrador".',
-    queda: 'Que el estatus avance solo al enviar, y poder corregirlo a mano cuando haga falta.'
-  },
-  {
-    name: 'Las cortesías y notas del contrato no salen en la propuesta',
-    hoy: 'Lo que se escribe en Notas — por ejemplo una pantalla digital de cortesía por cuatro meses — no aparece en el documento que ve el cliente.',
-    queda: 'Que las cortesías y bonificaciones se impriman como parte de lo que se está ofreciendo.'
-  },
-  {
-    name: 'El descuento no se aplica',
-    hoy: 'Escribir "10% de descuento" es sólo un texto; no modifica ningún monto.',
-    queda: 'Descuento como cifra real, aplicado al total y visible en la propuesta y en el calendario de pagos.'
-  },
-  {
-    name: 'La duración no se hereda del paquete',
-    hoy: 'Al elegir "Portada 6 meses" hay que teclear 6 aparte. El dato ya viaja a la pantalla y no se usa.',
-    queda: 'Que el paquete fije la duración, y que quede claro si una partida es una por mes o una sola vez.'
-  },
-  {
-    name: 'El "vertical" del contrato es otra lista, distinta a los sectores',
-    hoy: 'Son cinco opciones fijas que no coinciden con los 19 sectores del CRM, y hay que volver a elegirla aunque el contacto ya tenga la suya.',
-    queda: 'Unificar: un solo catálogo de sectores, heredado del cliente, con la opción de cambiarlo si el contrato es para otra de sus empresas.'
-  },
-  {
-    name: 'Un asesor no puede crear contratos',
-    hoy: 'Crear contratos está reservado a dirección y gerencia, que es lo que se vio con la cuenta de Arturo.',
-    queda: 'Abrirlo a los asesores comerciales, y que el vendedor se ponga solo con la persona que lo está creando en lugar de elegirse de una lista.'
-  },
-  {
-    name: 'Partidas del catálogo que no corresponden',
-    hoy: '"1 de 3 lugares en la Página Compartida de su rubro" aparece en Paquete Interiores, y existe una equivalente en Paquete Portada.',
-    queda: 'Depurarlas en el catálogo, no sólo en una propuesta suelta, para que no vuelvan a aparecer.'
-  },
-  {
-    name: 'No se puede corregir un contrato ya creado',
-    hoy: 'Sólo se pueden cambiar las notas y el vertical; cualquier otro cambio obliga a crear uno nuevo.',
-    queda: 'Poder corregir los términos mientras el contrato siga en borrador.'
-  }
+const retira = [
+  { name: 'Contratos y el cotizador', detail: 'Crear un contrato desde paquetes, la propuesta comercial impresa, el calendario de pagos del contrato y el cobro automático por Stripe. La cotización se hace fuera y se sube.' },
+  { name: 'Catálogo de paquetes', detail: 'Los ocho paquetes y sus cuarenta partidas se desactivan. Cada cotización es distinta y el catálogo obligaba a elegir una que no era.' },
+  { name: 'Ediciones (tablero por edición)', detail: 'Se quita la página. Lo que había que ver ahí se verá en el calendario y en las tareas por cliente.' },
+  { name: 'Invoices y Scope of Work', detail: 'Eran el principio de un cotizador propio. Se quitan del menú; si algún día se quiere generar el documento desde el CRM, se retoma.' },
+  { name: 'Calendarios de agendamiento', detail: 'La sección «Calendars» (páginas de reserva de citas) nunca se usó y confunde con el calendario de producción, que es uno solo y se queda.' },
+  { name: 'Automatización', detail: 'Nunca se configuró ninguna. Se quitan los dos paneles que quedaban en la ficha del contacto.' },
+  { name: 'En la ficha del contacto: Deals e Historial comercial', detail: 'El historial queda mejor contado en el Expediente: las cotizaciones aprobadas con su fecha son el historial.' },
+  { name: 'El departamento en las tareas', detail: 'La gente se brinca departamentos; una tarea se asigna a una persona y punto.' }
 ]
 
 const modulos = [
   {
-    icon: '🔗',
+    icon: '📎',
     highlight: true,
-    title: 'Unir el tablero comercial con los contratos',
-    porque: 'Es el punto que detonó la revisión: marcar un cierre en el tablero no deja hoy ningún contrato detrás.',
+    tag: 'Base del flujo',
+    title: 'Cotizaciones en la ficha del cliente, con versiones y «ésta fue la aprobada»',
+    porque: 'El Expediente ya guarda cotizaciones en PDF (hay cinco subidas por cuatro personas del equipo); lo que falta es que el sistema sepa cuál es cuál y cuál ganó.',
     items: [
-      'Cerrar un negocio lleva a generar su contrato, en lugar de quedarse como una marca suelta en el tablero',
-      'El contrato queda ligado al negocio que lo originó, y el negocio refleja el estado real del contrato',
-      'La cifra de ventas del mes deja de depender de que alguien marque una casilla y pasa a salir de contratos reales',
-      'Revisión de los cierres que hoy existen sin contrato, para dejarlos consistentes'
-    ]
-  },
-  {
-    icon: '📊',
-    highlight: true,
-    title: 'Tablero directivo con desglose por asesor',
-    porque: 'Hoy el tablero muestra dinero agregado, pero no dice quién vendió qué. Ese corte no existe en ninguna pantalla.',
-    items: [
-      'Total colocado en el mes, sumando los contratos cerrados — no el dinero cobrado, sino lo vendido',
-      'Desglose por asesor: cuánto colocó cada uno y con qué clientes',
-      'Ranking del mes con los montos de cada quien',
-      'Entrar al detalle de un asesor: contactos que agregó, negocios que cerró y cuáles fueron',
-      'Separación explícita entre lo VENDIDO y lo COBRADO, que en contratos diferidos a meses no son lo mismo',
-      'Base total de contactos de la cuenta, alimentada por todos los asesores'
+      'El panel pasa a decir «Sube tu cotización aquí», para que el asesor sepa exactamente dónde va',
+      'Cada cotización se guarda como una versión fechada: se ve cuándo se subió la primera, cuándo la segunda, y cuánto pasó entre las dos',
+      'Botón «Esta fue la que aprobó el cliente» en cada versión; sólo una por cliente puede estar aprobada',
+      'Al aprobar, un proceso guiado: «tu cliente aprobó esta cotización; se van a crear las tareas y los compromisos de pago», con el enlace a ambos',
+      'Aviso automático a la coordinación: «se aprobó la cotización de X, se crearon N tareas, te toca asignarlas»',
+      'El contacto pasa de prospecto a cliente en ese momento, sin captura adicional'
     ]
   },
   {
     icon: '📄',
     highlight: true,
-    title: 'Lectura de cotizaciones en PDF',
-    porque: 'Las cotizaciones se elaboran fuera de la plataforma y hoy no hay forma de que el sistema sepa qué se prometió.',
+    tag: 'Acelerador',
+    title: 'Lectura de la cotización en PDF',
+    porque: 'La cotización ya trae el desglose mes a mes. Hoy alguien lo copia a mano, tarea por tarea, con fecha 15 de cada mes.',
     items: [
-      'Subir la cotización al CRM y que el sistema extraiga cliente, empresa, entregables y montos',
-      'Que identifique EN QUÉ MES va cada entregable, que es lo que alimenta el calendario de producción',
-      'Que el contrato y sus entregables queden creados a partir de ese documento, sin recapturar nada',
-      'Revisión humana antes de guardar: el sistema propone lo que leyó y una persona lo confirma',
-      'Consideración técnica: conviene subir el documento original en PDF o Word. Un documento escaneado es una imagen y requiere un reconocimiento de texto adicional, más lento y menos confiable'
+      'Se sube el PDF y el sistema extrae el desglose: para cada mes, el entregable grande y sus entregables individuales («Cobertura de evento 4x4 → nota web con galería, video de entrevistas, video recap, publicación en redes»)',
+      'También extrae los montos mensuales comprometidos, que alimentan la cobranza',
+      'Pantalla de revisión obligatoria: el sistema propone lo que leyó, una persona lo corrige y confirma, y sólo entonces se crean las tareas',
+      'Un documento escaneado (imagen sin texto) se rechaza con un mensaje claro en lugar de devolver un desglose vacío; se captura a mano en la misma pantalla',
+      'Se construye contra las cotizaciones reales que ya están en el sistema y contra el acta de constitución y el calendario de entregables que Ricardo va a mandar'
+    ],
+    nota: 'Las cinco cotizaciones que ya están en la cuenta tienen cinco estructuras distintas (columnas por mes, secciones por mes y tema, numeración que cambia). Por eso la revisión humana no es un lujo: es la pieza que hace que una lectura imperfecta no se convierta en 18 tareas mal creadas. Si el documento que se lee es el acta de constitución y tiene formato fijo, el riesgo baja mucho.'
+  },
+  {
+    icon: '✅',
+    highlight: true,
+    tag: 'Núcleo',
+    title: 'Tareas con subtareas, detalle editable y «fecha por confirmar»',
+    porque: 'Hoy una tarea es un título, una fecha y una persona; no se puede editar después de crearla y no tiene cómo guardar sus partes.',
+    items: [
+      'Entregable grande con subtareas: cada entregable individual es una subtarea con su propio responsable; una persona hace la nota web, otra el video',
+      'Entregable extra escrito a mano, en texto libre, no de una lista',
+      'Página de detalle de cada tarea: fecha, hora, lugar, responsable, subtareas, descripción y cliente, todo editable',
+      'Al cambiar la fecha o la hora, aviso automático a los responsables',
+      '«Mes asignado, día por confirmar» como estado propio: al crearse desde la cotización la tarea trae el mes y no el día; en el calendario cae en una fecha fija del mes con una etiqueta y un color que dicen que falta confirmarla',
+      'Marcar completada pide confirmación y se puede deshacer; borrar sigue siendo definitivo y también pide confirmación',
+      'Se quita el campo de departamento; la tarea se asigna a una persona'
     ]
   },
   {
-    icon: '📅',
-    title: 'Fechas por confirmar como tarea pendiente',
-    porque: 'Una cobertura de evento o un programa vendido "para octubre" no traen día, y hoy el entregable queda sin fecha y fuera del calendario.',
+    icon: '🗂️',
+    highlight: true,
+    tag: 'Núcleo',
+    title: 'Tablero de tareas por cliente y por mes, y una sola cosa con el calendario',
+    porque: 'Van a ser cientos de tareas en cuanto se carguen los contratos ya firmados; una lista plana ordenada por fecha no sirve.',
     items: [
-      'Cuando la cotización no especifica el día, el entregable queda como pendiente de agendar en lugar de perderse',
-      'El administrador recibe la tarea de asignar fecha compromiso para ese cliente',
-      'Vista por mes: qué hay que entregar a cada cliente aunque todavía no tenga día exacto',
-      'Al firmar un contrato, avisar cuántos entregables quedaron sin fecha y sin responsable'
+      'Agrupado por cliente y, dentro, por mes: «Core Medical Institute — 18 tareas», «Septiembre: 3, día y hora sin confirmar»',
+      'Filtros: por mes, cumplidas, pendientes de asignar, pendientes de fecha, por persona y por cliente',
+      'Tareas y calendario dejan de ser dos cosas: el calendario es la vista por días de las mismas tareas, con la misma capacidad de edición en los dos lados',
+      'Lo que ya está en vivo se conserva: las tareas con fecha se dibujan en el calendario, se arrastran para cambiarles el día, y una semana vacía dice dónde está el trabajo siguiente',
+      'El panel de Tareas de la ficha del cliente se vuelve visible: es desde donde una tarea nace ligada a un cliente'
+    ],
+    nota: 'Hoy el calendario de producción (actividades) y las tareas son dos motores distintos. Unirlos es la decisión técnica más grande de este alcance y conviene tomarla antes de escribir código; la recomendación es que la tarea sea la única entidad y el calendario su vista, que es exactamente «la misma cosa con la misma interfaz».'
+  },
+  {
+    icon: '💰',
+    highlight: true,
+    tag: 'Administración',
+    title: 'Compromisos de pago y tablero de cobranza',
+    porque: 'Una portada de $300,000 en 12 pagos no son $300,000 en el mes: es lo vendido contra lo cobrado, y hoy nadie lo ve.',
+    items: [
+      'Al aprobar una cotización se crean sus pagos mensuales comprometidos (monto y mes), sin generar ninguna factura ni cobrar a nadie',
+      'Administración marca cada pago como cobrado (efectivo, transferencia o tarjeta) o pendiente',
+      'Tablero de cobranza: cuánto ingresó este mes, cuánto está comprometido para el siguiente, qué está vencido, y el corte por cliente',
+      'Vendido contra cobrado: el valor colocado por las cotizaciones aprobadas frente a lo que realmente ha entrado',
+      'Visible sólo para las personas que Campestre Media designe (Ricardo y Alexandra Nevarez)'
+    ],
+    nota: 'Hay una decisión de datos aquí: la cotización dice «$20,000 + IVA mensuales». Hay que fijar si el compromiso se registra con o sin IVA, porque es lo que Administración va a marcar como cobrado.'
+  },
+  {
+    icon: '🏆',
+    highlight: false,
+    tag: 'Dirección',
+    title: 'Ranking de ventas por asesor',
+    porque: 'Quién vendió qué este mes, con montos, a partir de las cotizaciones aprobadas.',
+    items: [
+      'Ventas del mes: cuántas cotizaciones se aprobaron y la suma de sus montos',
+      'Por asesor: cuánto colocó cada quien y con qué clientes, en orden',
+      'Entrar al detalle de un asesor: sus clientes, sus cotizaciones aprobadas y sus montos',
+      'Se construye sobre el reporte por vendedor que ya existe, apuntándolo a la cotización aprobada en lugar del contrato'
     ]
   },
   {
-    icon: '✍️',
-    title: 'Aprobación de la propuesta por el cliente',
-    porque: 'Hoy el cliente responde por fuera y alguien del equipo tiene que marcar el cierre a mano.',
+    icon: '🧹',
+    highlight: false,
+    tag: 'Arranque',
+    title: 'Limpieza, lenguaje y menú',
+    porque: 'La cuenta tiene que verse limpia y hablar el idioma del equipo desde el primer día.',
     items: [
-      'El cliente abre su propuesta y la aprueba desde ahí',
-      'La aprobación queda registrada con fecha y deja el contrato activo sin captura manual',
-      'Aviso al asesor y a dirección en el momento en que el cliente aprueba'
+      'Borrar los datos de prueba que Campestre Media indique: contratos, tareas y los contactos que no sean reales',
+      'Menú y pantallas en español y en el vocabulario acordado: Prospectos, Clientes, Tareas, Calendario, Cobranza',
+      'Retirar del menú y de la ficha todo lo listado en la sección 2',
+      'Las personas que pueden borrar: hoy el borrado de contactos y tareas es del dueño del registro y de dirección; se confirma con Ricardo si debe ampliarse'
+    ]
+  }
+]
+
+const yaHecho = [
+  { name: 'El Expediente del cliente', detail: 'Subir archivos a la ficha, con título, fecha y nota, en disco privado (un archivo no se abre por URL adivinada). Ya hay cinco cotizaciones reales subidas por cuatro personas del equipo. Es la base del flujo nuevo.' },
+  { name: 'Contactos: sectores, puesto, asesores y una persona una ficha', detail: 'Lista de sectores administrada por la cuenta, cargo y empresa como campos separados, cada asesor con su cartera, duplicados bloqueados por nombre. Se queda tal cual.' },
+  { name: 'Bitácora de seguimiento', detail: 'Llamadas, WhatsApp y visitas registradas a mano desde la ficha y desde el negocio, con hora real, resultado y siguiente paso. El equipo lleva 33 gestiones.' },
+  { name: 'Correo desde el CRM con adjuntos y remitente propio', detail: 'Sale a nombre de Campestre Media desde su propio dominio, con PDFs adjuntos. Probado en vivo.' },
+  { name: 'El calendario de producción y las tareas en él', detail: 'Cuadrícula por semana y por mes, arrastre para cambiar de día, y desde el 10 de octubre las tareas con fecha se dibujan ahí y una semana vacía dice dónde está el trabajo siguiente.' },
+  { name: 'Recibos de asignación y avisos al equipo', detail: 'Cuando se asigna trabajo, la persona recibe el aviso (campanita y correo) y confirma que lo vio. Se reutiliza tal cual para avisar a la coordinación.' },
+  { name: 'Permisos por departamento y quién ve el dinero', detail: 'Producción no alcanza contactos ni cifras; cada asesor ve lo suyo; dirección ve todo. El tablero de cobranza se cuelga de esta misma regla.' },
+  { name: 'Tablero de administración (por cobrar, vencido, ingreso del mes)', detail: 'Ya existe para los contratos. Se reapunta a los compromisos de la cotización aprobada y se le agrega el contraste vendido contra cobrado.' }
+]
+
+const entregas = [
+  {
+    highlight: true,
+    label: 'Lunes 12',
+    title: 'El flujo completo, operando',
+    items: [
+      'Cuenta limpia de datos de prueba (con la lista de Campestre Media)',
+      'Menú podado y en español; la ficha sin Deals, Historial comercial ni Automatización; «Sube tu cotización aquí» y el panel de Tareas visible',
+      'Cotizaciones con versiones fechadas y el botón «Esta fue la que aprobó el cliente», con el proceso guiado y el aviso a la coordinación',
+      'El asistente de la cotización aprobada: se captura o pega el desglose mes a mes y los montos, y al confirmar se crean las tareas con subtareas y los compromisos de pago',
+      'Subtareas con responsable, «mes asignado, día por confirmar», detalle de tarea editable (fecha, hora, lugar, responsable), confirmación al completar con deshacer, sin departamento',
+      'Compromisos de pago creados y el tablero de cobranza acotado a quien Ricardo indique; los cobros automáticos por Stripe apagados',
+      'Ranking de ventas por asesor reapuntado a las cotizaciones aprobadas'
     ]
   },
   {
-    icon: '📦',
-    title: 'Catálogo de paquetes por duración',
-    porque: 'Hoy son ocho paquetes con duraciones mezcladas. La idea es que el asesor elija uno y no modifique nada.',
+    highlight: false,
+    label: 'Semana siguiente',
+    title: 'Lo que necesita los documentos de Campestre o una decisión',
     items: [
-      'Cada paquete definido en sus duraciones de 3, 6 y 12 meses, con su precio y sus entregables por mes',
-      'El asesor elige un paquete y el sistema arma el resto',
-      'Lo que se salga del catálogo se maneja aparte, sin ensuciar los paquetes estándar',
-      'Requiere que Campestre Media entregue la definición final de los paquetes'
+      'La lectura automática del PDF, en cuanto lleguen el acta de constitución y el calendario de entregables: pre-llena el mismo asistente que ya se usa a mano',
+      'El tablero agrupado por cliente y mes con sus filtros',
+      'La unificación completa de tareas y calendario, una vez tomada la decisión de la sección 6'
+    ]
+  },
+  {
+    highlight: false,
+    label: 'Después',
+    title: 'Fase posterior, acordada en la llamada',
+    items: [
+      'La vista del cliente: su calendario de entregables en una página propia, con la evidencia de cada entrega (captura, enlace o video) al tocar el bloque, y el reporte mensual de evidencias consultable ahí'
     ]
   }
 ]
 
 const decisiones = [
-  {
-    pregunta: '¿Las cotizaciones se elaboran dentro del CRM o se siguen haciendo fuera y se suben?',
-    detalle: 'En la sesión la preferencia fue seguir elaborándolas fuera, donde ya hay un historial de más de sesenta cotizaciones que da muy buenos resultados, y subirlas al CRM. Esa decisión hace que el trabajo se concentre en la lectura del documento y deja de tener sentido construir un cotizador propio. Son caminos alternativos: no conviene hacer los dos.'
-  },
-  {
-    pregunta: '¿Qué es una "oportunidad" y qué es un "contrato" en el lenguaje de Campestre?',
-    detalle: 'Para Campestre Media una oportunidad es la cotización presentada y un contrato es la cotización cerrada. El sistema usa hoy los mismos conceptos con otros matices. Vale la pena fijar los nombres antes de construir encima, porque de eso dependen los estados, los tableros y los reportes.'
-  },
-  {
-    pregunta: '¿Qué puede hacer exactamente cada rol?',
-    detalle: 'Quedó pendiente la definición por departamento: quién crea contratos, quién administra el catálogo y los programas, quién ve las cifras completas y quién sólo lo suyo. Es dato de Campestre Media y condiciona varias de las pantallas de este alcance.'
-  }
+  { pregunta: '¿Tareas y calendario se unen como una sola entidad?', detalle: 'Hoy son dos motores: el calendario de producción (actividades, con hora, lugar, varias personas y entregables) y las tareas (título, día, una persona). La recomendación es que la tarea sea la única entidad y el calendario su vista. Es la decisión más grande del alcance y define cuánto cuesta el tablero.' },
+  { pregunta: 'Una tarea de la que sólo se sabe el mes, ¿en qué día cae en el calendario?', detalle: 'En la llamada se dijo el día 1. Al capturar a mano se usó el 15, que es el cierre de edición de la revista. Hay que fijar uno porque es lo que verá todo el equipo.' },
+  { pregunta: '¿«Mes 1» de la cotización es el mes en que se aprueba, o el siguiente?', detalle: 'De eso salen tanto las fechas de las tareas como los meses de los compromisos de pago.' },
+  { pregunta: '¿El compromiso de pago se registra con o sin IVA?', detalle: 'La cotización de Core Medical dice «$20,000 + IVA mensuales»: Administración va a marcar cobrados $20,000 o $23,200.' },
+  { pregunta: '¿Quién ve exactamente el tablero de cobranza?', detalle: 'Ricardo dijo él y Alexandra. Con la regla actual de «quién ve el dinero» lo verían también David Figueroa (Dirección) y Jocsan Díaz (Administración). Hay que decir si quedan dentro o fuera.' },
+  { pregunta: '¿Quién puede marcar una cotización como aprobada?', detalle: 'En la llamada, el asesor que la vendió. Aprobar crea tareas y compromisos de pago, así que un error crea 18 tareas. Alternativa: la aprueba el asesor y la valida la coordinación o dirección.' },
+  { pregunta: '¿Qué pasa si se aprueba una segunda versión cuando ya se crearon las tareas de la primera?', detalle: 'Recomendación: el sistema se niega y pide deshacer la aprobación anterior primero, porque borrar tareas ya asignadas destruye trabajo en curso.' },
+  { pregunta: 'Sin departamento en las tareas, ¿el tablero lo ve todo el equipo?', detalle: 'Hoy un jefe de departamento ve las tareas de su gente por el departamento. Al quitarlo, o el tablero es de todos (coherente con el calendario maestro) o se calcula por el departamento de la persona asignada.' },
+  { pregunta: '¿Se queda el tablero de oportunidades, renombrado «Prospectos»?', detalle: 'Tiene 17 negocios vivos y es donde vive el paso prospecto → cliente. La llamada pidió quitar «Deals» de la ficha, no el tablero. La recomendación es conservarlo con el nombre nuevo.' },
+  { pregunta: '¿Se queda la página de Programas (los siete podcasts)?', detalle: 'No está en la lista de bajas, pero pertenece al catálogo que se retira. Son datos reales (Replay, Lujo y Sabor, Visionarios…) y los entregables los nombran.' },
+  { pregunta: 'Confirmar que la coordinación que asigna es Mychel Toral.', detalle: 'Es a quien están asignadas las tres tareas actuales de Core Medical. En la llamada se le nombró «Mitch».' }
 ]
 
 const necesitamos = [
-  'La definición final de los paquetes: cuáles son, qué incluye cada uno y en qué duraciones se venden (3, 6 y 12 meses).',
-  'Los permisos por departamento: qué puede hacer cada rol dentro del sistema.',
-  'Un juego de cotizaciones reales en su formato definitivo, para construir la lectura de documentos contra ejemplos verdaderos y no contra supuestos.'
+  'El acta de constitución de proyecto y el calendario de entregables que Ricardo quedó de mandar (el formato de tabla mes a mes que le gustó), más la cotización original de ese mismo cliente. Es lo que define cuánto cuesta la lectura automática del PDF.',
+  'La lista de contactos, contratos y tareas de prueba que se borran. «Los que no sean del equipo» abarca 172 contactos con cartera real repartida entre 13 asesores; no se borra cartera por inferencia.',
+  'Las respuestas a la sección 6, en especial el día del mes, el IVA y quién ve cobranza: son datos que se escriben en la base desde el primer cliente.'
 ]
 
-const orden = [
-  { title: 'Unir el tablero comercial con los contratos', detail: 'Es la base: sin esto, cualquier cifra que muestre el sistema seguirá sin cuadrar con la realidad comercial.' },
-  { title: 'Ajustes al sistema actual', detail: 'Los ocho puntos de la sección 3. Son rápidos y quitan casi toda la sensación de que la plataforma está incompleta.' },
-  { title: 'Lectura de cotizaciones en PDF', detail: 'Una vez definido el formato de los paquetes y con ejemplos reales en mano.' },
-  { title: 'Calendario: fechas por confirmar', detail: 'Se apoya en lo anterior, porque los entregables salen de la cotización leída.' },
-  { title: 'Tablero directivo por asesor', detail: 'Cobra sentido cuando los contratos ya reflejan la realidad comercial; antes mostraría cifras incompletas.' },
-  { title: 'Aprobación de la propuesta por el cliente', detail: 'Cierra el ciclo de punta a punta, del envío al contrato activo.' }
+const datos = [
+  { name: '172 contactos', hoy: 'Cartera real: sectores, asesores, 33 gestiones de bitácora, 7 documentos.', que: 'Se conservan intactos. Sólo se borran los que Campestre Media señale como de prueba.' },
+  { name: '5 cotizaciones en PDF', hoy: 'Ya subidas al Expediente por cuatro personas del equipo.', que: 'Se conservan y se reclasifican como cotizaciones. Son el primer contenido real del flujo nuevo y el corpus de prueba del lector.' },
+  { name: '3 tareas de Core Medical', hoy: 'Capturadas a mano por Ricardo (15 oct, 15 nov, 10 dic), asignadas a la coordinación.', que: 'Se recrean desde la cotización aprobada con el flujo nuevo: es la demostración de que funciona.' },
+  { name: '11 actividades de agosto', hoy: 'Producción real (Mujeres al Frente, INFINITI, L.A. CETTO) con 31 entregables.', que: 'Se conservan; cómo se muestran depende de la decisión tareas-calendario.' },
+  { name: '3 contratos en borrador', hoy: 'Nunca firmados; dos tienen su cotización en el Expediente.', que: 'Se borran. Lo que importa de ellos ya está en el Expediente.' },
+  { name: '20 pagos programados', hoy: 'De contratos de prueba; cero cobrados, cero facturas emitidas.', que: 'Se borran. No hay historia financiera que proteger.' },
+  { name: '8 paquetes, 40 partidas', hoy: 'El catálogo real cargado en agosto.', que: 'Se desactivan, no se borran.' },
+  { name: '8 ediciones', hoy: 'El ciclo 15 → 14 de la revista, agosto 2026 a marzo 2027.', que: 'Se conservan como referencia; sólo se quita la página.' }
 ]
 
 const fuera = [
-  'Integración de WhatsApp al CRM — el registro de conversaciones se sigue haciendo a mano, como está hoy',
+  'Integración de WhatsApp al CRM — el registro de conversaciones se sigue haciendo a mano en la bitácora, como hoy',
+  'La vista del cliente con evidencias y el reporte mensual: fase posterior, se cotiza cuando toque',
+  'Generar la cotización desde el CRM — se descartó en la llamada; se sigue haciendo fuera',
   'Sitios web del grupo y el editor de sitios, que tienen su propio alcance de trabajo',
   'Soporte técnico e infraestructura, que se cubre por separado como servicio mensual',
   'Cualquier módulo no listado en este documento'
 ]
+
+function printPage() {
+  if (typeof window !== 'undefined') window.print()
+}
 </script>
 
 <style>
