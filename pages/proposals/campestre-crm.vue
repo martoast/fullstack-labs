@@ -373,7 +373,7 @@ useSeoMeta({
 
 const flujo = [
   { title: 'Prospecto', detail: 'El asesor lo da de alta y lleva su seguimiento en la ficha.' },
-  { title: 'Cotización', detail: 'Se hace fuera, como hoy, y se sube en PDF a su ficha. Varias versiones, cada una con fecha.' },
+  { title: 'Cotización', detail: 'Se hace fuera, como hoy, y se sube en PDF a su ficha: la propuesta y, cuando existen, el acta y el calendario de entregables. Varias versiones, cada una con fecha.' },
   { title: 'Aprobada', detail: 'Un botón por versión: «ésta fue la que aprobó el cliente». Ahí se vuelve cliente.' },
   { title: 'Tareas', detail: 'El sistema crea los entregables mes a mes con sus subtareas; la coordinación les pone día y responsable.' },
   { title: 'Cobranza', detail: 'Los pagos mensuales comprometidos quedan registrados para que Administración los marque cobrados.' }
@@ -410,16 +410,18 @@ const modulos = [
     icon: '📄',
     highlight: true,
     tag: 'Acelerador',
-    title: 'Lectura de la cotización en PDF',
-    porque: 'La cotización ya trae el desglose mes a mes. Hoy alguien lo copia a mano, tarea por tarea, con fecha 15 de cada mes.',
+    title: 'Lectura del documento aprobado: calendario de entregables, acta y propuesta',
+    porque: 'Los tres documentos reales ya están en mano (ALTUM Aguacaliente: calendario y acta; Core Medical: propuesta). Hoy alguien copia el desglose a mano, tarea por tarea.',
     items: [
-      'Se sube el PDF y el sistema extrae el desglose: para cada mes, el entregable grande y sus entregables individuales («Cobertura de evento 4x4 → nota web con galería, video de entrevistas, video recap, publicación en redes»)',
-      'También extrae los montos mensuales comprometidos, que alimentan la cobranza',
+      'Se sube el documento y el sistema propone el desglose: para cada mes, el entregable grande y sus entregables individuales («Cobertura de evento 4x4 → nota web con galería, video de entrevistas, video recap, publicación en redes»)',
+      'Los entregables recurrentes («2 coberturas por mes», «1 post y 1 historia en Facebook») se despliegan en una tarea por mes, que es lo que ALTUM necesita: unos 9 recurrentes al mes por 12 meses más los específicos, más de 120 tareas de un solo cliente',
+      'Los montos mensuales comprometidos salen de la propuesta («$20,000 + IVA mensuales», mes por mes) y alimentan la cobranza',
       'Pantalla de revisión obligatoria: el sistema propone lo que leyó, una persona lo corrige y confirma, y sólo entonces se crean las tareas',
-      'Un documento escaneado (imagen sin texto) se rechaza con un mensaje claro en lugar de devolver un desglose vacío; se captura a mano en la misma pantalla',
-      'Se construye contra las cotizaciones reales que ya están en el sistema y contra el acta de constitución y el calendario de entregables que Ricardo va a mandar'
+      'La columna TOTAL de la tabla se usa como verificación cruzada: si el sistema leyó 3 casillas donde el total dice 4, lo señala antes de que nadie confirme',
+      'Un entregable «fecha por definir» (la ponencia en Executive Mornings) entra como tarea sin mes, y los bonificados (mega pantallas, valla móvil) como tareas sin monto',
+      'Un documento escaneado (imagen sin texto) o uno que el sistema no reconoce se captura a mano en la misma pantalla, nunca se devuelve un desglose vacío'
     ],
-    nota: 'Las cinco cotizaciones que ya están en la cuenta tienen cinco estructuras distintas (columnas por mes, secciones por mes y tema, numeración que cambia). Por eso la revisión humana no es un lujo: es la pieza que hace que una lectura imperfecta no se convierta en 18 tareas mal creadas. Si el documento que se lee es el acta de constitución y tiene formato fijo, el riesgo baja mucho.'
+    nota: 'Lo que los documentos revelan y define el diseño. El calendario de entregables y el acta comparten una tabla fija de entregables por mes con una casilla por mes programado; esa tabla se lee bien con visión sobre la página, pero una extracción de texto pierde las casillas y sólo conserva el nombre de la fila y el total, así que el lector trabaja sobre la página renderizada. Y el acta puede mover las fechas respecto a la propuesta (ALTUM: «arranque en septiembre; la propuesta original iniciaba en octubre»), nombra al responsable operativo y a quien la elabora. Por eso las tareas salen del acta o del calendario cuando existen, y el dinero sale de la propuesta.'
   },
   {
     icon: '✅',
@@ -526,7 +528,7 @@ const entregas = [
     label: 'Semana siguiente',
     title: 'Lo que necesita los documentos de Campestre o una decisión',
     items: [
-      'La lectura automática del PDF, en cuanto lleguen el acta de constitución y el calendario de entregables: pre-llena el mismo asistente que ya se usa a mano',
+      'La lectura automática del documento (calendario, acta o propuesta), probada contra los documentos reales de ALTUM y Core Medical: pre-llena el mismo asistente que ya se usa a mano',
       'El tablero agrupado por cliente y mes con sus filtros',
       'La unificación completa de tareas y calendario, una vez tomada la decisión de la sección 6'
     ]
@@ -552,18 +554,21 @@ const decisiones = [
   { pregunta: 'Sin departamento en las tareas, ¿el tablero lo ve todo el equipo?', detalle: 'Hoy un jefe de departamento ve las tareas de su gente por el departamento. Al quitarlo, o el tablero es de todos (coherente con el calendario maestro) o se calcula por el departamento de la persona asignada.' },
   { pregunta: '¿Se queda el tablero de oportunidades, renombrado «Prospectos»?', detalle: 'Tiene 17 negocios vivos y es donde vive el paso prospecto → cliente. La llamada pidió quitar «Deals» de la ficha, no el tablero. La recomendación es conservarlo con el nombre nuevo.' },
   { pregunta: '¿Se queda la página de Programas (los siete podcasts)?', detalle: 'No está en la lista de bajas, pero pertenece al catálogo que se retira. Son datos reales (Replay, Lujo y Sabor, Visionarios…) y los entregables los nombran.' },
-  { pregunta: 'Confirmar que la coordinación que asigna es Mychel Toral.', detalle: 'Es a quien están asignadas las tres tareas actuales de Core Medical. En la llamada se le nombró «Mitch».' }
+  { pregunta: '¿De qué documento nacen las tareas cuando hay más de uno?', detalle: 'ALTUM tiene propuesta, acta de constitución y calendario de entregables, y el acta mueve el arranque de octubre a septiembre. Recomendación: las tareas salen del acta o del calendario cuando existen (son los documentos operativos) y los compromisos de pago salen siempre de la propuesta; cuando sólo hay propuesta, como Core Medical, todo sale de ella.' },
+  { pregunta: '¿La aprobación es «el cliente aprobó la propuesta» o «se elaboró el acta de constitución»?', detalle: 'El acta ya es el paso formal de entrega a operaciones: la elabora Administración (Jocsan Díaz) y la recibe la coordinación (Mych Toral). Si el CRM marca aprobada la cotización cuando se sube el acta, el que aprueba ya no es el asesor y la decisión anterior se resuelve sola.' },
+  { pregunta: 'Confirmar que la coordinación que asigna es Mych Toral.', detalle: 'El acta de ALTUM la nombra «responsable operativo», y es a quien están asignadas las tres tareas actuales de Core Medical. En la llamada se le nombró «Mitch».' }
 ]
 
 const necesitamos = [
-  'El acta de constitución de proyecto y el calendario de entregables que Ricardo quedó de mandar (el formato de tabla mes a mes que le gustó), más la cotización original de ese mismo cliente. Es lo que define cuánto cuesta la lectura automática del PDF.',
+  'Ya llegaron el calendario de entregables y el acta de constitución de ALTUM Aguacaliente y la propuesta de Core Medical. Falta la PROPUESTA de ALTUM (para ver cómo difiere del acta en fechas y montos) y, si existe, el acta o calendario de Core Medical: con los dos juegos completos el lector se prueba contra el caso real de los dos lados.',
   'La lista de contactos, contratos y tareas de prueba que se borran. «Los que no sean del equipo» abarca 172 contactos con cartera real repartida entre 13 asesores; no se borra cartera por inferencia.',
   'Las respuestas a la sección 6, en especial el día del mes, el IVA y quién ve cobranza: son datos que se escriben en la base desde el primer cliente.'
 ]
 
 const datos = [
   { name: '172 contactos', hoy: 'Cartera real: sectores, asesores, 33 gestiones de bitácora, 7 documentos.', que: 'Se conservan intactos. Sólo se borran los que Campestre Media señale como de prueba.' },
-  { name: '5 cotizaciones en PDF', hoy: 'Ya subidas al Expediente por cuatro personas del equipo.', que: 'Se conservan y se reclasifican como cotizaciones. Son el primer contenido real del flujo nuevo y el corpus de prueba del lector.' },
+  { name: '5 cotizaciones en PDF', hoy: 'Ya subidas al Expediente por cuatro personas del equipo.', que: 'Se conservan y se reclasifican como cotizaciones. Son el primer contenido real del flujo nuevo.' },
+  { name: 'Documentos de ALTUM y Core Medical', hoy: 'Calendario de entregables, acta de constitución y propuesta, entregados por Ricardo el 10 de octubre.', que: 'Son el corpus contra el que se construye y se prueba el lector. ALTUM (12 meses) es el primer cliente que se carga con el flujo nuevo.' },
   { name: '3 tareas de Core Medical', hoy: 'Capturadas a mano por Ricardo (15 oct, 15 nov, 10 dic), asignadas a la coordinación.', que: 'Se recrean desde la cotización aprobada con el flujo nuevo: es la demostración de que funciona.' },
   { name: '11 actividades de agosto', hoy: 'Producción real (Mujeres al Frente, INFINITI, L.A. CETTO) con 31 entregables.', que: 'Se conservan; cómo se muestran depende de la decisión tareas-calendario.' },
   { name: '3 contratos en borrador', hoy: 'Nunca firmados; dos tienen su cotización en el Expediente.', que: 'Se borran. Lo que importa de ellos ya está en el Expediente.' },
