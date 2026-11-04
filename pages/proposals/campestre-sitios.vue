@@ -124,7 +124,7 @@
       <section class="px-5 sm:px-10 py-5 sm:py-6 border-t border-gray-100">
         <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-4 flex items-center">
           <span class="w-7 h-7 sm:w-8 sm:h-8 bg-sky-100 text-sky-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold mr-3 shrink-0">4</span>
-          Proceso, rondas de ajustes y tiempos
+          Proceso y rondas de ajustes
         </h3>
         <div class="sm:ml-11">
           <div class="grid grid-cols-1 sm:grid-cols-4 gap-2">
@@ -134,16 +134,8 @@
               <p class="text-sky-700 text-xs mt-1 leading-relaxed">{{ p.detail }}</p>
             </div>
           </div>
-          <div class="mt-3 overflow-hidden rounded-lg border border-gray-200 text-sm">
-            <div class="grid grid-cols-2 bg-gray-50 px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider"><span>Sitio</span><span class="text-right">Tiempo estimado</span></div>
-            <div class="grid grid-cols-2 px-4 py-2 border-t border-gray-100"><span>Campestre Media Guatemala</span><span class="text-right">4 semanas</span></div>
-            <div class="grid grid-cols-2 px-4 py-2 border-t border-gray-100"><span>CITY Inmobiliaria</span><span class="text-right">5 semanas</span></div>
-            <div class="grid grid-cols-2 px-4 py-2 border-t border-gray-100 font-semibold"><span>Ambos en paralelo</span><span class="text-right">6 semanas</span></div>
-          </div>
           <p class="text-xs text-gray-500 mt-3 leading-relaxed">
-            Dos rondas de ajustes de diseño y una ronda de ajustes sobre el sitio ya construido, por sitio. Los
-            tiempos corren desde que recibimos logotipos, textos y fotografías; si el material llega por partes,
-            el calendario se recorre con él.
+            Dos rondas de ajustes de diseño y una ronda de ajustes sobre el sitio ya construido, por sitio.
           </p>
         </div>
       </section>
